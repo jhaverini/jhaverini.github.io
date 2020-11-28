@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  color:black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.top-nav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.top-nav:visited {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
