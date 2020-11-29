@@ -32,36 +32,71 @@ const pages = {
   },
 };
 
-function lowerCaseEquals(currentPageName, pageName) {
+function lcEq(currentPageName, pageName) {
   return currentPageName.toLowerCase() === pageName.toLowerCase();
 }
 
-function writeHeaderItem(page, isCurrentPage) {
+function writeTopRightNavItem(page, isCurrentPage) {
   if (isCurrentPage) {
-    document.write(`<span class="top-nav">${page.name}</span>`);
+    document.write(`<span class="top-nav-link current">${page.name}</span>`);
     return;
   }
   document.write(
-    `<a class="top-nav" href="${page.url}" target="${page.target}">${page.name}</a>`
+    `<a class="top-nav-link" href="${page.url}" target="${page.target}">${page.name}</a>`
   );
 }
 
-function writeHeaderNav(currentPageName) {
-  writeHeaderItem(
-    pages.home,
-    lowerCaseEquals(currentPageName, pages.home.name)
-  );
-  writeHeaderItem(
+function writeTopRightNav(currentPageName) {
+  document.write(`<div>`);
+  writeTopRightNavItem(
     pages.about,
-    lowerCaseEquals(currentPageName, pages.about.name)
+    lcEq(currentPageName, pages.about.name)
   );
-  writeHeaderItem(
+  writeTopRightNavItem(
     pages.projects,
-    lowerCaseEquals(currentPageName, pages.projects.name)
+    lcEq(currentPageName, pages.projects.name)
   );
-  writeHeaderItem(
+  writeTopRightNavItem(
     pages.resume,
-    lowerCaseEquals(currentPageName, pages.resume.name)
+    lcEq(currentPageName, pages.resume.name)
   );
-  document.write("<br/>");
+  document.write(`</div>`);
+}
+
+
+function writeTopLeftNavItem(page, isCurrentPage) {
+
+  const nj = 'Nilpa Jhaveri';
+
+  if (isCurrentPage) {
+    document.write(`<span class="top-nav-link home current">${nj}</span>`);
+    return;
+  }
+  document.write(
+    `<a class="top-nav-link home" href="${page.url}" target="${page.target}">${nj}</a>`
+  );
+}
+
+function writeTopLeftNav(currentPageName) {
+  writeTopLeftNavItem(
+    pages.home,
+    lcEq(currentPageName, pages.home.name)
+  );
+}
+
+
+function writeTopNav(currentPageName) {
+
+  document.write(`<div class="top-nav-bar">`);
+  
+  document.write(`<div class="top-nav-bar-left">`);
+  writeTopLeftNav(currentPageName);
+  document.write(`</div>`);
+  
+  document.write(`<div class="top-nav-bar-right">`);
+  //document.write('About&nbsp;&nbsp;&nbsp;Projects&nbsp;&nbsp;&nbsp;Resume');
+  writeTopRightNav(currentPageName);
+  document.write(`</div>`);
+
+  document.write(`</div>`);
 }
