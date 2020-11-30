@@ -1,10 +1,10 @@
 :root {
   --top-nav-link-color: #555;
   --top-nav-link-color-hover: #222;
-  --color-text-alt: #45080707;
+  --color-text-alt: #908f8f;
   --color-keycons: #4cd964;
   --color-nicu: #006ba6;
-  --top-nav-font-family: 'Poppins', 'Helvetica-Neue', sans-serif;
+  --top-nav-font-family: "Poppins", "Helvetica-Neue", sans-serif;
 }
 
 html {
@@ -13,7 +13,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Open Sans', 'Helvetica-Neue', sans-serif;
+  font-family: "Open Sans", "Helvetica-Neue", sans-serif;
   text-align: left;
   color: #080707;
   background-color: white;
@@ -22,25 +22,25 @@ body {
 }
 
 h1 {
-  font-family: 'Poppins', 'Helvetica-Neue', sans-serif;
+  font-family: "Poppins", "Helvetica-Neue", sans-serif;
   font-size: 3.8rem;
   font-weight: 500;
 }
 
 h2 {
-  font-family: 'Poppins', 'Helvetica-Neue', sans-serif;
+  font-family: "Poppins", "Helvetica-Neue", sans-serif;
   font-size: 3.2rem;
   font-weight: 600;
 }
 
 h2.companyname {
-  color: var(color-text-alt);
+  color: #908f8f;
 }
 
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
-  color: var(color-text-alt);
+  color: #908f8f;
 }
 
 h4 {
@@ -58,10 +58,10 @@ p.emphasis {
   font-weight: 600;
 }
 
-caption {
+p.caption {
   font-style: italic;
   font-size: 1.2rem;
-  color: var(color-text-alt);
+  color: #908f8f;
 }
 
 a, a:visited {
