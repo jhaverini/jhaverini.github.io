@@ -38,11 +38,11 @@ function lcEq(currentPageName, pageName) {
 
 function writeTopRightNavItem(page, isCurrentPage) {
   if (isCurrentPage) {
-    document.write(`<span class="top-nav-link current">${page.name}</span>`);
+    document.write(`<span class="header1-link current">${page.name}</span>`);
     return;
   }
   document.write(
-    `<a class="top-nav-link" href="${page.url}" target="${page.target}">${page.name}</a>`
+    `<a class="header1-link" href="${page.url}" target="${page.target}">${page.name}</a>`
   );
 }
 
@@ -69,11 +69,11 @@ function writeTopLeftNavItem(page, isCurrentPage) {
   const nj = 'Nilpa Jhaveri';
 
   if (isCurrentPage) {
-    document.write(`<span class="top-nav-link home current">${nj}</span>`);
+    document.write(`<span class="header1-link home current">${nj}</span>`);
     return;
   }
   document.write(
-    `<a class="top-nav-link home" href="${page.url}" target="${page.target}">${nj}</a>`
+    `<a class="header1-link home" href="${page.url}" target="${page.target}">${nj}</a>`
   );
 }
 

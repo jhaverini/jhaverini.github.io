@@ -1,6 +1,12 @@
 :root {
   --top-nav-link-color: #555;
   --top-nav-link-color-hover: #222;
+  --color-text-default: #080707;
+  --color-text-alt: #908f8f;
+  --color-keycons: #4cd964;
+  --color-nicu: #006ba6;
+  --top-nav-font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  --header-height: 110px;
 }
 
 html {
@@ -13,19 +19,55 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.6rem;
-  background-color: antiquewhite;
+  background-color: lightgray;
+  font-family: "Open Sans", "Helvetica-Neue", sans-serif;
+  text-align: left;
+  color: var(--color-text-default);
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
+  font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  font-size: 3.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+h2.companyname {
+  color: #908f8f;
+}
+
+h3 {
   font-size: 2.4rem;
-  color: #080707;
-  text-align: left;
+  font-weight: 600;
+  color: #908f8f;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 p {
-  -placeholder:nothing;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 200%;
+}
+
+p.emphasis {
+  font-weight: 600;
+}
+
+p.caption {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #908f8f;
 }
 
 a, a:visited {
@@ -49,7 +91,8 @@ a:hover {
 }
 
 .header-container {
-  flex: 0 0 100px;
+  position: relative;
+  flex: 0 0 var(--header-height);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -57,13 +100,16 @@ a:hover {
 }
 
 .header1 {
+  position: absolute;
+  z-index: 20;
+  flex: 0 0 50px;
   width:100%;
-  height: 40px;
-  padding-top: 15px;
+  padding-top: 10px;
   display:flex;
   flex-direction:row;
   justify-content: flex-start;
   align-items: flex-end;
+  background-color: white;
 }
 
 .header1-left {
@@ -86,22 +132,7 @@ a:hover {
   padding-right: 10px;
 }
 
-.content-container {
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100px;
-  background-color: white;
-}
-
-.edge-shadow {
-  flex:0 0 20px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
-}
-
-.top-nav-link {
+.header1-link {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.0rem;
   padding: 5px;
@@ -109,34 +140,68 @@ a:hover {
   text-decoration: none;
 }
 
-t.top-nav-link:visited {
+.header1-link:visited {
   color: var(--top-nav-link-color);
   text-decoration: none;
 }
 
-.top-nav-link:hover {
+.header1-link:hover {
   color: var(--top-nav-link-color-hover)
 }
 
-.top-nav-link.home {
+.header1-link.home {
   font-size: 3.0rem;
 }
 
-.top-nav-link.current {
-  color: black;
+.header1-link.current {
+  color: var(--color-text-default);
   text-decoration: none;
 }
 
-.prof-nav-bar {
-  width:100%;
-  height: 40px;
-  padding-top: 15px;
-  /*background-color:#F5F5F5;*/
+.header2 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  flex: 0 0 50px;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   justify-content: flex-start;
-  align-items: flex-end;
-  border-bottom: 1px #EEE solid;
+  align-items: flex-start;
+  padding-left: 15px;
+  padding-bottom: 10px;
 }
+
+.header2-title {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.content-container {
+  position: relative;
+  flex: 0 0 calc(100vh - var(--header-height));
+  display: block;
+  flex-direction: column;
+  width: 100%;
+  /*background-color: #4cd964;*/
+}
+
+.edge-shadow {
+  position: absolute;
+  top: 0px;
+  height: 25px;
+  flex:0 0 20px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
+}
+
+.scroll-view {
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  /*background-color: #006ba6;*/
+}
+
 
 
