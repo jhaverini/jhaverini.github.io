@@ -3,11 +3,19 @@
   --top-nav-link-color-hover: #222;
   --color-text-default: #080707;
   --color-text-alt: #908f8f;
+  --color-section-alt: rgba(13, 38, 18, 0.05);
   --color-keycons: #4cd964;
   --color-nicu: #006ba6;
-  --top-nav-font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
+  --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
   --header-height: 110px;
 }
+
+/* Do you want to add this?
+* {
+  box-sizing: border-box;
+}
+*/
 
 html {
   font-size: 62.5%;
@@ -20,7 +28,7 @@ body {
   align-items: center;
   font-size: 1.6rem;
   background-color: lightgray;
-  font-family: "Open Sans", "Helvetica-Neue", sans-serif;
+  font-family: var(--font-family-default);
   text-align: left;
   color: var(--color-text-default);
   margin: 0px;
@@ -28,25 +36,25 @@ body {
 }
 
 h1 {
-  font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  font-family: var(--font-family-alt);
   font-size: 3.8rem;
   font-weight: 500;
 }
 
 h2 {
-  font-family: "Poppins", "Helvetica-Neue", sans-serif;
+  font-family: var(--font-family-alt);
   font-size: 3.2rem;
   font-weight: 600;
 }
 
 h2.companyname {
-  color: #908f8f;
+  color: var(--color-text-alt);
 }
 
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
-  color: #908f8f;
+  color: var(--color-text-alt);
 }
 
 h4 {
@@ -67,7 +75,7 @@ p.emphasis {
 p.caption {
   font-style: italic;
   font-size: 1.2rem;
-  color: #908f8f;
+  color: var(--color-text-alt);
 }
 
 a, a:visited {
