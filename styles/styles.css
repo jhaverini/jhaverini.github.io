@@ -8,8 +8,12 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 1.6rem;
-  background-color: white;
+  background-color: antiquewhite;
   margin: 0px;
   padding: 0px;
 }
@@ -31,6 +35,70 @@ a, a:visited {
 
 a:hover {
   color: navy;
+}
+
+
+.usable-view {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh;
+  background-color: white;
+}
+
+.header-container {
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.header1 {
+  width:100%;
+  height: 40px;
+  padding-top: 15px;
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.header1-left {
+  flex:1;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.header1-right {
+  flex:1;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+
+.content-container {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100px;
+  background-color: white;
+}
+
+.edge-shadow {
+  flex:0 0 20px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
 }
 
 .top-nav-link {
@@ -59,7 +127,7 @@ t.top-nav-link:visited {
   text-decoration: none;
 }
 
-.top-nav-bar {
+.prof-nav-bar {
   width:100%;
   height: 40px;
   padding-top: 15px;
@@ -69,26 +137,6 @@ t.top-nav-link:visited {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px #EEE solid;
-}
-
-.top-nav-bar-left {
-  flex:1;
-  height: 100%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-left: 10px;
-}
-
-.top-nav-bar-right {
-  flex:1;
-  height: 100%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-end;
-  padding-right: 10px;
 }
 
 

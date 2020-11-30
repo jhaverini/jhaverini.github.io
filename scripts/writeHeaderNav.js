@@ -87,14 +87,13 @@ function writeTopLeftNav(currentPageName) {
 
 function writeTopNav(currentPageName) {
 
-  document.write(`<div class="top-nav-bar">`);
+  document.write(`<div class="header1">`);
   
-  document.write(`<div class="top-nav-bar-left">`);
+  document.write(`<div class="header1-left">`);
   writeTopLeftNav(currentPageName);
   document.write(`</div>`);
   
-  document.write(`<div class="top-nav-bar-right">`);
-  //document.write('About&nbsp;&nbsp;&nbsp;Projects&nbsp;&nbsp;&nbsp;Resume');
+  document.write(`<div class="header1-right">`);
   writeTopRightNav(currentPageName);
   document.write(`</div>`);
 
