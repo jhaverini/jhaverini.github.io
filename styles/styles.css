@@ -113,7 +113,7 @@ a:hover {
 }
 
 .header1-left {
-  flex:1;
+  flex: 1;
   height: 100%;
   display:flex;
   flex-direction:column;
@@ -123,7 +123,7 @@ a:hover {
 }
 
 .header1-right {
-  flex:1;
+  flex: 1;
   height: 100%;
   display:flex;
   flex-direction:column;
@@ -182,10 +182,9 @@ a:hover {
   display: block;
   flex-direction: column;
   width: 100%;
-  /*background-color: #4cd964;*/
 }
 
-.edge-shadow {
+.content-edge-shadow {
   position: absolute;
   top: 0px;
   height: 25px;
@@ -194,14 +193,19 @@ a:hover {
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
 }
 
-.scroll-view {
+.content-scroll-view {
   height: calc(100vh - var(--header-height));
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  /*background-color: #006ba6;*/
 }
 
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
 
 
