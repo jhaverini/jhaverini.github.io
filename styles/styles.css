@@ -9,13 +9,15 @@
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
   --header-height: 110px;
+  --side-menu-top-margin: 50px;
+  --side-menu-height: 150px;
+  --side-menu-width: 150px;
+  --side-margin: calc( var(--side-menu-width) + 20px );
 }
 
-/* Do you want to add this?
 * {
   box-sizing: border-box;
 }
-*/
 
 html {
   font-size: 62.5%;
@@ -88,7 +90,7 @@ a:hover {
 }
 
 
-.usable-view {
+.page {
   flex:1;
   display: flex;
   flex-direction: column;
@@ -184,24 +186,24 @@ a:hover {
   font-weight: 100;
 }
 
-.content-container {
+.body {
   position: relative;
   flex: 0 0 calc(100vh - var(--header-height));
-  display: block;
+  display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.content-edge-shadow {
+.edge-shadow {
   position: absolute;
   top: 0px;
-  height: 25px;
-  flex:0 0 20px;
+  z-index: 1000;
+  height: 20px;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
 }
 
-.content-scroll-view {
+.scroll-window {
   height: calc(100vh - var(--header-height));
   width: 100%;
   display: flex;
@@ -209,11 +211,74 @@ a:hover {
   overflow: auto;
 }
 
-.content {
-  flex: 1;
+.scroll-pane {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  margin-top: var(--side-menu-top-margin);
+}
+
+.side-menu-and-content-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.side-menu {
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  align-self: flex-start;
+  height: var(--side-menu-height);
+  width: var(--side-menu-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: antiquewhite;
+}
+
+.first-block-bg {
+  flex: 1 1 auto;
+  margin-top: calc( -1 * calc( var(--side-menu-height) + var(--side-menu-top-margin)) );
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.first-block-bleed-image {
+  align-self: flex-end;
+  background-color: orange;
+  width: 300px;
+  height: 200px;
+}
+
+.block-bg-light {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.block-bg-dark {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.block-fg {
+  flex: 1 1 auto;
+  margin-left: var(--side-margin);
+  margin-right: var(--side-margin); 
 }
 
 
