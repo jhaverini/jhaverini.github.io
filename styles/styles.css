@@ -247,14 +247,13 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  position: relative;
+  position: relative; /* Enables position child element upper-right corner */
 }
 
 .first-block-upper-right-corner {
   position: absolute;
-  top: -0.3vw; /* FIX */
-  right: -0.3vw;  /* FIX */
-  align-self: flex-end;
+  top: 0.0;
+  right: 0.0;
 }
 
 .block-bg-light {
