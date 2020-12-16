@@ -283,3 +283,19 @@ a:hover {
 }
 
 
+/* For small screens... */
+@media only screen and (max-width: 768px) {
+
+  .side-menu {
+    display: none;
+  }
+
+  .first-block-bg {
+    margin-top: calc( -1 * var(--side-menu-top-margin) );
+  }
+
+  .block-fg {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
