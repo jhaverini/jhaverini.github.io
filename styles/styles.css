@@ -83,6 +83,7 @@ p.caption {
 a, a:visited {
   color: var(--top-nav-link-color);
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -230,6 +231,7 @@ a:hover {
   position: sticky;
   top: 0px;
   left: 0px;
+  z-index: 1000;
   align-self: flex-start;
   height: var(--side-menu-height);
   width: var(--side-menu-width);

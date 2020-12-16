@@ -6,6 +6,8 @@
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="../scripts/writeHeader.js"></script>  
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/smoothScrolling.js"></script>
   </head>
   <body>
     <div class="page">
@@ -21,7 +23,7 @@
         <div class="edge-shadow">
         </div>
         
-        <div class="scroll-window">
+        <div id="scroll-window-id" class="scroll-window">
 
           <div class="scroll-pane">
 
@@ -29,13 +31,22 @@
 
               <div class="side-menu">
                 <ul>
-                  <li>A</li>
-                  <li>B</li>
-                  <li>C</li>
+                  <li>
+                    <a onClick="smoothScrollTo('section0')">Top</a>
+                  </li>
+                  <li>
+                    <a onClick="smoothScrollTo('section1')">Section1</a>
+                  </li>
+                  <li>
+                    <a onClick="smoothScrollTo('section2')">Section2</a>
+                  </li>
+                  <li>
+                    <a onClick="smoothScrollTo('section3')">Section3</a>
+                  </li>
                 </ul>
               </div>
 
-              <div class="first-block-bg">
+              <div id="section0" class="first-block-bg">
                 <div class="first-block-upper-right-corner">
                   <img src='./../images/kc-app/Logo.svg' style="width:50vw;">
                 </div>
@@ -49,20 +60,20 @@
               </div>
 
               <div class="block-bg-light">
-                <div class="block-fg" style="height:500px;">
+                <div id="section1" class="block-fg" style="height:500px;">
                   C'est la vie, mon cherie...
                 </div>
               </div>
 
               <div class="block-bg-dark">
-                <div class="block-fg" style="height:500px;">
+                <div id="section2" class="block-fg" style="height:500px;">
                   C'est la vie, mon cherie...
                 </div>
               </div>
 
               <div class="block-bg-light">
-                <div class="block-fg" style="height:500px;">
-                  C'est la vie, mon cherie...
+                <div id="section3" class="block-fg" style="height:500px;">
+                  C'est la vie, mon cherie... SSSSS
                 </div>
               </div>
 
