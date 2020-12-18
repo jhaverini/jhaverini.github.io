@@ -3,11 +3,22 @@
 //https://stackoverflow.com/a/18545500
 
 function smoothScrollTo(scrollToId){
-  smoothScrollInTo('scroll-window-id', scrollToId)
+  smoothScrollInTo('scroll-window', scrollToId)
 }
 
 function smoothScrollInTo(scrollBoxId, scrollToId) {
+
+  const scrollPaneTop = $('#scroll-pane').position().top;
+  const toTop = $('#'+scrollToId).position().top;
+  let offset = toTop;
+  if (scrollToId === 'section0') {
+    offset -= toTop
+  }
+  else {
+    offset -= scrollPaneTop;
+  }
+
   $('#'+scrollBoxId).animate(
-    {scrollTop: $('#'+scrollToId).position().top}, 300, 'swing'
+    {scrollTop: $('#'+scrollBoxId).position().top + offset }, 300, 'swing'
   )
 }
