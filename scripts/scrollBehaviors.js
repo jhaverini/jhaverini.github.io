@@ -1,99 +1,83 @@
+//For updating header height
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const UP = -1;
+const DOWN = 1;
+let scrollPosition = 0;
+let prevScrollDirection;
+//------------------------------------------------------------
 
-//For updating selected sidebar navigational links
+
+//For updating sidebar nav links
 //See: 
 //  https://stackoverflow.com/questions/32395988/highlight-menu-item-when-scrolling-down-to-section
 //  https://stackoverflow.com/a/57494988
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 let $sections;
-let $navigationLinks;
-let sectionIdTonavigationLink = {};
+let $navLinks;
+let sectionIdToNavLink = {};
 let throttler;
 
 //Throttle function, enforces a minimum time interval
-function throttle(highlightCurrentSectionFn, scrollDivId, interval) {
-
+function throttle(updateNavLinksFn, scrollDivId, interval) {
   scrollPosition = $('#'+ scrollDivId).scrollTop(); 
-
-  console.log('dd')
-
   var lastCall, timeoutId;
-	return function () {
+	return function() {
 		var now = new Date().getTime();
 		if (lastCall && now < (lastCall + interval) ) {
 			// if we are inside the interval we wait
 			clearTimeout(timeoutId);
 			timeoutId = setTimeout(function () {
 				lastCall = now;
-        highlightCurrentSectionFn.call(scrollPosition);
+        updateNavLinksFn.call(scrollPosition);
 			}, interval - (now - lastCall) );
     } 
     else {
-			// otherwise, we directly call the function 
+			//Otherwise, directly call function 
 			lastCall = now;
-			highlightCurrentSectionFn.call(scrollPosition);
+			updateNavLinksFn.call(scrollPosition);
 		}
 	};
 }
 
-function getOffset(el) {
-	let x = 0;
+function getYOffset(el) {
 	let y = 0;
-	while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-		x += el.offsetLeft - el.scrollLeft;
+	while(el && !isNaN(el.offsetTop)) {
 		y += el.offsetTop - el.scrollTop;
 		el = el.offsetParent;
 	}
-	return { top: y, left: x };
+	return y;
 }
 
-function highlightCurrentSection(scrollPosition) {
-
+function updateNavLinks(scrollPosition) {
   for (let i = $sections.length - 1; i >= 0; i--) {
-		let currentSection = $sections[i];
-		// get the position of the section
-		let sectionTop = getOffset(currentSection).top;
-
-	   // if the user has scrolled over the top of the section  
+		let section = $sections[i];
+		let sectionTop = getYOffset(section);
+	  //If scrolled over section top...  
 		if (scrollPosition >= sectionTop - 250) {
-			// get the section id
-      let id = currentSection.id;
-      console.log(id);
-			// get the corresponding navigation link
-			let $navigationLink = sectionIdTonavigationLink[id];
-			// if the link is not active
-			if (typeof $navigationLink[0] !== 'undefined') {
-				if (!$navigationLink[0].classList.contains('side-menu-active-selection')) {
-					// remove .active class from all the links
-					for (i = 0; i < $navigationLinks.length; i++) {
-						$navigationLinks[i].className = $navigationLinks[i].className.replace(/ side-menu-active-selection/, '');
+			let $navLink = sectionIdToNavLink[section.id];
+			//If link is not active...
+			if (typeof $navLink[0] !== 'undefined') {
+				if (!$navLink[0].classList.contains('side-menu-active-selection')) {
+					//Remove active class from all links
+					for (i = 0; i < $navLinks.length; i++) {
+						$navLinks[i].className = $navLinks[i].className.replace(/ side-menu-active-selection/, '');
 					}
-					// add .active class to the current link
-					$navigationLink[0].className += (' side-menu-active-selection');
+					//Add active class to current link
+					$navLink[0].className += (' side-menu-active-selection');
 				}
-			} else {
-					// remove .active class from all the links
-					for (i = 0; i < $navigationLinks.length; i++) {
-						$navigationLinks[i].className = $navigationLinks[i].className.replace(/ side-menu-active-selection/, '');
+      }
+      else {
+					//Remove active class from all links
+					for (i = 0; i < $navLinks.length; i++) {
+						$navLinks[i].className = $navLinks[i].className.replace(/ side-menu-active-selection/, '');
 					}
 			}	
-			// we have found our section, so we return false to exit the each loop
-			return false;
+			//Section found; done
+			return;
 		}
 	}
 }
-
-
-
-
-//For updating header height
-const UP = -1;
-const DOWN = 1;
-let scrollPosition = 0;
-let prevScrollDirection;
-
-
-
-
-
+//------------------------------------------------------------
 
 
 function setUpScrollBehaviors({scrollDivId, headerContainerDivId, sideMenuDivId}) {
@@ -103,30 +87,32 @@ function setUpScrollBehaviors({scrollDivId, headerContainerDivId, sideMenuDivId}
     console.error('setupHeaderResizeOnScroll: Invalid argument(s) supplied.');
   }
 
+  //DivIDs -> jQuery selectors
   const scrollDivSelector = '#'+ scrollDivId;
   const headerContainerDivSelector = '#'+ headerContainerDivId;
   const sideMenuDivSelector = '#'+ sideMenuDivId;
 
+  //Initialize scrollbar position
   scrollPosition = $(scrollDivSelector).scrollTop(); 
 
-  //For nav links
-  $navigationLinks = document.querySelectorAll(`${sideMenuDivSelector} > ul > li > a`);
+  //Initialize nav link-related caches
+  $navLinks = document.querySelectorAll(`${sideMenuDivSelector} > ul > li > a`);
   $sections = document.getElementsByTagName('section');
-  sectionIdTonavigationLink = {};
-  for (var i = $sections.length-1; i >= 0; i--) {
-    var id = $sections[i].id;
-    sectionIdTonavigationLink[id] = 
-    document.querySelectorAll(`${sideMenuDivSelector} > ul > li > a[href=\\#${id}]`) || null;
+  sectionIdToNavLink = {};
+  for (let i = $sections.length-1; i >= 0; i--) {
+    const id = $sections[i].id;
+    sectionIdToNavLink[id] = 
+      document.querySelectorAll(`${sideMenuDivSelector} > ul > li > a[href=\\#${id}]`) || null;
   } 
   
-
+  //Set scrollDiv's scroll function
   $(scrollDivSelector).scroll(() => {
 
-    //For updating header height...
-    //++++++++++++++
+    //1. UPDATE HEADER HEIGHT
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     let newScrollPosition = $(scrollDivSelector).scrollTop();
 
-    //If STARTING to scroll down...
+    //If starting to scroll down...
     if (newScrollPosition > scrollPosition && 
         prevScrollDirection !== DOWN) {
 
@@ -147,7 +133,7 @@ function setUpScrollBehaviors({scrollDivId, headerContainerDivId, sideMenuDivId}
       prevScrollDirection = DOWN;
     } 
     
-    //If STARTING to scroll up...
+    //If starting to scroll up...
     else if (newScrollPosition < scrollPosition && 
              prevScrollDirection !== UP) {
 
@@ -170,37 +156,33 @@ function setUpScrollBehaviors({scrollDivId, headerContainerDivId, sideMenuDivId}
 
     //Update scroll position
     scrollPosition = newScrollPosition;
-    //--------------
+    //------------------------------------------------------------
 
-    //For nav links
-    //++++++++++++++
-    highlightCurrentSection(scrollPosition);
-   // throttler();
-   //throttler = throttle(highlightCurrentSection, scrollDivId, 100);
-    //--------------
+    //2. Update nav links
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    updateNavLinks(scrollPosition);
+    //throttler();
+    //throttler = throttle(updateNavLinks, scrollDivId, 100);
+    //------------------------------------------------------------
   });
-
 }
 
-
-
-
-
-// Smooth Scrolling...
-
-// PERHAPS NOT NECESSARY, AFTER GENERAL SUPPORT FOR SCROLL-BEHAVIOR CSS PROPERTY?
-
-//https://stackoverflow.com/questions/18545467/how-to-scroll-within-a-div-with-jquery-animate-function
-//https://stackoverflow.com/a/18545500
+//Smooth Scrolling
+//Use of this function is necessary at least until there is widespread browser 
+//support for the scroll-behavior: smooth css property.
+//As of Dec 2020, support is lagging in (at least) Safari. 
+//Inspired by: 
+// * https://stackoverflow.com/questions/18545467/how-to-scroll-within-a-div-with-jquery-animate-function
+// * https://stackoverflow.com/a/18545500
 
 function smoothScroll(inId, toId) { //"inId": id of element w/ scrollbar
 
-  //Check input arguments...
+  //Check args
   if (!inId || !toId) {
     console.error('smoothScroll: Invalid argument(s) supplied.');
   }
 
-  //Determine new scrollbar position, and distance to scroll
+  //Determine new scrollbar position and distance to be scrolled
   const inTop = $('#'+inId).position().top;
   const toOffset = $('#'+toId).position().top;
   const scrollTop = inTop  + toOffset;
@@ -217,9 +199,9 @@ function smoothScroll(inId, toId) { //"inId": id of element w/ scrollbar
   }
 
   //Set the scroll animation's ease-in / ease-out behavior
+  //For alternate ease-in / ease-out animation behaviors
+  //see: https://gsgd.co.uk/sandbox/jquery/easing/
   const easingType = 'easeInOutQuad';
-  //NOTE: For alternate ease-in / ease-out animation behaviors, see:
-  //https://gsgd.co.uk/sandbox/jquery/easing/
 
   //Scroll!
   $('#'+inId).animate({scrollTop}, durationMs, easingType);
