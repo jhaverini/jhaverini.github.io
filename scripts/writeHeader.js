@@ -42,11 +42,11 @@ function currentPageName() {
 function writeHeaderRightNavItem(page) {
 
   if (page.name === currentPageName()) {
-    document.write(`<span class="header1-link current">${page.name}</span>`);
+    document.write(`<span class="header-line1-link current">${page.name}</span>`);
     return;
   }
   document.write(
-    `<a class="header1-link" href="${page.url}" target="${page.target}">${page.name}</a>`
+    `<a class="header-line1-link" href="${page.url}" target="${page.target}">${page.name}</a>`
   );
 }
 
@@ -64,11 +64,11 @@ function writeHeaderLeftNavItem(page) {
   const nj = 'Nilpa Jhaveri';
 
   if (page.name === currentPageName()) {
-    document.write(`<span class="header1-link home current">${nj}</span>`);
+    document.write(`<span class="header-line1-link home current">${nj}</span>`);
     return;
   }
   document.write(
-    `<a class="header1-link home" href="${page.url}" target="${page.target}">${nj}</a>`
+    `<a class="header-line1-link home" href="${page.url}" target="${page.target}">${nj}</a>`
   );
 }
 
@@ -79,23 +79,23 @@ function writeHeaderLeftNav() {
 
 function writeHeader() {
 
-  document.write(`<div class="header1">`);
+  document.write(`<div class="header-line1">`);
   
-  document.write(`<div class="header1-left">`);
+  document.write(`<div class="header-line1-left">`);
   writeHeaderLeftNav();
   document.write(`</div>`);
   
-  document.write(`<div class="header1-right">`);
+  document.write(`<div class="header-line1-right">`);
   writeHeaderRightNav();
   document.write(`</div>`);
 
   document.write(`</div>`);
 
-  document.write(`<div class="header2">`);
-  document.write(`<div class="header2-title">`);
+  document.write(`<div class="header-line2">`);
+  document.write(`<div class="header-line2-title">`);
   document.write(`User Experience Designer`);
   document.write(`</div>`);
-  document.write(`<div class="header2-title">`);
+  document.write(`<div class="header-line2-title">`);
   document.write(`Licensed Architect`);
   document.write(`</div>`);
   document.write(`</div>`);

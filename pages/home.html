@@ -2,25 +2,44 @@
 <html>
   <head>
     <title>Home</title>
+    
     <link rel="stylesheet" href="../styles/styles.css">
+
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="../scripts/writeHeader.js"></script>  
+    
     <script src="../scripts/jquery-3.5.1.min.js"></script> 
-    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/jquery.easing.1.3.min.js"></script> 
+    <script src="../scripts/jquery.easing.compatibility.js"></script>
+    
+    <script src="../scripts/scrollBehaviors.js"></script>
+    <script src="../scripts/writeHeader.js"></script>  
+
+    <script>
+      //When the document is fully loaded (ready), call a function 
+      //that sets up header resizing on scroll up/down
+      $(document).ready(function() {
+        setUpScrollBehaviors({
+          scrollDivId: 'scroll-window',
+          headerContainerDivId: 'header-container',
+          sideMenuDivId: 'side-menu'
+        });
+      });
+    </script>
+
   </head>
   <body>
     <div class="page">
 
-      <div class="header-container">
+      <div id="header-container" class="header-container">
         <script>
           writeHeader();
         </script>
       </div>
 
-      <div class="body">
+      <div class="page-body">
         
-        <div class="edge-shadow">
+        <div class="header-shadow">
         </div>
         
         <div id="scroll-window" class="scroll-window">
@@ -29,53 +48,65 @@
 
             <div class="side-menu-and-content-wrapper">
 
-              <div class="side-menu">
-                <ul>
-                  <li>
-                    <a onClick="smoothScrollTo('section0')">Top</a>
-                  </li>
-                  <li>
-                    <a onClick="smoothScrollTo('section1')">Section1</a>
-                  </li>
-                  <li>
-                    <a onClick="smoothScrollTo('section2')">Section2</a>
-                  </li>
-                  <li>
-                    <a onClick="smoothScrollTo('section3')">Section3</a>
-                  </li>
-                </ul>
+              <div class="side-menu-container">
+
+                <div id="side-menu" class="side-menu">
+                  <ul class="side-menu-ul">
+                    <li class="side-menu-li">
+                      <a href="#section0" onClick="smoothScroll('scroll-window', 'section0')">Top</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section1" onClick="smoothScroll('scroll-window', 'section1')">Section1</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section2" onClick="smoothScroll('scroll-window', 'section2')">Section2</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section3" onClick="smoothScroll('scroll-window', 'section3')">Section3</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section4" onClick="smoothScroll('scroll-window', 'section4')">Section4</a>
+                    </li>
+                  </ul>
+                </div>
+
               </div>
 
-              <div id="section0" class="first-block-bg">
+              <section id="section0" class="first-block-bg">
                 <div class="first-block-upper-right-corner">
-                  <img src='./../images/kc-app/Logo.svg' style="width:50vw;">
+                  <img src='./../images/kc-app/Logo.svg' style="width:20vw;">
                 </div>
                 <div class="block-fg" style="height:200px;">
                   <h2>
                     Key Conservation:<br>
                     Replenishing...
-                  
                   </h2>
                 </div>
-              </div>
+              </section>
 
-              <div class="block-bg-light">
-                <div id="section1" class="block-fg" style="height:500px;">
-                  C'est la vie, mon cherie...
+              <section id="section1" class="block-bg-light">
+                <div class="block-fg" style="height:500px;">
+                  Section 1
                 </div>
-              </div>
+              </section>
 
-              <div class="block-bg-dark">
-                <div id="section2" class="block-fg" style="height:500px;">
-                  C'est la vie, mon cherie...
+              <section id="section2" class="block-bg-dark">
+                <div class="block-fg" style="height:500px;">
+                  Section 2
                 </div>
-              </div>
+              </section>
 
-              <div class="block-bg-light">
-                <div id="section3" class="block-fg" style="height:500px;">
-                  C'est la vie, mon cherie... SSSSS
+              <section id="section3" class="block-bg-light">
+                <div class="block-fg" style="height:500px;">
+                  Section 3
                 </div>
-              </div>
+              </section>
+
+              <section id="section4" class="block-bg-dark">
+                <div class="block-fg" style="height:500px;">
+                  Section 4
+                </div>
+              </section>
 
             </div>
 
