@@ -13,13 +13,15 @@
     <script src="../scripts/jquery.easing.compatibility.js"></script>
     <script src="../scripts/smoothScrolling.js"></script>
     <script src="../scripts/scrollEffects.js"></script>
-    <script src="../scripts/writeHeader.js"></script>  
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
 
     <script>
       //When the document is fully loaded (ready), call a function 
       //that sets up header resizing on scroll up/down
-      $(document).ready(function() {
-        setUpScrollBehaviors({
+      $(document).ready(()=>{
+        setUpScrollEffects({
           scrollDivId: 'scroll-window',
           headerContainerDivId: 'header-container',
           sideMenuDivId: 'side-menu'
