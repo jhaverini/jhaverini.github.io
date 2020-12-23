@@ -7,12 +7,12 @@ function initScrollEffects({scrollDivId, headerContainerDivId, sideMenuDivId}) {
     console.error('setUpScrollEffects: Invalid arg(s).');
   }
 
-  initNavUpdater({
+  un.initNavUpdater({
     scrollDivId,
     sideMenuDivId,
   });
 
-  initHeaderUpdater({
+  uh.initHeaderUpdater({
     scrollDivId,
     headerContainerDivId,
     sideMenuDivId,
@@ -20,7 +20,7 @@ function initScrollEffects({scrollDivId, headerContainerDivId, sideMenuDivId}) {
 
   //Set scroll function
   $('#'+scrollDivId).scroll(() => {
-    updateHeader();
-    updateNav();
+    uh.updateHeader();
+    un.updateNav();
   });
 }
