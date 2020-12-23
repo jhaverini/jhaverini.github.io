@@ -1,18 +1,18 @@
 //Scroll effects
 
-function setUpScrollEffects({scrollDivId, headerContainerDivId, sideMenuDivId}) { 
+function initScrollEffects({scrollDivId, headerContainerDivId, sideMenuDivId}) { 
 
   //Check input arguments
   if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
     console.error('setUpScrollEffects: Invalid arg(s).');
   }
 
-  setUpNavUpdater({
+  initNavUpdater({
     scrollDivId,
     sideMenuDivId,
   });
 
-  setUpHeaderUpdater({
+  initHeaderUpdater({
     scrollDivId,
     headerContainerDivId,
     sideMenuDivId,
