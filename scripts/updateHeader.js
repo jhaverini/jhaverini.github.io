@@ -1,14 +1,11 @@
 //Update header height on scroll
 
 
-SCROLL BOUNCE STILL NOT FIGURED OUT ON LAPTOP...
-
-USE DATA INSTEAD OF HREF FOR NAV - SINCE BROWSER BACK/FORWARD BEHAVIOR DOESN'T SYNC.
-(OR ELSE MAKE IT SYNC?)
-
-USE VANILLA JS , INSTEAD OF JQUERY?
-
-STORE REFERENCES TO ELEMENTS INSTEAD OF NAMES?
+//SCROLL BOUNCE STILL NOT FIGURED OUT ON LAPTOP...
+//USE DATA INSTEAD OF HREF FOR NAV - SINCE BROWSER BACK/FORWARD BEHAVIOR DOESN'T SYNC.
+//(OR ELSE MAKE IT SYNC?)
+//USE VANILLA JS , INSTEAD OF JQUERY?
+//STORE REFERENCES TO ELEMENTS INSTEAD OF NAMES?
 
 
 const uh = { // uh: namespace 
@@ -50,8 +47,8 @@ const uh = { // uh: namespace
   
     const $scrollDiv = $(uh.scrollDivSelector);
     const newScrollPosition = $scrollDiv.scrollTop();
-    const scrollAtBottom = 
-      ($scrollDiv.prop('scrollHeight') - newScrollPosition) === $scrollDiv.prop('clientHeight');
+    const scrollAtOrPastBottom = 
+      ($scrollDiv.prop('scrollHeight') - newScrollPosition) <= $scrollDiv.prop('clientHeight');
   
     //If starting to scroll down...
     if (uh.scrollPosition > 0 && //Condition needed to guard against weird Safari touchscreen bounce issue
@@ -73,7 +70,7 @@ const uh = { // uh: namespace
     } 
     
     //If starting to scroll up...
-    else if (!scrollAtBottom && //Condition needed to guard against weird Safari touchscreen bounce issue
+    else if (!scrollAtOrPastBottom && //Condition needed to guard against weird Safari touchscreen bounce issue
              newScrollPosition < uh.scrollPosition && 
              uh.prevScrollDirection !== uh.UP) {
 
