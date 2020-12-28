@@ -16,8 +16,13 @@ const un = { //un: UpdateNav "namespace" - to minimize variable name collisions 
   navLinks: [],
   sectionIdToNavLink: {}, //Look-up table; given sectionID, get corresponding navLink
   
-  scrollDivSelector: {},
-  sideMenuDivSelector: undefined,
+  scrollDivId: undefined,
+  sideMenuDivId: undefined,
+
+  scrollDiv: undefined,
+  sideMenuDiv: undefined,
+
+  scrollPosition: 0,
 
 
   initNavUpdater: ({scrollDivId, sideMenuDivId}) => {
@@ -25,36 +30,44 @@ const un = { //un: UpdateNav "namespace" - to minimize variable name collisions 
     //Check input args
     if (!scrollDivId || !sideMenuDivId) {
       elog('initNavUpdater: Invalid arg(s) supplied.');
+      return;
     }
 
-    //Initialize jQuery selectors
-    un.scrollDivSelector = '#'+ scrollDivId;
-    un.sideMenuDivSelector = '#'+ sideMenuDivId;
+    //Initialize stored divs and ids
+    un.scrollDivId = scrollDivId;
+    un.sideMenuDivId = sideMenuDivId;
+    un.scrollDiv = document.getElementById(scrollDivId);
+    un.sideMenuDiv = document.getElementById(sideMenuDivId);
 
-    //Initialize scrollbar position
-    const scrollPosition = $(un.scrollDivSelector).scrollTop(); 
+    if (!un.scrollDiv || !un.sideMenuDiv) {
+      elog('initNavUpdater: Required element(s) not found.');
+      return;
+    }
 
     //Initialize nav link-related caches
-    un.navLinks = document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a`);
+    un.navLinks = document.querySelectorAll(`#${un.sideMenuDivId} > ul > li > a`);
     un.sections = document.getElementsByTagName('section');
     un.sectionIdToNavLink = {};
     for (let i = un.sections.length-1; i >= 0; i--) {
       const id = un.sections[i].id;
       un.sectionIdToNavLink[id] = 
-        document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a[href=\\#${id}]`) || null;
-    } 
+        document.querySelectorAll(`#${un.sideMenuDivId} > ul > li > a[href=\\#${id}]`) || null;
+    }
+
+    //Highlight the initially-highlighted link
+    un.updateNav();
   },
 
 
   updateNav: () => {
 
-    const scrollPosition = $(un.scrollDivSelector).scrollTop(); 
+    un.scrollPosition = un.scrollDiv.scrollTop; 
 
     for (let i = un.sections.length - 1; i >= 0; i--) {
-      let section = un.sections[i];
-      let sectionTop = un.getYOffset(section);
+      const section = un.sections[i];
+      const sectionTop = un.getYOffset(section);
       //If scrolled over section top...  
-      if (scrollPosition >= sectionTop - 250) {
+      if (un.scrollPosition >= sectionTop - 250) {
         let navLink = un.sectionIdToNavLink[section.id];
         if (typeof navLink[0] !== 'undefined') {
           //If link is not active...
@@ -94,7 +107,9 @@ const un = { //un: UpdateNav "namespace" - to minimize variable name collisions 
 
 //Throttle function, enforces a minimum time interval
 function throttle(updateNavLinksFn, scrollDivId, interval) {
-  scrollPosition = $('#'+ scrollDivId).scrollTop(); 
+
+  un.scrollPosition = un.scrollDiv.scrollTop;
+
   var lastCall, timeoutId;
 	return function() {
 		var now = new Date().getTime();
