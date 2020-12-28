@@ -30,10 +30,13 @@
           headerDivId: 'header',
           sideNavDivId: 'side-nav'
         });
+
+        window.addEventListener("scroll", ()=>{ilog('Scrolling...')});
       });
     </script>
 
   </head>
+  
   <body>
     <div class="page">
 
@@ -54,34 +57,30 @@
 
             <div class="side-nav-and-content-wrapper">
 
+              <!--
               <div class="side-nav-container">
-
                 <div id="side-nav" class="side-nav">
                   <ul class="side-nav-ul">
                     <li class="side-nav-li">
-                      <a href="#section0" onClick="ss.scrollTo('section0')">Top</a>
+                      <a class="side-nav-link" href="#section0" onClick="ss.scrollTo('section0')">
+                        Top
+                      </a>
                     </li>
                     <li class="side-nav-li">
-                      <a href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
-                    </li>
-                    <li class="side-nav-li">
-                      <a href="#section2" onClick="ss.scrollTo('section2')">Section2</a>
-                    </li>
-                    <li class="side-nav-li">
-                      <a href="#section3" onClick="ss.scrollTo('section3')">Section3</a>
-                    </li>
-                    <li class="side-nav-li">
-                      <a href="#section4" onClick="ss.scrollTo('section4')">Section4</a>
+                      <a class="side-nav-link" href="#section1" onClick="return ss.scrollTo('section1')">
+                        Section1
+                      </a>
                     </li>
                   </ul>
-                </div>
-
+                </div
               </div>
+              -->
 
               <section id="section0">
+
                 <div class="block-fg" style="height:200px;">
                   <h2>
-                    <div class="company-name">Projects:</div>
+                    My Amazing Projects
                   </h2>
                 </div>
               </section>
@@ -89,31 +88,8 @@
               <section id="section1">
                 <div class="block-bg-light">
                   <div class="block-fg" style="height:500px;">
-                    Section 1
-                  </div>
-                </div>
-              </section>
-
-              <section id="section2" >
-                <div class="block-bg-dark">
-                  <div class="block-fg" style="height:500px;">
-                    Section 2
-                  </div>
-              </div>
-              </section>
-
-              <section id="section3">
-                <div class="block-bg-light">
-                  <div class="block-fg" style="height:500px;">
-                    Section 3
-                  </div>
-                </div>
-              </section>
-
-              <section id="section4"">
-                <div class="block-bg-dark">
-                  <div class="block-fg" style="height:500px;">
-                    Section 4
+                    <a href="./projects-kaiser-nicu.html">Kaiser NICU</a><br/>
+                    <a href="./projects-key-conservation-app.html">Key Conservation</a>
                   </div>
                 </div>
               </section>

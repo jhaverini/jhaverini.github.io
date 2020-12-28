@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Key Conservation</title>
+    <title>Home</title>
     
     <link rel="stylesheet" href="../styles/styles.css">
 
@@ -30,10 +30,13 @@
           headerDivId: 'header',
           sideNavDivId: 'side-nav'
         });
+
+        window.addEventListener("scroll", ()=>{ilog('Scrolling...')});
       });
     </script>
 
   </head>
+  
   <body>
     <div class="page">
 
@@ -59,19 +62,29 @@
                 <div id="side-nav" class="side-nav">
                   <ul class="side-nav-ul">
                     <li class="side-nav-li">
-                      <a href="#section0" onClick="ss.scrollTo('section0')">Top</a>
+                      <a class="side-nav-link" href="#section0" onClick="ss.scrollTo('section0')">
+                        Top
+                      </a>
                     </li>
                     <li class="side-nav-li">
-                      <a href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
+                      <a class="side-nav-link" href="#section1" onClick="return ss.scrollTo('section1')">
+                        Section1
+                      </a>
                     </li>
                     <li class="side-nav-li">
-                      <a href="#section2" onClick="ss.scrollTo('section2')">Section2</a>
+                      <a class="side-nav-link" href="#section2" onClick="return ss.scrollTo('section2')">
+                        Section2
+                      </a>
                     </li>
                     <li class="side-nav-li">
-                      <a href="#section3" onClick="ss.scrollTo('section3')">Section3</a>
+                      <a class="side-nav-link" href="#section3" onClick="return ss.scrollTo('section3')">
+                        Section3
+                      </a>
                     </li>
                     <li class="side-nav-li">
-                      <a href="#section4" onClick="ss.scrollTo('section4')">Section4</a>
+                      <a class="side-nav-link" href="#section4" onClick="return ss.scrollTo('section4')">
+                        Section4
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -87,11 +100,8 @@
                     <div class="company-name">Key Conservation:</div>
                     Replenishing biodiversity through local, real-time support
                   </h2>
-                  
-                    
-                  </h2>
                 </div>
-              </section>
+                </section>
 
               <section id="section1">
                 <div class="block-bg-light">
@@ -104,9 +114,19 @@
               <section id="section2" >
                 <div class="block-bg-dark">
                   <div class="block-fg" style="height:500px;">
-                    Section 2
+                    Section 2.1
                   </div>
-              </div>
+                </div>
+                <div class="block-bg-light">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2.2
+                  </div>
+                </div>
+                <div class="block-bg-dark">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2.3
+                  </div>
+                </div>
               </section>
 
               <section id="section3">
