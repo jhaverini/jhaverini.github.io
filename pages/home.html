@@ -16,6 +16,7 @@
     <script src="../scripts/updateHeader.js"></script>
     <script src="../scripts/updateNav.js"></script>
     <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
 
     <script>
       //When the document is fully loaded ("ready"), call a function 
@@ -38,7 +39,7 @@
 
       <div id="header-container" class="header-container">
         <script>
-          writeHeader();
+          wh.writeHeader();
         </script>
       </div>
 
@@ -78,13 +79,10 @@
               </div>
 
               <section id="section0">
-                <div class="section-upper-right-corner">
-                  <img src='./../images/kc-app/Logo.svg' style="width:20vw;">
-                </div>
+
                 <div class="block-fg" style="height:200px;">
                   <h2>
-                    Key Conservation:<br>
-                    Replenishing...
+                    Yo my peeps. What's up?
                   </h2>
                 </div>
               </section>
@@ -100,9 +98,19 @@
               <section id="section2" >
                 <div class="block-bg-dark">
                   <div class="block-fg" style="height:500px;">
-                    Section 2
+                    Section 2.1
                   </div>
-              </div>
+                </div>
+                <div class="block-bg-light">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2.2
+                  </div>
+                </div>
+                <div class="block-bg-dark">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2.3
+                  </div>
+                </div>
               </section>
 
               <section id="section3">
@@ -120,6 +128,12 @@
                   </div>
                 </div>
               </section>
+
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
 
             </div>
 

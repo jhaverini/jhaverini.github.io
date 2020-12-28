@@ -56,7 +56,7 @@ h2 {
   font-weight: 600;
 }
 
-h2.companyname {
+.company-name {
   color: var(--color-text-alt);
 }
 
@@ -203,6 +203,12 @@ a:hover {
 .header-line2-title {
   font-size: 1.6rem;
   font-weight: 100;
+}
+
+.footer-text {
+  color: gray;
+  padding-top: 10px;
+  height: 400px;
 }
 
 .page-body {

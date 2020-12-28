@@ -2,32 +2,133 @@
 <html>
   <head>
     <title>Kaiser NICU</title>
+    
     <link rel="stylesheet" href="../styles/styles.css">
+
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="../scripts/writeHeader.js"></script>  
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script> 
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerContainerDivId: 'header-container',
+          sideMenuDivId: 'side-menu'
+        });
+      });
+    </script>
+
   </head>
   <body>
-    <div class="usable-view">
+    <div class="page">
 
-      <div class="header-container">
+      <div id="header-container" class="header-container">
         <script>
-          writeHeader();
+          wh.writeHeader();
         </script>
       </div>
 
-      <div class="content-container">
+      <div class="page-body">
         
-        <div class="content-edge-shadow" />
+        <div class="header-shadow">
+        </div>
         
-        <div class="content-scroll-view">
-        
-          <div class="content">
+        <div id="scroll-window" class="scroll-window">
 
-            <h1>Kaiser Neonatal Intensive Care Unit...</h1>
-            
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-menu-and-content-wrapper">
+
+              <div class="side-menu-container">
+
+                <div id="side-menu" class="side-menu">
+                  <ul class="side-menu-ul">
+                    <li class="side-menu-li">
+                      <a href="#section0" onClick="ss.scrollTo('section0')">Top</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section2" onClick="ss.scrollTo('section2')">Section2</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section3" onClick="ss.scrollTo('section3')">Section3</a>
+                    </li>
+                    <li class="side-menu-li">
+                      <a href="#section4" onClick="ss.scrollTo('section4')">Section4</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <section id="section0">
+                <div class="block-fg" style="height:200px;">
+                  <h2>
+                    <div class="company-name">Kaiser NICU:</div>
+                    UX At the Boundary of Life and Death
+                  </h2>
+                </div>
+              </section>
+
+              <section id="section1">
+                <div class="block-bg-light">
+                  <div class="block-fg" style="height:500px;">
+                    Section 1
+                  </div>
+                </div>
+              </section>
+
+              <section id="section2" >
+                <div class="block-bg-dark">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2
+                  </div>
+              </div>
+              </section>
+
+              <section id="section3">
+                <div class="block-bg-light">
+                  <div class="block-fg" style="height:500px;">
+                    Section 3
+                  </div>
+                </div>
+              </section>
+
+              <section id="section4"">
+                <div class="block-bg-dark">
+                  <div class="block-fg" style="height:500px;">
+                    Section 4
+                  </div>
+                </div>
+              </section>
+
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
           </div>
-
+          
         </div>
 
       </div>
