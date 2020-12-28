@@ -2,87 +2,109 @@
 
 const uh = { //uh: UpdateHeader "namespace", to minimize variable name collisions across files
   
-  //*** KEEP THESE SYNCED WITH CORRESPONDING CSS FILE VARIABLES!!! ***
-  HEADER_CONTAINER_MIN_HEIGHT: '50px', // --header-container-min-height
-  HEADER_CONTAINER_MAX_HEIGHT: '100px', // --header-container-max-height
-  SIDE_MENU_MAX_TOP: '50px', // --side-menu-max-top
-  SIDE_MENU_MIN_TOP: '0px', // --side-menu-min-top
+  //*** KEEP THESE SYNCED WITH CORRESPONDING CSS!!! ***
+  HEADER_MIN_HEIGHT: '50px', // --header-min-height
+  HEADER_MAX_HEIGHT: '100px', // --header-max-height
+  SIDE_NAV_MAX_TOP: '50px', // --side-nav-max-top
+  SIDE_NAV_MIN_TOP: '0px', // --side-nav-min-top
 
   UP: -1,
   DOWN: 1,
 
-  scrollPosition: 0,
+  scrollDiv: undefined,
+  headerDiv: undefined,
+  sideNavDiv: undefined,
+
+  prevScrollPosition: 0,
   prevScrollDirection: undefined,
 
-  scrollDiv: undefined,
-  headerContainerDiv: undefined,
-  sideMenuDiv: undefined,
-
-
-  initHeaderUpdater: ({scrollDivId, headerContainerDivId, sideMenuDivId}) => {
+  initHeaderUpdater: ({
+    scrollDivId, 
+    headerDivId, 
+    sideNavDivId, //Set to null if page has no side navigation
+  }) => {
 
     //Check input arguments
-    if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
+    if (!scrollDivId || !headerDivId) {
       elog('initHeaderUpdater: Invalid arg(s).');
     }
 
     uh.scrollDiv = document.getElementById(scrollDivId);
-    uh.headerContainerDiv = document.getElementById(headerContainerDivId);
-    uh.sideMenuDiv = document.getElementById(sideMenuDivId);
-    if (!uh.scrollDiv || !uh.headerContainerDiv || !uh.sideMenuDiv) {
-      elog('initHeaderUpdater: Elements corresponding to id args not found.');
+    if (!uh.scrollDiv) {
+      elog('initHeaderUpdater: scrollDiv not found for id:' + scrollDivId);
+      return;
     }
 
-    //Initialize scrollbar position
-    uh.scrollPosition = document.getElementById(scrollDivId).scrollTop;
+    uh.headerDiv = document.getElementById(headerDivId);
+    if (!uh.headerDiv) {
+      elog('initHeaderUpdater: headerDiv not found for id:' + headerDivId);
+      return;
+    }
+
+    if (sideNavDivId) {
+      uh.sideNavDiv = document.getElementById(sideNavDivId);
+      if (!uh.sideNavDiv) {
+        elog('initHeaderUpdater: sideNavDiv not found for id:' + sideNavDivId);
+        return;
+      }
+    }
+
+    //Initialize prev scrollbar position
+    uh.prevScrollPosition = document.getElementById(scrollDivId).scrollTop;
   },
 
 
   updateHeader: () => {
     
-    const newScrollPosition = uh.scrollDiv.scrollTop;
+    const scrollPosition = uh.scrollDiv.scrollTop;
     const scrollAtOrPastBottom = 
-      (uh.scrollDiv.scrollHeight - newScrollPosition) <= uh.scrollDiv.clientHeight;
+      (uh.scrollDiv.scrollHeight - scrollPosition) <= uh.scrollDiv.clientHeight;
 
     //If starting to scroll down...
-    if (uh.scrollPosition > 0 && //This condition guards against Safari touch bounce issue
-        newScrollPosition > uh.scrollPosition && 
+    if (uh.prevScrollPosition > 0 && //This condition guards against Safari touch bounce issue
+        scrollPosition > uh.prevScrollPosition && 
         uh.prevScrollDirection !== uh.DOWN) {
 
       //Initiate contraction of header (a css transition animation)
-      uh.headerContainerDiv.style.flexBasis = uh.HEADER_CONTAINER_MIN_HEIGHT;
+      uh.headerDiv.style.flexBasis = uh.HEADER_MIN_HEIGHT;
 
-      //Initiate counter-animation of side-menu top (a css transition animation)
-      //so that the side menu location appears constant while the header is 
-      //contracting. (Note: Since side-menu's position is "sticky", this
-      //counter-animation of side-menu top only has effect when the side-menu
+      //For pages that have a side nav menu:
+      //Initiate counter-animation of side-nav top (a css transition animation)
+      //so that the side nav location appears constant while the header is 
+      //contracting. (Note: Since side-nav's position is "sticky", this
+      //counter-animation of side-nav top only has effect when the side-nav
       //is as high as it can go relative to the bottom of the header.)
-      uh.sideMenuDiv.style.top = uh.SIDE_MENU_MAX_TOP;
-      
+      if (uh.sideNavDiv) {
+        uh.sideNavDiv.style.top = uh.SIDE_NAV_MAX_TOP;
+      }
+
       //Update previous scroll direction value with current value
       uh.prevScrollDirection = uh.DOWN;
     } 
     
     //If starting to scroll up...
     else if (!scrollAtOrPastBottom && //This condition guards against Safari touchscreen bounce issue
-             newScrollPosition < uh.scrollPosition && 
+             (scrollPosition < uh.prevScrollPosition) && 
              uh.prevScrollDirection !== uh.UP) {
 
       //Initiate expansion of header (a css transition animation)
-      uh.headerContainerDiv.style.flexBasis = uh.HEADER_CONTAINER_MAX_HEIGHT;
+      uh.headerDiv.style.flexBasis = uh.HEADER_MAX_HEIGHT;
 
-      //Initiate counter-animation of side-menu top (a css transition animation)
-      //so that the side menu location appears constant while the header is 
-      //expanding. (Note: Since side-menu's position is "sticky", this
-      //counter-animation of side-menu top only has effect when the side-menu
+      //For pages that have a side nav menu:
+      //Initiate counter-animation of side-nav top (a css transition animation)
+      //so that the side nav location appears constant while the header is 
+      //expanding. (Note: Since side-nav's position is "sticky", this
+      //counter-animation of side-nav top only has effect when the side-nav
       //is as high as it can go relative to the bottom of the header.)
-      uh.sideMenuDiv.style.top = uh.SIDE_MENU_MIN_TOP;
-      
+      if (uh.sideNavDiv) {
+        uh.sideNavDiv.style.top = uh.SIDE_NAV_MIN_TOP;
+      }
+
       //Update previous scroll direction value with current value
       uh.prevScrollDirection = uh.UP;      
     }
 
-    //Update scroll position
-    uh.scrollPosition = newScrollPosition;
+    //Update scroll positions
+    uh.prevScrollPosition = scrollPosition;
   }
 }

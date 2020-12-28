@@ -27,8 +27,8 @@
       $(document).ready(()=>{
         sfx.initScrollEffects({
           scrollDivId: 'scroll-window',
-          headerContainerDivId: 'header-container',
-          sideMenuDivId: 'side-menu'
+          headerDivId: 'header',
+          sideNavDivId: null,
         });
       });
     </script>
@@ -37,7 +37,7 @@
   <body>
     <div class="page">
 
-      <div id="header-container" class="header-container">
+      <div id="header" class="header">
         <script>
           wh.writeHeader();
         </script>
@@ -52,26 +52,26 @@
 
           <div id="scroll-pane" class="scroll-pane">
 
-            <div class="side-menu-and-content-wrapper">
+            <div class="side-nav-and-content-wrapper">
 
-              <div class="side-menu-container">
+              <div class="side-nav-container">
 
                 <!--
-                <div id="side-menu" class="side-menu">
-                  <ul class="side-menu-ul">
-                    <li class="side-menu-li">
+                <div id="side-nav" class="side-nav">
+                  <ul class="side-nav-ul">
+                    <li class="side-nav-li">
                       <a href="#section0" onClick="ss.scrollTo('section0')">Top</a>
                     </li>
-                    <li class="side-menu-li">
-                      <a href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
                     </li>
-                    <li class="side-menu-li">
+                    <li class="side-nav-li">
                       <a href="#section2" onClick="ss.scrollTo('section2')">Section2</a>
                     </li>
-                    <li class="side-menu-li">
+                    <li class="side-nav-li">
                       <a href="#section3" onClick="ss.scrollTo('section3')">Section3</a>
                     </li>
-                    <li class="side-menu-li">
+                    <li class="side-nav-li">
                       <a href="#section4" onClick="ss.scrollTo('section4')">Section4</a>
                     </li>
                   </ul>

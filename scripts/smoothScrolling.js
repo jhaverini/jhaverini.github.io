@@ -6,7 +6,7 @@
 // * https://stackoverflow.com/questions/18545467/how-to-scroll-within-a-div-with-jquery-animate-function
 // * https://stackoverflow.com/a/18545500
 
-const ss = {
+const ss = { //"ss": A containing namespace, to prevent cross-file variable/function name collisions
 
   scrollDivId: undefined,
   easingType: 'swing', //Default
@@ -42,8 +42,17 @@ const ss = {
     //Set the duration of the scroll animation
     const durationMs = (scrollDistance !== 0) ? 300 : 0; 
 
-    //Scroll!
-    $('#'+ss.scrollDivId).animate({scrollTop}, durationMs, ss.easingType);
-  },
+    const onDone = () => {
+      location.hash = '#' + toId; //Add the "to" id to the URL
+    };
 
+    //Scroll!
+    $('#'+ss.scrollDivId).animate({scrollTop}, durationMs, ss.easingType, onDone);
+
+    //When a link's onClick function returns a function that returns false,
+    //the onClick function over-rides the default behavior of the link
+    //(i.e. instantly navigating to the link's anchor). We want to over-ride
+    //this default behavior, because we are using smooth scrolling.
+    return false;
+  },
 };

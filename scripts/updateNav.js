@@ -5,53 +5,56 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // GET RID OF JQUERY DEPENDENCE
-// BLINKINESS
 // TEST TO SEE IF POSITIONING IS ACCURATE
 // THROTTLING?
 
 
-const un = { //un: UpdateNav "namespace" - to minimize variable name collisions across files
-  
+const un = { //"un": A containing namespace, to prevent cross-file variable/function name collisions
+
+  //*** KEEP THESE SYNCED WITH CORRESPONDING CSS!!! ***
+  baseClass: 'side-nav-link',
+  selectedClass: 'side-nav-link-selected',
+
   sections: [],
   navLinks: [],
   sectionIdToNavLink: {}, //Look-up table; given sectionID, get corresponding navLink
   
   scrollDivId: undefined,
-  sideMenuDivId: undefined,
+  sideNavDivId: undefined,
 
   scrollDiv: undefined,
-  sideMenuDiv: undefined,
+  sideNavDiv: undefined,
 
   scrollPosition: 0,
 
 
-  initNavUpdater: ({scrollDivId, sideMenuDivId}) => {
+  initNavUpdater: ({scrollDivId, sideNavDivId}) => {
 
     //Check input args
-    if (!scrollDivId || !sideMenuDivId) {
+    if (!scrollDivId || !sideNavDivId) {
       elog('initNavUpdater: Invalid arg(s) supplied.');
       return;
     }
 
     //Initialize stored divs and ids
     un.scrollDivId = scrollDivId;
-    un.sideMenuDivId = sideMenuDivId;
+    un.sideNavDivId = sideNavDivId;
     un.scrollDiv = document.getElementById(scrollDivId);
-    un.sideMenuDiv = document.getElementById(sideMenuDivId);
+    un.sideNavDiv = document.getElementById(sideNavDivId);
 
-    if (!un.scrollDiv || !un.sideMenuDiv) {
+    if (!un.scrollDiv || !un.sideNavDiv) {
       elog('initNavUpdater: Required element(s) not found.');
       return;
     }
 
     //Initialize nav link-related caches
-    un.navLinks = document.querySelectorAll(`#${un.sideMenuDivId} > ul > li > a`);
+    un.navLinks = document.querySelectorAll(`#${un.sideNavDivId} > ul > li > a`);
     un.sections = document.getElementsByTagName('section');
     un.sectionIdToNavLink = {};
     for (let i = un.sections.length-1; i >= 0; i--) {
       const id = un.sections[i].id;
       un.sectionIdToNavLink[id] = 
-        document.querySelectorAll(`#${un.sideMenuDivId} > ul > li > a[href=\\#${id}]`) || null;
+        document.querySelectorAll(`#${un.sideNavDivId} > ul > li > a[href=\\#${id}]`) || null;
     }
 
     //Highlight the initially-highlighted link
@@ -61,7 +64,15 @@ const un = { //un: UpdateNav "namespace" - to minimize variable name collisions 
 
   updateNav: () => {
 
+    const selectedClassRegex = new RegExp(` ${un.selectedClass}`);
+
     un.scrollPosition = un.scrollDiv.scrollTop; 
+
+    const removeSelectedClassFromAllLinks = () => {
+      for (i = 0; i < un.navLinks.length; i++) {
+        un.navLinks[i].className = un.navLinks[i].className.replace(selectedClassRegex, '');
+      }
+    };
 
     for (let i = un.sections.length - 1; i >= 0; i--) {
       const section = un.sections[i];
@@ -71,20 +82,16 @@ const un = { //un: UpdateNav "namespace" - to minimize variable name collisions 
         let navLink = un.sectionIdToNavLink[section.id];
         if (typeof navLink[0] !== 'undefined') {
           //If link is not active...
-          if (!navLink[0].classList.contains('side-menu-active-selection')) {
-            //Remove active class from all links
-            for (i = 0; i < un.navLinks.length; i++) {
-              un.navLinks[i].className = un.navLinks[i].className.replace(/ side-menu-active-selection/, '');
-            }
-            //Add active class to current link
-            navLink[0].className += (' side-menu-active-selection');
+          if (!navLink[0].classList.contains(un.selectedClass)) {
+           
+            removeSelectedClassFromAllLinks();
+
+            //Add selected class to current link
+            navLink[0].className += (' ' + un.selectedClass);
           }
         }
         else {
-            //Remove active class from all links
-            for (i = 0; i < un.navLinks.length; i++) {
-              un.navLinks[i].className = un.navLinks[i].className.replace(/ side-menu-active-selection/, '');
-            }
+          removeSelectedClassFromAllLinks();
         }	
         //Section found; done
         return;

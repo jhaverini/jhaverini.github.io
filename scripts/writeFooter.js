@@ -1,5 +1,5 @@
 
-const wf = {
+const wf = { //"wf": A containing namespace, to prevent cross-file variable/function name collisions
   
   writeFooter: () => {
 

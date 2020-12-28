@@ -1,11 +1,15 @@
 //Scroll effects
 
-const sfx = { //sfx: ScrollEffects "namespace" - reduce chances of naming collisions across files
+const sfx = { //"sfx": A containing namespace, to prevent cross-file variable/function name collisions
 
-  initScrollEffects: ({scrollDivId, headerContainerDivId, sideMenuDivId}) => { 
+  initScrollEffects: ({
+    scrollDivId, 
+    headerDivId, 
+    sideNavDivId //Set to null, if page has no side navigation
+  }) => { 
 
     //Error-check input arguments
-    if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
+    if (!scrollDivId || !headerDivId) {
       elog('initScrollEffects: Invalid arg(s).');
       return;
     }
@@ -18,21 +22,27 @@ const sfx = { //sfx: ScrollEffects "namespace" - reduce chances of naming collis
     //Initialize smooth scrolling
     ss.initSmoothScroll(scrollDivId);
 
-    //Initialize the side-nav and header updaters
-    un.initNavUpdater({
-      scrollDivId,
-      sideMenuDivId,
-    });
+    //Initialize header updater
     uh.initHeaderUpdater({
       scrollDivId,
-      headerContainerDivId,
-      sideMenuDivId,
+      headerDivId,
+      sideNavDivId,
     });
+
+    //If page has side navigation, initialize side nav menu
+    if (sideNavDivId) {
+      un.initNavUpdater({
+        scrollDivId,
+        sideNavDivId,
+      });
+    }
   
     //Set the div's onScroll function to update header and side-nav
     scrollDiv.onscroll = () => {
       uh.updateHeader();
-      un.updateNav();
+      if (sideNavDivId) {
+        un.updateNav();
+      }
     }
   }
 

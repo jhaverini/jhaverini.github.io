@@ -1,5 +1,4 @@
-
-const wh = {
+const wh = { //"wh": A containing namespace, to prevent cross-file variable/function name collisions
 
   pages: {
     home: {
@@ -72,9 +71,10 @@ const wh = {
     wh.writeLeftNavItem(wh.pages.home);
   },
 
+
   writeLeftNavItem: (page) => {
     const nj = 'Nilpa Jhaveri';
-    if (page.name === wh.currentPageName()) {
+    if (wh.isCurrentPage(page)) {
       document.write(`<span class="header-line1-link home current">${nj}</span>`);
       return;
     }
@@ -94,14 +94,20 @@ const wh = {
     document.write(`</div>`);
   },
 
+
   writeRightNavItem: (page) => {
-    if (page.name === wh.currentPageName()) {
+    if (wh.isCurrentPage(page)) {
       document.write(`<span class="header-line1-link current">${page.name}</span>`);
       return;
     }
     document.write(
       `<a class="header-line1-link" href="${page.url}" target="${page.target}">${page.name}</a>`
     );
+  },
+
+
+  isCurrentPage: (page) => {
+    return wh.currentPageName().toLowerCase().includes(page.name.toLowerCase())
   },
 };
 
