@@ -4,7 +4,14 @@
 //  https://stackoverflow.com/a/57494988
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-const un = { //un: namespace
+// GET RID OF JQUERY DEPENDENCE
+// BLINKINESS
+// TEST TO SEE IF POSITIONING IS ACCURATE
+// THROTTLING?
+
+
+const un = { //un: UpdateNav "namespace" - to minimize variable name collisions across files
+  
   sections: [],
   navLinks: [],
   sectionIdToNavLink: {}, //Look-up table; given sectionID, get corresponding navLink
@@ -13,13 +20,29 @@ const un = { //un: namespace
   sideMenuDivSelector: undefined,
 
 
-  getYOffset: (el) => {
-    let y = 0;
-    while(el && !isNaN(el.offsetTop)) {
-      y += el.offsetTop - el.scrollTop;
-      el = el.offsetParent;
+  initNavUpdater: ({scrollDivId, sideMenuDivId}) => {
+
+    //Check input args
+    if (!scrollDivId || !sideMenuDivId) {
+      elog('initNavUpdater: Invalid arg(s) supplied.');
     }
-    return y;
+
+    //Initialize jQuery selectors
+    un.scrollDivSelector = '#'+ scrollDivId;
+    un.sideMenuDivSelector = '#'+ sideMenuDivId;
+
+    //Initialize scrollbar position
+    const scrollPosition = $(un.scrollDivSelector).scrollTop(); 
+
+    //Initialize nav link-related caches
+    un.navLinks = document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a`);
+    un.sections = document.getElementsByTagName('section');
+    un.sectionIdToNavLink = {};
+    for (let i = un.sections.length-1; i >= 0; i--) {
+      const id = un.sections[i].id;
+      un.sectionIdToNavLink[id] = 
+        document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a[href=\\#${id}]`) || null;
+    } 
   },
 
 
@@ -57,29 +80,13 @@ const un = { //un: namespace
   },
 
 
-  initNavUpdater: ({scrollDivId, sideMenuDivId}) => {
-
-    //Check input args
-    if (!scrollDivId || !sideMenuDivId) {
-      console.error('setUpNavUpdater: Invalid arg(s) supplied.');
+  getYOffset: (el) => {
+    let y = 0;
+    while(el && !isNaN(el.offsetTop)) {
+      y += el.offsetTop - el.scrollTop;
+      el = el.offsetParent;
     }
-
-    //Initialize jQuery selectors
-    un.scrollDivSelector = '#'+ scrollDivId;
-    un.sideMenuDivSelector = '#'+ sideMenuDivId;
-
-    //Initialize scrollbar position
-    const scrollPosition = $(un.scrollDivSelector).scrollTop(); 
-
-    //Initialize nav link-related caches
-    un.navLinks = document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a`);
-    un.sections = document.getElementsByTagName('section');
-    un.sectionIdToNavLink = {};
-    for (let i = un.sections.length-1; i >= 0; i--) {
-      const id = un.sections[i].id;
-      un.sectionIdToNavLink[id] = 
-        document.querySelectorAll(`${un.sideMenuDivSelector} > ul > li > a[href=\\#${id}]`) || null;
-    } 
+    return y;
   },
 };
 

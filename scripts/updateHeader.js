@@ -1,16 +1,8 @@
 //Update header height on scroll
 
-
-//SCROLL BOUNCE STILL NOT FIGURED OUT ON LAPTOP...
-//USE DATA INSTEAD OF HREF FOR NAV - SINCE BROWSER BACK/FORWARD BEHAVIOR DOESN'T SYNC.
-//(OR ELSE MAKE IT SYNC?)
-//USE VANILLA JS , INSTEAD OF JQUERY?
-//STORE REFERENCES TO ELEMENTS INSTEAD OF NAMES?
-
-
-const uh = { // uh: namespace 
+const uh = { //uh: UpdateHeader "namespace", to minimize variable name collisions across files
   
-  //*** KEEP THESE SYNCED WITH THE CSS FILE!!! ***
+  //*** KEEP THESE SYNCED WITH CORRESPONDING CSS FILE VARIABLES!!! ***
   HEADER_CONTAINER_MIN_HEIGHT: '50px', // --header-container-min-height
   HEADER_CONTAINER_MAX_HEIGHT: '100px', // --header-container-max-height
   SIDE_MENU_MAX_TOP: '50px', // --side-menu-max-top
@@ -21,68 +13,70 @@ const uh = { // uh: namespace
 
   scrollPosition: 0,
   prevScrollDirection: undefined,
-  scrollDivSelector: undefined,
-  headerContainerDivSelector: undefined,
-  sideMenuDivSelector: undefined,
+
+  scrollDiv: undefined,
+  headerContainerDiv: undefined,
+  sideMenuDiv: undefined,
 
 
   initHeaderUpdater: ({scrollDivId, headerContainerDivId, sideMenuDivId}) => {
 
     //Check input arguments
     if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
-      console.error('setupHeaderUpdater: Invalid arg(s).');
+      elog('initHeaderUpdater: Invalid arg(s).');
     }
 
-    //DivIDs -> jQuery selectors
-    uh.scrollDivSelector = '#'+ scrollDivId;
-    uh.headerContainerDivSelector = '#'+ headerContainerDivId;
-    uh.sideMenuDivSelector = '#'+ sideMenuDivId;
+    uh.scrollDiv = document.getElementById(scrollDivId);
+    uh.headerContainerDiv = document.getElementById(headerContainerDivId);
+    uh.sideMenuDiv = document.getElementById(sideMenuDivId);
+    if (!uh.scrollDiv || !uh.headerContainerDiv || !uh.sideMenuDiv) {
+      elog('initHeaderUpdater: Elements corresponding to id args not found.');
+    }
 
     //Initialize scrollbar position
-    uh.scrollPosition = $(uh.scrollDivSelector).scrollTop(); 
+    uh.scrollPosition = document.getElementById(scrollDivId).scrollTop;
   },
 
 
   updateHeader: () => {
-  
-    const $scrollDiv = $(uh.scrollDivSelector);
-    const newScrollPosition = $scrollDiv.scrollTop();
+    
+    const newScrollPosition = uh.scrollDiv.scrollTop;
     const scrollAtOrPastBottom = 
-      ($scrollDiv.prop('scrollHeight') - newScrollPosition) <= $scrollDiv.prop('clientHeight');
-  
+      (uh.scrollDiv.scrollHeight - newScrollPosition) <= uh.scrollDiv.clientHeight;
+
     //If starting to scroll down...
-    if (uh.scrollPosition > 0 && //Condition needed to guard against weird Safari touchscreen bounce issue
+    if (uh.scrollPosition > 0 && //This condition guards against Safari touch bounce issue
         newScrollPosition > uh.scrollPosition && 
         uh.prevScrollDirection !== uh.DOWN) {
 
       //Initiate contraction of header (a css transition animation)
-      $(uh.headerContainerDivSelector).css('flexBasis', uh.HEADER_CONTAINER_MIN_HEIGHT);
+      uh.headerContainerDiv.style.flexBasis = uh.HEADER_CONTAINER_MIN_HEIGHT;
 
       //Initiate counter-animation of side-menu top (a css transition animation)
       //so that the side menu location appears constant while the header is 
       //contracting. (Note: Since side-menu's position is "sticky", this
       //counter-animation of side-menu top only has effect when the side-menu
       //is as high as it can go relative to the bottom of the header.)
-      $(uh.sideMenuDivSelector).css('top', uh.SIDE_MENU_MAX_TOP);
+      uh.sideMenuDiv.style.top = uh.SIDE_MENU_MAX_TOP;
       
       //Update previous scroll direction value with current value
       uh.prevScrollDirection = uh.DOWN;
     } 
     
     //If starting to scroll up...
-    else if (!scrollAtOrPastBottom && //Condition needed to guard against weird Safari touchscreen bounce issue
+    else if (!scrollAtOrPastBottom && //This condition guards against Safari touchscreen bounce issue
              newScrollPosition < uh.scrollPosition && 
              uh.prevScrollDirection !== uh.UP) {
 
       //Initiate expansion of header (a css transition animation)
-      $(uh.headerContainerDivSelector).css('flexBasis', uh.HEADER_CONTAINER_MAX_HEIGHT);
+      uh.headerContainerDiv.style.flexBasis = uh.HEADER_CONTAINER_MAX_HEIGHT;
 
       //Initiate counter-animation of side-menu top (a css transition animation)
       //so that the side menu location appears constant while the header is 
       //expanding. (Note: Since side-menu's position is "sticky", this
       //counter-animation of side-menu top only has effect when the side-menu
       //is as high as it can go relative to the bottom of the header.)
-      $(uh.sideMenuDivSelector).css('top', uh.SIDE_MENU_MIN_TOP);
+      uh.sideMenuDiv.style.top = uh.SIDE_MENU_MIN_TOP;
       
       //Update previous scroll direction value with current value
       uh.prevScrollDirection = uh.UP;      

@@ -6,34 +6,44 @@
 // * https://stackoverflow.com/questions/18545467/how-to-scroll-within-a-div-with-jquery-animate-function
 // * https://stackoverflow.com/a/18545500
 
-function smoothScroll(inId, toId) { //"inId": id of element w/ scrollbar
+const ss = {
 
-  //Check args
-  if (!inId || !toId) {
-    console.error('smoothScroll: Invalid argument(s) supplied.');
-  }
+  scrollDivId: undefined,
+  easingType: 'swing', //Default
 
-  //Determine new scrollbar position and distance to be scrolled
-  const inTop = $('#'+inId).position().top;
-  const toOffset = $('#'+toId).position().top;
-  const scrollTop = inTop  + toOffset;
-  const oldScrollTop = $('#'+inId).scrollTop();
-  const scrollDistance =  Math.abs(oldScrollTop - scrollTop);
+  initSmoothScroll: (scrollDivId) => {
+    if (!scrollDivId) {
+      elog('initSmoothScrolling: Invalid arg(s) supplied.');
+      return;
+    }
+    ss.scrollDivId = scrollDivId;
 
-  //Set the duration of the scroll animation
-  let durationMs = 0; 
-  if (scrollDistance !== 0) {
-    //Alt1: Constant scroll duration
-    durationMs = 300;
-    //Alt2: A constant portion, but with some inverse dependence on distance
-    //durationMs = 200 + (4000 / Math.abs(scrollDistance));
-  }
+    //Set the scroll animation's ease-in / ease-out behavior
+    //For alternate ease-in / ease-out animation behaviors
+    //see: https://api.jqueryui.com/easings/
+    ss.easingType = 'easeInOutQuad';
+  },
 
-  //Set the scroll animation's ease-in / ease-out behavior
-  //For alternate ease-in / ease-out animation behaviors
-  //see: https://gsgd.co.uk/sandbox/jquery/easing/
-  const easingType = 'easeInOutQuad';
+  scrollTo: (toId) => { //"inId": id of element w/ scrollbar
 
-  //Scroll!
-  $('#'+inId).animate({scrollTop}, durationMs, easingType);
-}
+    //Check args
+    if (!toId) {
+      elog('smoothScroll: Invalid argument(s) supplied.');
+      return;
+    }
+
+    //Determine new scrollbar position and distance to be scrolled
+    const scrollDivTop = $('#'+ss.scrollDivId).position().top;
+    const toOffset = $('#'+toId).position().top;
+    const scrollTop = scrollDivTop + toOffset;
+    const oldScrollTop = $('#'+ss.scrollDivId).scrollTop();
+    const scrollDistance =  Math.abs(oldScrollTop - scrollTop);
+
+    //Set the duration of the scroll animation
+    const durationMs = (scrollDistance !== 0) ? 300 : 0; 
+
+    //Scroll!
+    $('#'+ss.scrollDivId).animate({scrollTop}, durationMs, ss.easingType);
+  },
+
+};

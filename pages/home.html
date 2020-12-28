@@ -7,21 +7,21 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    
+   
     <script src="../scripts/jquery-3.5.1.min.js"></script> 
-    <script src="../scripts/jquery.easing.1.3.min.js"></script> 
-    <script src="../scripts/jquery.easing.compatibility.js"></script>
-    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script> 
+    <script src="../scripts/logging.js"></script>
     <script src="../scripts/scrollEffects.js"></script>
-    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
     <script src="../scripts/updateHeader.js"></script>
     <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
 
     <script>
       //When the document is fully loaded (ready), call a function 
       //that sets up header resizing on scroll up/down
       $(document).ready(()=>{
-        initScrollEffects({
+        sfx.initScrollEffects({
           scrollDivId: 'scroll-window',
           headerContainerDivId: 'header-container',
           sideMenuDivId: 'side-menu'
@@ -55,27 +55,27 @@
                 <div id="side-menu" class="side-menu">
                   <ul class="side-menu-ul">
                     <li class="side-menu-li">
-                      <a href="#section0" onClick="smoothScroll('scroll-window', 'section0')">Top</a>
+                      <a href="#section0" onClick="ss.scrollTo('section0')">Top</a>
                     </li>
                     <li class="side-menu-li">
-                      <a href="#section1" onClick="smoothScroll('scroll-window', 'section1')">Section1</a>
+                      <a href="#section1" onClick="ss.scrollTo('section1')">Section1</a>
                     </li>
                     <li class="side-menu-li">
-                      <a href="#section2" onClick="smoothScroll('scroll-window', 'section2')">Section2</a>
+                      <a href="#section2" onClick="ss.scrollTo('section2')">Section2</a>
                     </li>
                     <li class="side-menu-li">
-                      <a href="#section3" onClick="smoothScroll('scroll-window', 'section3')">Section3</a>
+                      <a href="#section3" onClick="ss.scrollTo('section3')">Section3</a>
                     </li>
                     <li class="side-menu-li">
-                      <a href="#section4" onClick="smoothScroll('scroll-window', 'section4')">Section4</a>
+                      <a href="#section4" onClick="ss.scrollTo('section4')">Section4</a>
                     </li>
                   </ul>
                 </div>
 
               </div>
 
-              <section id="section0" class="first-block-bg">
-                <div class="first-block-upper-right-corner">
+              <section id="section0">
+                <div class="section-upper-right-corner">
                   <img src='./../images/kc-app/Logo.svg' style="width:20vw;">
                 </div>
                 <div class="block-fg" style="height:200px;">
@@ -86,16 +86,20 @@
                 </div>
               </section>
 
-              <section id="section1" class="block-bg-light">
-                <div class="block-fg" style="height:500px;">
-                  Section 1
+              <section id="section1">
+                <div class="block-bg-light">
+                  <div class="block-fg" style="height:500px;">
+                    Section 1
+                  </div>
                 </div>
               </section>
 
-              <section id="section2" class="block-bg-dark">
-                <div class="block-fg" style="height:500px;">
-                  Section 2
-                </div>
+              <section id="section2" >
+                <div class="block-bg-dark">
+                  <div class="block-fg" style="height:500px;">
+                    Section 2
+                  </div>
+              </div>
               </section>
 
               <section id="section3" class="block-bg-light">

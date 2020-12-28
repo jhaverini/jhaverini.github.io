@@ -17,7 +17,7 @@
   --side-menu-container-padding-top: 200px;
   --side-menu-min-top: 0px;
   --side-menu-max-top: 50px;
-  --side-menu-height: 150px;
+  --side-menu-height: 250px;
   --side-menu-width: 150px;
   --side-margin: calc( var(--side-menu-width) + 20px );
 }
@@ -266,6 +266,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  /* background-color: rgba(255, 220, 174, 0.397); */
   /* 
      NOTE: The transition animation properties below enable 
      the side-menu to counter-animate against the header-container 
@@ -290,17 +291,18 @@ a:hover {
   transition: background 100ms;
 }
 
-.first-block-bg {
+section {
+  /* border: 1px #222, dashed; */
   flex: 1 1 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  position: relative; /* Enables position child element upper-right corner */
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
 }
 
-.first-block-upper-right-corner {
+.section-upper-right-corner {
   position: absolute;
   top: 0.0;
   right: 0.0;
@@ -332,7 +334,7 @@ a:hover {
 }
 
 
-/* For small screens... */
+/* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
 @media only screen and (max-width: 768px) {
 
   .side-menu {

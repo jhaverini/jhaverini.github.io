@@ -1,26 +1,39 @@
 //Scroll effects
 
-function initScrollEffects({scrollDivId, headerContainerDivId, sideMenuDivId}) { 
+const sfx = { //sfx: ScrollEffects "namespace" - reduce chances of naming collisions across files
 
-  //Check input arguments
-  if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
-    console.error('setUpScrollEffects: Invalid arg(s).');
+  initScrollEffects: ({scrollDivId, headerContainerDivId, sideMenuDivId}) => { 
+
+    //Error-check input arguments
+    if (!scrollDivId || !headerContainerDivId || !sideMenuDivId) {
+      elog('initScrollEffects: Invalid arg(s).');
+      return;
+    }
+    const scrollDiv = document.getElementById(scrollDivId);
+    if (!scrollDiv) {
+      elog('initScrollEffects: ScrollDiv element not found for id:' + scrollDivId)
+      return;
+    }
+
+    //Initialize smooth scrolling
+    ss.initSmoothScroll(scrollDivId);
+
+    //Initialize the side-nav and header updaters
+    un.initNavUpdater({
+      scrollDivId,
+      sideMenuDivId,
+    });
+    uh.initHeaderUpdater({
+      scrollDivId,
+      headerContainerDivId,
+      sideMenuDivId,
+    });
+  
+    //Set the div's onScroll function to update header and side-nav
+    scrollDiv.onscroll = () => {
+      uh.updateHeader();
+      un.updateNav();
+    }
   }
 
-  un.initNavUpdater({
-    scrollDivId,
-    sideMenuDivId,
-  });
-
-  uh.initHeaderUpdater({
-    scrollDivId,
-    headerContainerDivId,
-    sideMenuDivId,
-  });
-
-  //Set scroll function
-  $('#'+scrollDivId).scroll(() => {
-    uh.updateHeader();
-    un.updateNav();
-  });
-}
+};
