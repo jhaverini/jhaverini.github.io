@@ -18,8 +18,11 @@
     <script src="../scripts/writeHeader.js"></script>
 
     <script>
-      //When the document is fully loaded (ready), call a function 
-      //that sets up header resizing on scroll up/down
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
       $(document).ready(()=>{
         sfx.initScrollEffects({
           scrollDivId: 'scroll-window',
