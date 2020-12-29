@@ -19,7 +19,7 @@
   --side-nav-min-top: 0px;
   --side-nav-max-top: 50px;
   --side-nav-height: 250px;
-  --side-nav-width: 150px;
+  --side-nav-width: 175px;
   --side-margin: calc( var(--side-nav-width) + 50px );
 }
 
