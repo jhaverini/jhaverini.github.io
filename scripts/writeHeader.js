@@ -98,7 +98,9 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
   writeRightNavItem: (page) => {
     const classList = `header-line1-link ${wh.isCurrentPage(page) ? 'current':''}`;
     document.write(
-      `<a class="header-line1-link ${classList}" href="${page.url}" target="${page.target}">${page.name}</a>`
+      `<a class="header-line1-link ${classList}" href="${page.url}" target="${page.target}">
+        ${page.name}
+      </a>`
     );
   },
 
