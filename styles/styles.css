@@ -78,16 +78,6 @@ p {
   line-height: 200%;
 }
 
-.emphasis {
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  border-left-width: 5px;
-  border-left-color: var(--color-keycons);
-  border-left-style: solid;
-}
-
 p.caption {
   font-style: italic;
   font-size: 1.2rem;
@@ -102,6 +92,10 @@ a, a:visited {
 
 a:hover {
   color: navy;
+}
+
+ul {
+  line-height: 150%;
 }
 
 .page {
@@ -348,6 +342,30 @@ section {
   flex: 1 1 auto;
   margin-left: var(--side-margin);
   margin-right: var(--side-margin);
+}
+
+.goal {
+  width: 100%;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  border-left-width: 5px;
+  border-left-color: var(--color-keycons);
+  border-left-style: solid;
+}
+
+.key-challenge {
+  border:1px solid #F3C3C6; 
+  background-color: #FEFBFB;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 
