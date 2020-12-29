@@ -20,7 +20,7 @@
   --side-nav-max-top: 50px;
   --side-nav-height: 250px;
   --side-nav-width: 150px;
-  --side-margin: calc( var(--side-nav-width) + 20px );
+  --side-margin: calc( var(--side-nav-width) + 50px );
 }
 
 * {
@@ -78,8 +78,14 @@ p {
   line-height: 200%;
 }
 
-p.emphasis {
+.emphasis {
   font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  border-left-width: 5px;
+  border-left-color: var(--color-keycons);
+  border-left-style: solid;
 }
 
 p.caption {
@@ -105,7 +111,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   height: 100vh;
   background-color: white;
 }
@@ -296,15 +302,15 @@ a:hover {
 
 .side-nav-link {
   transition: background 100ms;
-  border-left-width: 3px;
+  border-left-width: 4px;
   border-left-color: transparent;
   border-left-style: solid;
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
 .side-nav-link-selected {
   transition: background 100ms;
-  border-left-color: blue;
+  border-left-color: var(--color-keycons);
   height: 20px;
 }
 
@@ -317,12 +323,6 @@ section {
   justify-content: center;
   align-items: stretch;
   position: relative;  /* Enables absolute positioning of children in corners, etc */
-}
-
-.section-upper-right-corner {
-  position: absolute;
-  top: 0.0;
-  right: 0.0;
 }
 
 .block-bg-light {
