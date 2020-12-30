@@ -5,6 +5,7 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // GET RID OF JQUERY DEPENDENCE
+
 // TEST TO SEE IF POSITIONING IS ACCURATE
 // THROTTLING?
 
@@ -13,7 +14,17 @@ const un = { //"un": A containing namespace, to prevent cross-file variable/func
 
   //*** KEEP THESE SYNCED WITH CORRESPONDING CSS!!! ***
   baseClass: 'side-nav-link',
-  selectedClass: 'side-nav-link-selected',
+  selectedClass: () => { //NOTE: This is a function, so that the selected link color can be different for different pages
+    if (pr.isCurrentPage(pr.pages.projectKaiserNicu)) {
+      return 'side-nav-link-selected-nicu';
+    }
+    else if (pr.isCurrentPage(pr.pages.projectKeyConservationApp)) {
+      return 'side-nav-link-selected-keycons';
+    }
+    else { //Default
+      return 'side-nav-link-selected';
+    }
+  },
 
   sections: [],
   navLinks: [],
@@ -64,7 +75,8 @@ const un = { //"un": A containing namespace, to prevent cross-file variable/func
 
   updateNav: () => {
 
-    const selectedClassRegex = new RegExp(` ${un.selectedClass}`);
+    const selectedClassName = un.selectedClass();
+    const selectedClassRegex = new RegExp(` ${selectedClassName}`);
 
     un.scrollPosition = un.scrollDiv.scrollTop; 
 
@@ -82,12 +94,10 @@ const un = { //"un": A containing namespace, to prevent cross-file variable/func
         let navLink = un.sectionIdToNavLink[section.id];
         if (typeof navLink[0] !== 'undefined') {
           //If link is not active...
-          if (!navLink[0].classList.contains(un.selectedClass)) {
-           
+          if (!navLink[0].classList.contains(selectedClassName)) {
             removeSelectedClassFromAllLinks();
-
             //Add selected class to current link
-            navLink[0].className += (' ' + un.selectedClass);
+            navLink[0].className += (' ' + selectedClassName);
           }
         }
         else {

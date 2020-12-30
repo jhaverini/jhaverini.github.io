@@ -5,8 +5,9 @@
   --color-text-default: #080707;
   --color-text-alt: #908f8f;
   --color-section-alt: rgba(13, 38, 18, 0.05);
-  --color-keycons: #4cd964;
-  --color-nicu: #006ba6;
+  --color-project-keycons: #4cd964;
+  --color-project-nicu: #006ba6;
+  --color-project-default: #00AAFF;
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
   --header-line1-height: 50px;
@@ -300,13 +301,21 @@ ul {
   border-left-color: transparent;
   border-left-style: solid;
   padding-left: 6px;
+  height: 20px;
 }
 
 .side-nav-link-selected {
-  transition: background 100ms;
-  border-left-color: var(--color-keycons);
-  height: 20px;
+  border-left-color: var(--color-project-default);
 }
+
+.side-nav-link-selected-nicu {
+  border-left-color: var(--color-project-nicu);
+}
+
+.side-nav-link-selected-keycons {
+  border-left-color: var(--color-project-keycons);
+}
+
 
 section {
   /* border: 1px rgb(204, 204, 204) dashed; */
@@ -344,15 +353,23 @@ section {
   margin-right: var(--side-margin);
 }
 
-.goal {
+.goal { /**/
   width: 100%;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 20px;
   border-left-width: 5px;
-  border-left-color: var(--color-keycons);
   border-left-style: solid;
+  border-left-color: var(--color-project-default);
+}
+
+.goal-keycons { /* Use together with goal, as "compound class" */
+  border-left-color: var(--color-project-keycons);
+}
+
+.goal-nicu { /* Use together with goal, as a "compound class" */
+  border-left-color: var(--color-project-nicu);
 }
 
 .key-challenge {
@@ -366,6 +383,10 @@ section {
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 0px 10px #00000055);
 }
 
 

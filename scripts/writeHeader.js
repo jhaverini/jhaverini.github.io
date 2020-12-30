@@ -1,47 +1,5 @@
 const wh = { //"wh": A containing namespace, to prevent cross-file variable/function name collisions
-
-  pages: {
-    home: {
-      name: "Home",
-      url: "./home.html",
-      target: "_self",
-    },
-    about: {
-      name: "About",
-      url: "./about.html",
-      target: "_self",
-    },
-    projects: {
-      name: "Projects",
-      url: "./projects.html",
-      target: "_self",
-    },
-    projectKaiserNicu: {
-      name: "Case Study: Kaiser NICU",
-      url: "./case-study-kaiser-nicu.html",
-      target: "_self",
-    },
-    projectKeyConservationApp: {
-      name: "Case Study: Key Conservation App",
-      url: "./case-study-key-conservation-app.html",
-      target: "_self",
-    },
-    resume: {
-      name: "Resume",
-      url: "../pdfs/Resume-Jhaveri-2020-12.pdf",
-      target: "_blank",
-    },
-  },
   
-
-  currentPageName: () => {
-    const url = document.location.href;
-    const urlParts = url.split('/');
-    const pageNameIndex = urlParts.length - 1; 
-    return urlParts[pageNameIndex];
-  },
-
-
   writeHeader: () => {
 
     document.write(`<div class="header-line1">`);
@@ -68,13 +26,13 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
 
 
   writeLeftNav: () => {
-    wh.writeLeftNavItem(wh.pages.home);
+    wh.writeLeftNavItem(pr.pages.home);
   },
 
 
   writeLeftNavItem: (page) => {
     const nj = 'Nilpa Jhaveri';
-    if (wh.isCurrentPage(page)) {
+    if (pr.isCurrentPage(page)) {
       document.write(`<span class="header-line1-link home current">${nj}</span>`);
       return;
     }
@@ -85,7 +43,7 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
 
 
   writeRightNav: () => {
-    const pages = wh.pages;
+    const pages = pr.pages;
     const writeRightNavItem = wh.writeRightNavItem;
     document.write(`<div>`);
     writeRightNavItem(pages.about);
@@ -96,7 +54,7 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
 
 
   writeRightNavItem: (page) => {
-    const classList = `header-line1-link ${wh.isCurrentPage(page) ? 'current':''}`;
+    const classList = `header-line1-link ${pr.isCurrentPage(page) ? 'current':''}`;
     document.write(
       `<a class="header-line1-link ${classList}" href="${page.url}" target="${page.target}">
         ${page.name}
@@ -104,10 +62,6 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
     );
   },
 
-
-  isCurrentPage: (page) => {
-    return wh.currentPageName().toLowerCase().includes(page.name.toLowerCase())
-  },
 };
 
 
