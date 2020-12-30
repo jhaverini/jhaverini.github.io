@@ -14,7 +14,7 @@
   --header-line2-height: 50px;
   --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
   --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
-  --header-transition-duration: 100ms;
+  --header-transition-duration: 500ms;
   --header-transition-timing-function: ease-in-out;
   --side-nav-container-padding-top: 200px;
   --side-nav-min-top: 0px;
