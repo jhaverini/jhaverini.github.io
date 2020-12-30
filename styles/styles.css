@@ -218,7 +218,7 @@ ul {
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-height: var(--header-max-height);
+  max-height: calc(100vh - var(--header-max-height)); /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
   width: 100%;
 }
 
