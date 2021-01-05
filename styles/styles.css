@@ -124,7 +124,7 @@ ul {
   flex-basis: var(--header-max-height);
   display: flex;
   flex-direction: column;
-  width: calc(100% - 2*var(--side-margin));
+  width: calc(100% - var(--side-margin) - var(--side-margin) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
   transition-property: all;
   transition-duration: var(--header-transition-duration);
   transition-timing-function: var(--header-transition-timing-function);

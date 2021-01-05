@@ -2,6 +2,8 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
   
   writeHeader: () => {
 
+    document.write(`<div id="header" class="header">`); //id required to "find" header for collapsing / expanding when scrolling down / up
+
     document.write(`<div class="header-line1">`);
     
     document.write(`<div class="header-line1-left">`);
@@ -22,6 +24,8 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
     document.write(`Licensed Architect`);
     document.write(`</div>`);
     document.write(`</div>`);
+
+    document.write(`</div>`); //header
   },
 
 
