@@ -5,7 +5,7 @@ const sfx = { //"sfx": A containing namespace, to prevent cross-file variable/fu
   initScrollEffects: ({
     scrollDivId, 
     headerDivId, 
-    sideNavDivId //Set to null, if page has no side navigation
+    sideNavDivId //Set to null if page has no side navigation
   }) => { 
 
     //Error-check input arguments
@@ -18,7 +18,7 @@ const sfx = { //"sfx": A containing namespace, to prevent cross-file variable/fu
       elog('initScrollEffects: ScrollDiv element not found for id:' + scrollDivId)
       return;
     }
-
+    
     //Initialize smooth scrolling
     ss.initSmoothScroll(scrollDivId);
 
