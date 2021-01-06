@@ -51,41 +51,76 @@
 
           <div id="scroll-pane" class="scroll-pane">
 
+            <!-- NOTE: This page happens not to have side nav, but we still use the same "wrapper" div... -->
             <div class="side-nav-and-content-wrapper">
 
-              <!--
-              <div class="side-nav-container">
-                <div id="side-nav" class="side-nav">
-                  <ul class="side-nav-ul">
-                    <li class="side-nav-li">
-                      <a class="side-nav-link" href="#section0" onClick="ss.scrollTo('section0')">
-                        Top
-                      </a>
-                    </li>
-                    <li class="side-nav-li">
-                      <a class="side-nav-link" href="#section1" onClick="return ss.scrollTo('section1')">
-                        Section1
-                      </a>
-                    </li>
-                  </ul>
-                </div
-              </div>
-              -->
-
               <section id="section0">
-
-                <div class="block-fg" style="height:200px;">
-                  <h2>
-                    My Amazing Projects
-                  </h2>
-                </div>
-              </section>
-
-              <section id="section1">
                 <div class="block-bg-light">
-                  <div class="block-fg" style="height:500px;">
-                    <a href="./projects-kaiser-nicu.html">Kaiser NICU</a><br/>
-                    <a href="./projects-key-conservation-app.html">Key Conservation</a>
+                  <div class="block-fg">
+                    
+                    <h3 style="padding-top: 10px;">
+                      Selected Projects
+                    </h3>
+                    
+                    <!-- Key Conservation -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:3; padding-right: 20px;">
+                        <a class="project-index-image" href="./projects-key-conservation-app.html">
+                          <img src="./../images/projects/index/kc-app.png" width="100%">
+                        </a>
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:2;">
+                        <div style="font-size: 0.8em; padding-bottom: 15px;">
+                          MOBILE APP &bull; UI/UX DESIGN
+                        </div>
+                        <div style="font-size: 0.95em; padding-bottom: 5px;">
+                          <b>Crowdsourcing community to replenish biodiversity</b>
+                        </div>
+                        <div style="font-size: 0.95em; padding-bottom: 20px;">
+                          Key Conservation is a mobile app that empowers anyone 
+                          carrying a smartphone to help conservation organizations 
+                          with small to large scale campaigns &ndash; locally and in real-time.
+                        </div>
+                        <div>
+                          <a class="project-index-name" href="./projects-key-conservation-app.html">
+                            <b>View Case Study</b>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Kaiser NICU -->
+                    <div style="padding-top: 30px; display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:3; padding-right: 20px;">
+                        <a class="project-index-image" href="./projects-kaiser-nicu.html">
+                          <img src="./../images/projects/index/kaiser-nicu.png" width="100%" style="border: 1px solid rgba(0, 0, 0, 0.274);">
+                        </a>
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:2;">
+                        <div style="font-size: 0.8em; padding-bottom: 15px;">
+                          ENVIRONMENT &bull; ARCHITECTURAL DESIGN
+                        </div>
+                        <div style="font-size: 0.95em; padding-bottom: 5px;">
+                          <b>Supporting society's most fragile members</b>
+                        </div>
+                        <div style="font-size: 0.95em; padding-bottom: 20px;">
+                          Kaiser San Diego’s Neonatal Intensive Care Unit pioneered an 
+                          evidence-based approach, based on family-centered care, in which infants’ 
+                          families are included with hospital staff as a part of the primary care team.
+                        </div>
+                        <div>
+                          <a class="project-index-name" href="./projects-kaiser-nicu.html">
+                            <b>View Case Study</b>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div> 
+
                   </div>
                 </div>
               </section>

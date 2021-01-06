@@ -394,6 +394,18 @@ section {
   filter: drop-shadow(0px 0px 10px #00000055);
 }
 
+a.project-index-image {
+  filter: brightness(100%);
+}
+
+a.project-index-image:hover {
+  filter: brightness(110%);  
+}
+
+a.project-index-name:hover {
+  color: var(--top-nav-link-color-hover);
+}
+
 
 /* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
 @media only screen and (max-width: 768px) {
