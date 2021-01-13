@@ -28,7 +28,7 @@ const pr = { //"pr": A containing namespace, to prevent cross-file variable/func
     },
     resume: {
       name: "Resume",
-      url: "../pdfs/Resume-Jhaveri.pdf",
+      url: "../pdfs/resume-jhaveri.pdf",
       target: "_blank",
     },
   },
