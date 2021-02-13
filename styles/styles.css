@@ -57,14 +57,16 @@ h1 {
   font-size: 3.8rem;
   font-weight: 500;
   line-height: 130%;
-  margin-top: 4px;
-  margin-bottom: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 h2 {
   font-size: 3.2rem;
   font-weight: 600;
   line-height: 1.2;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .company-name {
@@ -76,6 +78,7 @@ h3 {
   font-weight: 600;
   line-height: 1.3;
   color: var(--color-text-alt);
+  margin-top: 0px;
   margin-bottom: 32px;
 }
 
@@ -83,6 +86,7 @@ h4 {
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.4;
+  margin-top: 0px;
   margin-bottom: 32px;
 }
 
@@ -90,20 +94,23 @@ p {
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 200%;
+  margin-top: 0px;
   margin-bottom: 32px;
 }
 
 p.caption {
   font-style: italic;
   font-size: 1.2rem;
+  line-height: 150%;
   color: var(--color-text-alt);
-  margin-top: 8px;
+  margin-top: 0px;
   margin-bottom: 32px;
 }
 
 p.credits {
   font-size: 1.2rem;
   color: var(--color-text-alt);
+  margin-top: 0px;
   margin-bottom: 12px;
 }
 
@@ -351,6 +358,7 @@ section {
   justify-content: center;
   align-items: stretch;
   position: relative;  /* Enables absolute positioning of children in corners, etc */
+  margin-bottom: 100px;
 }
 
 .block-bg-light {
@@ -425,6 +433,29 @@ a.project-index-image:hover {
 a.project-index-name:hover {
   color: var(--top-nav-link-color-hover);
 }
+
+.spacer-large {
+  height: 68px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-medium {
+  height: 48px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-small {
+  height: 32px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
 
 
 /* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
