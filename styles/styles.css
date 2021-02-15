@@ -25,7 +25,8 @@
   --side-nav-max-top: 50px;
   --side-nav-height: 250px;
   --side-nav-width: 175px;
-  --side-margin: calc( var(--side-nav-width) + 50px );
+  --side-margin-narrow: calc( var(--side-nav-width) + 96px );
+  --side-margin-wide: calc( var( --side-nav-width) + 16px );
 }
 
 /* Styles */
@@ -126,6 +127,7 @@ a:hover {
 
 ul {
   line-height: 150%;
+  margin-bottom: 32px;
 }
 
 .page {
@@ -147,12 +149,12 @@ ul {
   flex-basis: var(--header-max-height);
   display: flex;
   flex-direction: column;
-  width: calc(100% - var(--side-margin) - var(--side-margin) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
+  width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
   transition-property: all;
   transition-duration: var(--header-transition-duration);
   transition-timing-function: var(--header-transition-timing-function);
-  margin-left: var(--side-margin);
-  margin-right: var(--side-margin);
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
   background-color: white;
 }
 
@@ -291,7 +293,7 @@ ul {
   left: 0px;
   bottom: 0px;
   padding-top: var(--side-nav-container-padding-top);
-  width: var(--side-margin);
+  width: var(--side-margin-narrow);
 }
 
 .side-nav {
@@ -358,7 +360,6 @@ section {
   justify-content: center;
   align-items: stretch;
   position: relative;  /* Enables absolute positioning of children in corners, etc */
-  margin-bottom: 100px;
 }
 
 .block-bg-light {
@@ -380,10 +381,16 @@ section {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.block-fg {
+.block-fg-narrow {
   flex: 1 1 auto;
-  margin-left: var(--side-margin);
-  margin-right: var(--side-margin);
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
+}
+
+.block-fg-wide {
+  flex: 1 1 auto;
+  margin-left: var(--side-margin-wide);
+  margin-right: var(--side-margin-wide);
 }
 
 .goal { /**/
@@ -392,7 +399,7 @@ section {
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 20px;
-  border-left-width: 5px;
+  border-left-width: 6px;
   border-left-style: solid;
   border-left-color: var(--color-project-default);
 }
@@ -465,11 +472,7 @@ a.project-index-name:hover {
     display: none;
   }
 
-  .first-block-bg {
-    margin-top: calc( -1 * var(--side-nav-top-margin) );
-  }
-
-  .block-fg {
+  .block-fg-narrow {
     margin-left: 24px;
     margin-right: 24px;
   }
