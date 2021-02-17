@@ -25,7 +25,8 @@
   --side-nav-max-top: 50px;
   --side-nav-height: 250px;
   --side-nav-width: 175px;
-  --side-margin: calc( var(--side-nav-width) + 50px );
+  --side-margin-narrow: calc( var(--side-nav-width) + 96px );
+  --side-margin-wide: calc( var( --side-nav-width) + 16px );
 }
 
 /* Styles */
@@ -56,12 +57,17 @@ h1 {
   font-family: var(--font-family-alt);
   font-size: 3.8rem;
   font-weight: 500;
+  line-height: 120%;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 h2 {
-  font-family: var(--font-family-alt);
   font-size: 3.2rem;
   font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0px;
+  margin-bottom: 32px;
 }
 
 .company-name {
@@ -71,24 +77,42 @@ h2 {
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 32px;
 }
 
 h4 {
   font-size: 1.8rem;
   font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0px;
+  margin-bottom: 32px;
 }
 
 p {
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 200%;
+  margin-top: 0px;
+  margin-bottom: 32px;
 }
 
 p.caption {
   font-style: italic;
   font-size: 1.2rem;
+  line-height: 150%;
   color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+p.credits {
+  font-size: 1.2rem;
+  color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 16px;
 }
 
 a, a:visited {
@@ -102,7 +126,11 @@ a:hover {
 }
 
 ul {
-  line-height: 150%;
+  font-weight: 300;
+  line-height: 200%;
+  padding-left: 18px;
+  margin-top: -24px;
+  margin-bottom: 32px;
 }
 
 .page {
@@ -124,12 +152,12 @@ ul {
   flex-basis: var(--header-max-height);
   display: flex;
   flex-direction: column;
-  width: calc(100% - var(--side-margin) - var(--side-margin) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
+  width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
   transition-property: all;
   transition-duration: var(--header-transition-duration);
   transition-timing-function: var(--header-transition-timing-function);
-  margin-left: var(--side-margin);
-  margin-right: var(--side-margin);
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
   background-color: white;
 }
 
@@ -168,8 +196,8 @@ ul {
 }
 
 .header-line1-link {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2.0rem;
+  font-family: var(--font-family-alt);
+  font-size: 1.6rem;
   color: var(--top-nav-link-color);
   text-decoration: none;
   margin: 0px;
@@ -185,7 +213,8 @@ ul {
 }
 
 .header-line1-link.home {
-  font-size: 3.0rem;
+  font-family: var(--font-family-alt);
+  font-size: 2.0rem;
 }
 
 .header-line1-link.current {
@@ -208,8 +237,9 @@ ul {
 }
 
 .header-line2-title {
+  font-family: var(--font-family-alt);
   font-size: 1.6rem;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .footer-text {
@@ -266,7 +296,7 @@ ul {
   left: 0px;
   bottom: 0px;
   padding-top: var(--side-nav-container-padding-top);
-  width: var(--side-margin);
+  width: var(--side-margin-narrow);
 }
 
 .side-nav {
@@ -302,6 +332,7 @@ ul {
 }
 
 .side-nav-link {
+  font-size: 1.4rem;
   transition: background 100ms;
   border-left-width: 4px;
   border-left-color: transparent;
@@ -353,19 +384,26 @@ section {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.block-fg {
+.block-fg-narrow {
   flex: 1 1 auto;
-  margin-left: var(--side-margin);
-  margin-right: var(--side-margin);
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
+}
+
+.block-fg-wide {
+  flex: 1 1 auto;
+  margin-left: var(--side-margin-wide);
+  margin-right: var(--side-margin-wide);
 }
 
 .goal { /**/
   width: 100%;
   font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  line-height: 200%;
+  margin-top: 0px;
+  margin-bottom: 32px;
   padding-left: 20px;
-  border-left-width: 5px;
+  border-left-width: 6px;
   border-left-style: solid;
   border-left-color: var(--color-project-default);
 }
@@ -381,18 +419,28 @@ section {
 .key-challenge {
   border:1px solid #F3C3C6; 
   background-color: #FEFBFB;
-  padding-left:30px;
-  padding-right:30px;
-  padding-top: 0px;
-  padding-bottom: 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
+  padding-left:24px;
+  padding-right:24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .drop-shadow {
-  filter: drop-shadow(0px 0px 10px #00000055);
+  filter: drop-shadow(0px 0px 8px #26262655);
+  
+  /* option 2 copied from CSS Scan shadow #1, need to convert to drop-shadow */
+  /* filter: drop-shadow(0px 7px 29px 0px  */
+  
+  /* option 3 from Figma */
+  /* filter: drop-shadow(0px 4px 4px #62626214);
+  filter: drop-shadow(0px 8px 32px #00000029); */
+  
+  /* option 4 copied from CSS Scan shadow #3, convert to drop-shadow */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 a.project-index-image {
@@ -407,6 +455,29 @@ a.project-index-name:hover {
   color: var(--top-nav-link-color-hover);
 }
 
+.spacer-large {
+  height: 48px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-medium {
+  height: 32px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-small {
+  height: 16px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
 
 /* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
 @media only screen and (max-width: 768px) {
@@ -415,11 +486,7 @@ a.project-index-name:hover {
     display: none;
   }
 
-  .first-block-bg {
-    margin-top: calc( -1 * var(--side-nav-top-margin) );
-  }
-
-  .block-fg {
+  .block-fg-narrow {
     margin-left: 24px;
     margin-right: 24px;
   }

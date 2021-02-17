@@ -1,0 +1,426 @@
+/* Fonts - constructed at https://fonts.google.com. */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Variables */
+:root {
+  --top-nav-link-color: #555;
+  --top-nav-link-color-hover: #222;
+  --top-nav-link-color-current: #111;
+  --color-text-default: #080707;
+  --color-text-alt: #908f8f;
+  --color-section-alt: rgba(13, 38, 18, 0.05);
+  --color-project-keycons: #4cd964;
+  --color-project-nicu: #006ba6;
+  --color-project-default: #00AAFF;
+  --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
+  --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
+  --header-line1-height: 50px;
+  --header-line2-height: 50px;
+  --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
+  --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
+  --header-transition-duration: 500ms;
+  --header-transition-timing-function: ease-in-out;
+  --side-nav-container-padding-top: 200px;
+  --side-nav-min-top: 0px;
+  --side-nav-max-top: 50px;
+  --side-nav-height: 250px;
+  --side-nav-width: 175px;
+  --side-margin-narrow: calc( var(--side-nav-width) + 50px );
+}
+
+/* Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  background-color: lightgray;
+  font-family: var(--font-family-default);
+  text-align: left;
+  color: var(--color-text-default);
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-family: var(--font-family-alt);
+  font-size: 3.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: var(--font-family-alt);
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.company-name {
+  color: var(--color-text-alt);
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--color-text-alt);
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 200%;
+}
+
+p.caption {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-text-alt);
+}
+
+a, a:visited {
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: navy;
+}
+
+ul {
+  line-height: 150%;
+}
+
+.page {
+  flex-grow:1;
+  flex-shrink: 1;
+  flex-basis: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  background-color: white;
+}
+
+.header {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--header-max-height);
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
+  transition-property: all;
+  transition-duration: var(--header-transition-duration);
+  transition-timing-function: var(--header-transition-timing-function);
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
+  background-color: white;
+}
+
+.header-line1 {
+  position: absolute;
+  z-index: 20;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--header-line1-height);
+  width: 100%;
+  padding-top: 5px;
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-color: white;
+}
+
+.header-line1-left {
+  flex: 1;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header-line1-right {
+  flex: 1;
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: flex-end;
+  /* padding-right: 10px; */
+}
+
+.header-line1-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.0rem;
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+  margin: 0px;
+}
+
+.header-line1-link:visited {
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+}
+
+.header-line1-link:hover {
+  color: var(--top-nav-link-color-hover);
+}
+
+.header-line1-link.home {
+  font-size: 3.0rem;
+}
+
+.header-line1-link.current {
+  color: var(--top-nav-link-color-current);
+  text-decoration: none;
+}
+
+.header-line2 {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: var(--header-line2-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 10px;
+}
+
+.header-line2-title {
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.footer-text {
+  color: gray;
+  padding-top: 10px;
+  height: 40px;
+}
+
+.page-body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--header-max-height)); /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  width: 100%;
+}
+
+.header-shadow {
+  position: absolute;
+  top: 0px;
+  z-index: 1000;
+  height: 20px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0));
+}
+
+.scroll-window {
+  flex: 1;
+  flex-basis: 0px; /* Firefox complains if no flex-basis */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.scroll-pane {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav-and-content-wrapper {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.side-nav-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding-top: var(--side-nav-container-padding-top);
+  width: var(--side-margin-narrow);
+}
+
+.side-nav {
+  position: sticky;
+  top: var(--side-nav-max-top); /* See: scripts/resizeHeaderOnScroll.js */
+  left: 0px;
+  z-index: 1000;
+  align-self: flex-start;
+  height: var(--side-nav-height);
+  width: var(--side-nav-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background-color: rgba(255, 220, 174, 0.397); */
+  /* 
+     NOTE: The transition animation properties below enable 
+     the side-nav to counter-animate against the header 
+     collapse/expansion animation, such that the side
+     navigation appears to remain in the same place.
+     See: scripts/resizeHeaderOnScroll.js
+  */
+  transition-property: top;
+  transition-duration: var(--header-transition-duration);
+  transition-timing-function: var(--header-transition-timing-function);
+}
+
+.side-nav-ul {
+  list-style-type: none;
+}
+
+.side-nav-li {
+  padding: 10px;
+}
+
+.side-nav-link {
+  transition: background 100ms;
+  border-left-width: 4px;
+  border-left-color: transparent;
+  border-left-style: solid;
+  padding-left: 6px;
+  height: 20px;
+}
+
+.side-nav-link-selected {
+  border-left-color: var(--color-project-default);
+}
+
+.side-nav-link-selected-nicu {
+  border-left-color: var(--color-project-nicu);
+}
+
+.side-nav-link-selected-keycons {
+  border-left-color: var(--color-project-keycons);
+}
+
+
+section {
+  /* border: 1px rgb(204, 204, 204) dashed; */
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+}
+
+.block-bg-light {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.block-bg-dark {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.block-fg-narrow {
+  flex: 1 1 auto;
+  margin-left: var(--side-margin-narrow);
+  margin-right: var(--side-margin-narrow);
+}
+
+.goal { /**/
+  width: 100%;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-left-color: var(--color-project-default);
+}
+
+.goal-keycons { /* Use together with goal, as "compound class" */
+  border-left-color: var(--color-project-keycons);
+}
+
+.goal-nicu { /* Use together with goal, as a "compound class" */
+  border-left-color: var(--color-project-nicu);
+}
+
+.key-challenge {
+  border:1px solid #F3C3C6; 
+  background-color: #FEFBFB;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 0px 10px #00000055);
+}
+
+a.project-index-image {
+  filter: brightness(100%);
+}
+
+a.project-index-image:hover {
+  filter: brightness(110%);  
+}
+
+a.project-index-name:hover {
+  color: var(--top-nav-link-color-hover);
+}
+
+
+/* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
+@media only screen and (max-width: 768px) {
+
+  .side-nav {
+    display: none;
+  }
+
+  .first-block-bg {
+    margin-top: calc( -1 * var(--side-nav-top-margin) );
+  }
+
+  .block-fg-narrow {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
