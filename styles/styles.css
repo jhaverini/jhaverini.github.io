@@ -57,7 +57,7 @@ h1 {
   font-family: var(--font-family-alt);
   font-size: 3.8rem;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 120%;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -67,7 +67,7 @@ h2 {
   font-weight: 600;
   line-height: 1.2;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 32px;
 }
 
 .company-name {
@@ -112,7 +112,7 @@ p.credits {
   font-size: 1.2rem;
   color: var(--color-text-alt);
   margin-top: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 a, a:visited {
@@ -126,7 +126,10 @@ a:hover {
 }
 
 ul {
-  line-height: 150%;
+  font-weight: 300;
+  line-height: 200%;
+  padding-left: 18px;
+  margin-top: -24px;
   margin-bottom: 32px;
 }
 
@@ -396,8 +399,9 @@ section {
 .goal { /**/
   width: 100%;
   font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  line-height: 200%;
+  margin-top: 0px;
+  margin-bottom: 32px;
   padding-left: 20px;
   border-left-width: 6px;
   border-left-style: solid;
@@ -415,18 +419,28 @@ section {
 .key-challenge {
   border:1px solid #F3C3C6; 
   background-color: #FEFBFB;
-  padding-left:30px;
-  padding-right:30px;
-  padding-top: 0px;
-  padding-bottom: 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
+  padding-left:24px;
+  padding-right:24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .drop-shadow {
-  filter: drop-shadow(0px 0px 10px #00000055);
+  filter: drop-shadow(0px 0px 8px #26262655);
+  
+  /* option 2 copied from CSS Scan shadow #1, need to convert to drop-shadow */
+  /* filter: drop-shadow(0px 7px 29px 0px  */
+  
+  /* option 3 from Figma */
+  /* filter: drop-shadow(0px 4px 4px #62626214);
+  filter: drop-shadow(0px 8px 32px #00000029); */
+  
+  /* option 4 copied from CSS Scan shadow #3, convert to drop-shadow */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 a.project-index-image {
@@ -442,21 +456,21 @@ a.project-index-name:hover {
 }
 
 .spacer-large {
-  height: 68px;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-
-.spacer-medium {
   height: 48px;
   width: 100%;
   padding: 0px;
   margin: 0px;
 }
 
-.spacer-small {
+.spacer-medium {
   height: 32px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-small {
+  height: 16px;
   width: 100%;
   padding: 0px;
   margin: 0px;
