@@ -115,6 +115,18 @@ p.credits {
   margin-bottom: 16px;
 }
 
+ul {
+  font-weight: 300;
+  line-height: 200%;
+  padding-left: 18px;
+  margin-top: -24px;
+  margin-bottom: 32px;
+}
+
+b {
+  font-weight: 600;
+}
+
 a, a:visited {
   color: var(--top-nav-link-color);
   text-decoration: none;
@@ -123,14 +135,6 @@ a, a:visited {
 
 a:hover {
   color: navy;
-}
-
-ul {
-  font-weight: 300;
-  line-height: 200%;
-  padding-left: 18px;
-  margin-top: -24px;
-  margin-bottom: 32px;
 }
 
 .page {
@@ -328,11 +332,12 @@ ul {
 }
 
 .side-nav-li {
-  padding: 10px;
+  padding: 12px;
 }
 
 .side-nav-link {
   font-size: 1.4rem;
+  font-weight: 400;
   transition: background 100ms;
   border-left-width: 4px;
   border-left-color: transparent;
@@ -382,6 +387,9 @@ section {
   justify-content: center;
   align-items: stretch;
   background-color: rgba(0, 0, 0, 0.05);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .block-fg-narrow {
