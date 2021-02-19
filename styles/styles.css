@@ -14,8 +14,8 @@
   --color-project-default: #00AAFF;
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
-  --header-line1-height: 50px;
-  --header-line2-height: 50px;
+  --header-line1-height: 48px;
+  --header-line2-height: 48px;
   --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
   --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
   --header-transition-duration: 500ms;
@@ -242,7 +242,7 @@ a:hover {
 
 .header-line2-title {
   font-family: var(--font-family-alt);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 200;
 }
 
@@ -332,7 +332,7 @@ a:hover {
 }
 
 .side-nav-li {
-  padding: 12px;
+  padding: 10px;
 }
 
 .side-nav-link {
