@@ -3,9 +3,9 @@
 
 /* Variables */
 :root {
-  --top-nav-link-color: #555;
+  --top-nav-link-color: #777;
   --top-nav-link-color-hover: #222;
-  --top-nav-link-color-current: #111;
+  --top-nav-link-color-current: #000;
   --color-text-default: #080707;
   --color-text-alt: #908f8f;
   --color-section-alt: rgba(13, 38, 18, 0.05);
@@ -20,7 +20,7 @@
   --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
   --header-transition-duration: 500ms;
   --header-transition-timing-function: ease-in-out;
-  --side-nav-container-padding-top: 200px;
+  --side-nav-container-padding-top: 180px;
   --side-nav-min-top: 0px;
   --side-nav-max-top: 50px;
   --side-nav-height: 250px;
@@ -134,7 +134,7 @@ a, a:visited {
 }
 
 a:hover {
-  color: navy;
+  color: var(--top-nav-link-color-hover);
 }
 
 .page {
@@ -246,11 +246,28 @@ a:hover {
   font-weight: 200;
 }
 
-.footer-text {
-  color: gray;
-  padding-top: 10px;
-  height: 40px;
+.footer {
+  padding-bottom: 20px;
 }
+
+.footer-line {
+  text-align: center;
+  color: gray;
+}
+
+
+.footer-contact-link {
+  filter: brightness(100%);
+}
+
+.footer-contact-link:visited {
+  filter: brightness(100%); /* Same as normal value */
+}
+
+.footer-contact-link:hover {
+  filter: brightness(0%);
+}
+
 
 .page-body {
   position: relative;
@@ -305,7 +322,8 @@ a:hover {
 
 .side-nav {
   position: sticky;
-  top: var(--side-nav-max-top); /* See: scripts/resizeHeaderOnScroll.js */
+  top: var(--side-nav-max-top); /* See: scripts/updateHeader.js */
+  padding-top: 20px; /* Prevents header from sliding over side-nav */
   left: 0px;
   z-index: 1000;
   align-self: flex-start;
