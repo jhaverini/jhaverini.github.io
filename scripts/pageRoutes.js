@@ -3,7 +3,7 @@ const pr = { //"pr": A containing namespace, to prevent cross-file variable/func
   pages: {
     home: {
       name: "Home",
-      url: "./home.html",
+      url: "./about.html",
       target: "_self",
     },
     about: {
@@ -27,10 +27,10 @@ const pr = { //"pr": A containing namespace, to prevent cross-file variable/func
       target: "_self",
     },
     resume: {
-      name: "Resume",
+      name: "\u25F9" + " Resume",
       url: "../pdfs/resume-jhaveri.pdf",
       target: "_blank",
-    },
+    }
   },
   
 

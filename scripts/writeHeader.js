@@ -36,12 +36,14 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
 
   writeLeftNavItem: (page) => {
     const nj = 'Nilpa Jhaveri';
+    /* Not needed, while left link leads to about page, and there is no home page...
     if (pr.isCurrentPage(page)) {
       document.write(`<span class="header-line1-link home current">${nj}</span>`);
       return;
     }
+    */
     document.write(
-      `<a class="header-line1-link home" href="${page.url}" target="${page.target}">${nj}</a>`
+      `<a class="header-line1-link home current" href="${page.url}" target="${page.target}">${nj}</a>`
     );
   },
 
@@ -51,9 +53,9 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
     const writeRightNavItem = wh.writeRightNavItem;
     document.write(`<div>`);
     writeRightNavItem(pages.about);
-    document.write('&nbsp;&nbsp;')
+    document.write('&nbsp;&nbsp;');
     writeRightNavItem(pages.projects);
-    document.write('&nbsp;&nbsp;')
+    document.write('&nbsp;&nbsp;');
     writeRightNavItem(pages.resume);
     document.write(`</div>`);
   },
