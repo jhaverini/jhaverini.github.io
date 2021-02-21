@@ -520,7 +520,7 @@ a.project-index-name:hover {
 /* LAYOUT ADJUSTMENTS FOR CORNER WATERMARKS... */
 @media only screen and (max-width: 1200px) {
   .corner-watermark-key-conservation-logo {
-    background-position: right calc(50px - 10vw) top calc(20px - 15vw);
+    background-position: right calc(50px - 10vw) top calc(20px - 15vw); /* Fiddled with these until they worked... */
     background-size: 41.8vw;
   }
 }
