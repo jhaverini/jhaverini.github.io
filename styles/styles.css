@@ -14,6 +14,7 @@
   --color-project-default: #00AAFF;
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
+  --max-page-width: 1200px; /* Keep in sync with media query breakpoint... */
   --header-line1-height: 48px;
   --header-line2-height: 48px;
   --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
@@ -144,7 +145,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-page-width);
   height: 100vh;
   background-color: white;
 }
@@ -502,11 +503,38 @@ a.project-index-name:hover {
   margin: 0px;
 }
 
+.corner-watermark-kaiser-logo {
+  background-image: url('./../images/projects/kaiser-nicu/0-101-logo.png');
+  background-repeat: no-repeat;
+  background-position: right 0px top 0px;
+  background-size: 440px;
+}
 
+.corner-watermark-key-conservation-logo {
+  background-image:url('./../images/projects/kc-app/0-101-logo.svg');
+  background-repeat: no-repeat;
+  background-position: right -70px top -160px;
+  background-size: 500px;
+}
 
+/* LAYOUT ADJUSTMENTS FOR CORNER WATERMARKS... */
+@media only screen and (max-width: 1200px) {
+  .corner-watermark-key-conservation-logo {
+    background-position: right calc(50px - 10vw) top calc(20px - 15vw);
+    background-size: 41.8vw;
+  }
+}
 
 /* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
 @media only screen and (max-width: 768px) {
+
+  .corner-watermark-key-conservation-logo {
+    background-image: none;
+  }
+
+  .corner-watermark-kaiser-logo {
+    background-image: none;
+  }
 
   .side-nav {
     display: none;
