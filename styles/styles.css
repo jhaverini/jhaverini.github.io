@@ -92,6 +92,14 @@ h4 {
   margin-bottom: 32px;
 }
 
+h5 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
 p {
   font-size: 1.6rem;
   font-weight: 300;
