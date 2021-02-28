@@ -290,7 +290,9 @@ a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - var(--header-max-height));  /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  /* transition: all var(--header-transition-duration) var(--header-transition-timing-function); Needed to counter-animate min-height. */
+  /* max-height: calc(100vh - var(--header-max-height));  Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  max-height: 100vh;
   width: 100%;
 }
 
