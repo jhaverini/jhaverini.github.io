@@ -298,7 +298,7 @@ a:hover {
      We wouldn't need to do this, except max-height has to be definite to prevent wierd scrolling behavior on the iphone.
      See: scripts/resizeHeaderOnScroll.js
   */
-  max-height: calc(100vh - var(--header-max-height)); /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  max-height: calc(100vh - var(--header-min-height)); /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
   
 /*  max-height: calc(100vh - var(--header-max-height)); */ /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
   will-change: auto; /* Enlist hardware acceleration, for transition animation */
