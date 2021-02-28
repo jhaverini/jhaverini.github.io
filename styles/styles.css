@@ -284,6 +284,11 @@ a:hover {
   filter: brightness(0%);
 }
 
+.footer-contact-link:active {
+  filter: brightness(100%);
+}
+
+
 .page-body {
   position: relative;
   flex: 1;
