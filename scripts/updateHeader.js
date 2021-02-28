@@ -67,7 +67,6 @@ const uh = { //uh: UpdateHeader "namespace", to minimize variable name collision
 
       //Initiate contraction of header (a css transition animation)
       uh.headerDiv.style.flexBasis = uh.HEADER_MIN_HEIGHT;
-    //  document.getElementById('page-body').style.maxHeight = `calc(100vh - ${uh.HEADER_MIN_HEIGHT})`;
 
       //For pages that have a side nav menu:
       //Initiate counter-animation of side-nav top (a css transition animation)
@@ -90,7 +89,6 @@ const uh = { //uh: UpdateHeader "namespace", to minimize variable name collision
 
       //Initiate expansion of header (a css transition animation)
       uh.headerDiv.style.flexBasis = uh.HEADER_MAX_HEIGHT;
-  //    document.getElementById('page-body').style.maxHeight = `calc(100vh - ${uh.HEADER_MAX_HEIGHT})`;
       
       //For pages that have a side nav menu:
       //Initiate counter-animation of side-nav top (a css transition animation)
