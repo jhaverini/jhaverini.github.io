@@ -51,7 +51,7 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
   writeRightNav: () => {
     const pages = pr.pages;
     const writeRightNavItem = wh.writeRightNavItem;
-    document.write(`<div>`);
+    document.write(`<div style="white-space:nowrap; padding-left:10px;">`);
     writeRightNavItem(pages.about);
     document.write('&nbsp;&nbsp;');
     writeRightNavItem(pages.projects);

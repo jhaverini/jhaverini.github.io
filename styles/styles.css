@@ -19,7 +19,7 @@
   --header-line2-height: 48px;
   --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
   --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
-  --header-transition-duration: 500ms;
+  --header-transition-duration: 300ms;
   --header-transition-timing-function: ease-in-out;
   --side-nav-container-padding-top: 180px;
   --side-nav-min-top: 0px;
@@ -92,6 +92,14 @@ h4 {
   margin-bottom: 32px;
 }
 
+h5 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
 p {
   font-size: 1.6rem;
   font-weight: 300;
@@ -139,11 +147,12 @@ a:hover {
 }
 
 .page {
-  flex-grow:1;
+  flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: var(--max-page-width);
   height: 100vh;
@@ -158,9 +167,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
-  transition-property: all;
-  transition-duration: var(--header-transition-duration);
-  transition-timing-function: var(--header-transition-timing-function);
+  transition: all var(--header-transition-duration) var(--header-transition-timing-function), width 1ms; /* Ideally, we'd just want to animate flex-basis, but Safari bug. So, added width exception... */
   margin-left: var(--side-margin-narrow);
   margin-right: var(--side-margin-narrow);
   background-color: white;
@@ -206,6 +213,7 @@ a:hover {
   color: var(--top-nav-link-color);
   text-decoration: none;
   margin: 0px;
+  white-space: nowrap;
 }
 
 .header-line1-link:visited {
@@ -238,6 +246,7 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  white-space: nowrap;
   padding-bottom: 10px;
 }
 
@@ -503,6 +512,11 @@ a.project-index-name:hover {
   margin: 0px;
 }
 
+.project-summary {
+  display: flex; 
+  flex-direction: row;
+}
+
 .corner-watermark-kaiser-logo {
   background-image: url('./../images/projects/kaiser-nicu/0-101-logo.png');
   background-repeat: no-repeat;
@@ -525,7 +539,21 @@ a.project-index-name:hover {
   }
 }
 
-/* LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
+/* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
+@media only screen and (max-width: 1100px) {
+  
+  .project-summary {
+    flex-direction: column;
+  }
+
+  .header {
+    width: calc(100vw - 40px);
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
 @media only screen and (max-width: 768px) {
 
   .corner-watermark-key-conservation-logo {
