@@ -284,25 +284,12 @@ a:hover {
   filter: brightness(0%);
 }
 
-
 .page-body {
   position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* 
-     NOTE: Transition animation properties below enable 
-     the page-body to counter-animate max-height against 
-     the header collapse/expansion animation.
-     We wouldn't need to do this, except max-height has to be definite to prevent wierd scrolling behavior on the iphone.
-     See: scripts/resizeHeaderOnScroll.js
-  */
-  max-height: calc(100vh - var(--header-min-height)); /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
-  
-/*  max-height: calc(100vh - var(--header-max-height)); */ /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
-  will-change: auto; /* Enlist hardware acceleration, for transition animation */
-  transition: all var(--header-transition-duration) var(--header-transition-timing-function); /*Needed to counter-animate min-height. */
 }
 
 .header-shadow {
@@ -546,6 +533,13 @@ a.project-index-name:hover {
   background-repeat: no-repeat;
   background-position: right -70px top -160px;
   background-size: 500px;
+}
+
+/* IOS-SPECIFIC */
+@supports (-webkit-touch-callout: none) {
+  .page-body {
+    max-height: calc(100vh - var(--header-max-height)); /* Prevents wierd behavior on iPhone, with header scrolling out of view. CHANGEF */
+  }
 }
 
 /* LAYOUT ADJUSTMENTS FOR CORNER WATERMARKS... */
