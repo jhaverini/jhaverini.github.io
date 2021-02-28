@@ -19,12 +19,11 @@ const wf = { //"wf": A containing namespace, to prevent cross-file variable/func
     
     //Copywrite notice
     document.write('<div class="footer-line">');
-    document.write(`&copy 2019 - ${year} ${emailLink}, all rights reserved.`);
+    document.write(`&copy 2019 - ${year} ${emailLink}<br>All rights reserved.`);
     document.write('</div>');
 
     //Site development attribution
     document.write('<div class="footer-line">');
-    document.write(`Site by Quixotry`);
     document.write('</div>');
 
     document.write('</div>');
