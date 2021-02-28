@@ -290,10 +290,17 @@ a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* transition: all var(--header-transition-duration) var(--header-transition-timing-function); Needed to counter-animate min-height. */
-  /* max-height: calc(100vh - var(--header-max-height));  Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
-  max-height: 100vh;
   width: 100%;
+  /* 
+     NOTE: Transition animation properties below enable 
+     the page-body to counter-animate max-height against 
+     the header collapse/expansion animation.
+     We wouldn't need to do this, except max-height has to be definite to prevent wierd scrolling behavior on the iphone.
+     See: scripts/resizeHeaderOnScroll.js
+  */
+  max-height: calc(100vh - var(--header-max-height));  /* Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  will-change: auto; /* Enlist hardware acceleration, for transition animation */
+  transition: all var(--header-transition-duration) var(--header-transition-timing-function); /*Needed to counter-animate min-height. */
 }
 
 .header-shadow {
