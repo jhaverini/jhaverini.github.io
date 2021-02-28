@@ -22,8 +22,9 @@ const wf = { //"wf": A containing namespace, to prevent cross-file variable/func
     document.write(`&copy 2019 - ${year} ${emailLink}<br>All rights reserved.`);
     document.write('</div>');
 
-    //Site development attribution
-    document.write('<div class="footer-line">');
+    //Some extra space, so when iOSes browser bottom-bar appears over footer content, the important footer content isn't hidden.
+    //(iOS vh/vw coords are screwed up when the browser bottom bar is present...)
+    document.write('<div style="height:40px;">');
     document.write('</div>');
 
     document.write('</div>');
