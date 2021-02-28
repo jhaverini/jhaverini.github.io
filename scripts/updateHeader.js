@@ -3,8 +3,8 @@
 const uh = { //uh: UpdateHeader "namespace", to minimize variable name collisions across files
   
   //*** KEEP THESE SYNCED WITH CORRESPONDING CSS!!! ***
-  HEADER_MIN_HEIGHT: '50px', // --header-min-height
-  HEADER_MAX_HEIGHT: '100px', // --header-max-height
+  HEADER_MIN_HEIGHT: '48px', // --header-min-height
+  HEADER_MAX_HEIGHT: '96px', // --header-max-height
   SIDE_NAV_MAX_TOP: '50px', // --side-nav-max-top
   SIDE_NAV_MIN_TOP: '0px', // --side-nav-min-top
 
