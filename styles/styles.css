@@ -167,6 +167,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
+  will-change: auto;
   transition: all var(--header-transition-duration) var(--header-transition-timing-function), width 1ms; /* Ideally, we'd just want to animate flex-basis, but Safari bug. So, added width exception... */
   margin-left: var(--side-margin-narrow);
   margin-right: var(--side-margin-narrow);
@@ -289,7 +290,7 @@ a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - var(--header-max-height)); /*Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
+  /* max-height: calc(100vh - var(--header-max-height)); Meant to prevent wierd behavior on iPhone with header scrolling out of view... */
   width: 100%;
 }
 
