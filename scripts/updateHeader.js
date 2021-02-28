@@ -3,8 +3,8 @@
 const uh = { //uh: UpdateHeader "namespace", to minimize variable name collisions across files
   
   //*** KEEP THESE SYNCED WITH CORRESPONDING CSS!!! ***
-  HEADER_MIN_HEIGHT: '50px', // --header-min-height
-  HEADER_MAX_HEIGHT: '100px', // --header-max-height
+  HEADER_MIN_HEIGHT: '48px', // --header-min-height
+  HEADER_MAX_HEIGHT: '96px', // --header-max-height
   SIDE_NAV_MAX_TOP: '50px', // --side-nav-max-top
   SIDE_NAV_MIN_TOP: '0px', // --side-nav-min-top
 
@@ -89,7 +89,7 @@ const uh = { //uh: UpdateHeader "namespace", to minimize variable name collision
 
       //Initiate expansion of header (a css transition animation)
       uh.headerDiv.style.flexBasis = uh.HEADER_MAX_HEIGHT;
-
+      
       //For pages that have a side nav menu:
       //Initiate counter-animation of side-nav top (a css transition animation)
       //so that the side nav location appears constant while the header is 
