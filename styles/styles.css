@@ -541,9 +541,13 @@ a.project-index-name:hover {
 }
 
 /* IOS-SPECIFIC */
+/* https://stackoverflow.com/a/47818418 */
 @supports (-webkit-touch-callout: none) {
   .page-body {
-    max-height: calc(100vh - var(--header-max-height)); /* Prevents wierd behavior on iPhone, with header scrolling out of view. CHANGEF */
+    /* 
+     Prevents wierd behavior on iPhone, with header scrolling out of view, or scrolling happening faster than your thumb.
+    */
+    max-height: calc(100vh - var(--header-max-height));
   }
 }
 
