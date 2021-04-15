@@ -110,7 +110,7 @@ p {
 
 p.caption {
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 150%;
   color: var(--color-text-alt);
   margin-top: 0px;
@@ -119,6 +119,7 @@ p.caption {
 
 .credits {
   font-size: 1.2rem;
+  font-weight: 400;
   color: var(--color-text-alt);
   margin-top: 0px;
   margin-bottom: 16px;
