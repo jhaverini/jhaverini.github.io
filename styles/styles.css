@@ -73,10 +73,6 @@ h2 {
   margin-bottom: 32px;
 }
 
-.company-name {
-  color: var(--color-text-alt);
-}
-
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
@@ -157,6 +153,10 @@ a.bright-link, a.bright-link:visited {
 
 a.bright-link:hover {
   color: var(--bright-link-color-hover);
+}
+
+.company-name {
+  color: var(--color-text-alt);
 }
 
 .page {
