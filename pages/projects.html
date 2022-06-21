@@ -57,12 +57,12 @@
 
               <section>
                 <div class="block-bg-light">
-                  <div class="block-fg-narrow">
+                  <div class="block-fg-wide">
                     
                     <div class="spacer-large"></div>
 
                     <h3>
-                      Selected Projects
+                      Case Studies
                     </h3>
                   
                     <!-- Key Conservation -->
@@ -119,14 +119,6 @@
                             Kaiser San Diego's Neonatal Intensive Care Unit pushed the envelope of tradition by pioneering private patient rooms, based on research showing improved outcomes when families are included as members of their infants' care teams.
                           </p>
 
-                          <!-- old text
-                            Kaiser San Diego's Neonatal Intensive Care Unit pioneered an evidence-based approach featuring private rooms for infants and their families &ndash; based on the idea that families are a necessary part of the infant patients' care teams.-->
-
-                          <!-- alt text
-                            Kaiser San Diego's Neonatal Intensive Care Unit pioneered an all private-room layout &ndash; based on the research-backed idea that families are a necessary part of the infant patients' care teams.
-
-                            Kaiser San Diego's Neonatal Intensive Care Unit pioneered a private infant room layout, based on research showing improved outcomes when families are included as  members of infant patients' care teams.-->
-
                         </div>
                         <!-- Bottom-aligned -->
                         <div style="padding-bottom: 5px; padding-top: 5px;">
@@ -138,30 +130,69 @@
                       </div>
                     </div>
 
-                    <div class="spacer-medium"></div>
+                    <div class="spacer-large"></div>
 
-                    <div style="display:flex; flex-direction:row; justify-content: space-between; align-items: center;">
+                    <h3>
+                      Selected Projects
+                    </h3>
+
+                    <!-- NOTE:
+                      When ready:
+                        * Replace "negate-hover" with "project-index-image"
+                        * Replace "x-href" with "href"
+                    -->
+
+                    <div style="display:flex; flex-direction:row; justify-content:space-between; align-items: center;">
 
                       <!-- Iterant -->
-                      <div style="flex: 1;">
-                        <a class="" href="./projects-iterant.html">
-                          Iterant
-                        </a>
-                      </div> 
+                      <a class="project-index-image"
+                        style="flex: 1; display:flex; flex-direction:column; margin-right: 5%;" 
+                        href="./projects-iterant.html"
+                      >
+                        <div class="project-index-tile-header">
+                          DESKTOP WEB &bull; PROD. DESIGNER
+                        </div>
+                        <img width="100%" src="../images/projects/index/thumbnail-iterant.jpg">
+                        <div class="project-index-tile-footer-1">
+                          Iterant | Circular Economy
+                        </div>
+                        <div class="project-index-tile-footer-2">
+                          Incentivizing longer life-cycles for durable, reusable goods
+                        </div>
+                      </a> 
 
                       <!-- Vox Pulmini -->
-                      <div style="flex: 1;">
-                        <a class="" href="./projects-vox-pulmini.html">
-                          Vox Pulmini
-                        </a>
-                      </div> 
+                      <a class="negate-hover" 
+                        style="flex: 1; display:flex; flex-direction:column;"
+                        x-href="./projects-vox-pulmini.html"
+                      >
+                        <div class="project-index-tile-header">
+                          MOBILE APP &bull; UX DESIGNER
+                        </div>
+                        <img width="100%" src="../images/projects/index/thumbnail-vox-progress.jpg">  
+                        <div class="project-index-tile-footer-1">
+                          Vox Pulmini | Healthcare
+                        </div>
+                        <div class="project-index-tile-footer-2">
+                          Using technology and storytelling to save kids’ lives
+                        </div>
+                      </a>
 
-                      <!-- SpeakOut -->
-                      <div style="flex: 1;">
-                        <a class="" href="./projects-speakout.html">
-                          SpeakOut
-                        </a>
-                      </div> 
+                      <!-- SpeakOut -->                        
+                      <a class="negate-hover" 
+                        style="flex:1; display:flex; flex-direction:column; margin-left: 5%;"
+                        x-href="./projects-speakout.html">
+                        <div class="project-index-tile-header">
+                          RESPONSIVE WEB &bull; UX DESIGNER
+                        </div>
+                        <img width="100%" src="../images/projects/index/thumbnail-speakout-progress.jpg">
+                        <div class="project-index-tile-footer-1">
+                          SpeakOut | Education
+                        </div>
+                        <div class="project-index-tile-footer-2">
+                          Promoting equal opportunity through access to quality education
+                        </div>
+                      </a>
                     </div>
 
                     <div class="spacer-medium"></div>
@@ -169,29 +200,58 @@
                     <div style="display:flex; flex-direction:row; justify-content: space-between; align-items: center;">
 
                       <!-- HamiltonPay -->
-                      <div style="flex: 1;">
-                        <a class="" href="./projects-hamiltonpay.html">
+                      <a class="negate-hover"
+                        style=" flex:1; display:flex; flex-direction:column; margin-right: 5%;"
+                        x-href="./projects-hamiltonpay.html"
+                      >
+                        <div class="project-index-tile-header">
+                          RESPONSIVE WEB &bull; UX DESIGNER
+                        </div>
+                        <img width="100%" src="../images/projects/index/thumbnail-hamilton-progress.jpg">
+                        <div class="project-index-tile-footer-1">
                           HamiltonPay
-                        </a>
-                      </div> 
+                        </div>
+                        <div class="project-index-tile-footer-2">
+                          Enabling faster, cheaper, safer transactions for small businesses
+                        </div>
+                      </a>
 
                       <!-- Konica Minolta -->
-                      <div style="flex: 1;">
-                        <a class="" href="./projects-konica-minolta.html">
-                          Konica Minolta
-                        </a>
-                      </div> 
+                      <a class="negate-hover" 
+                         style=" flex:1; display:flex; flex-direction:column;" 
+                         x-href="./projects-konica-minolta.html"
+                      >
+                        <div class="project-index-tile-header">
+                          ENVIRONMENT &bull; ARCHITECT
+                        </div>
+                         <img width="100%" src="../images/projects/index/thumbnail-konica-progress.jpg">
+                         <div class="project-index-tile-footer-1">
+                           Konica Minolta
+                         </div>
+                         <div class="project-index-tile-footer-2">
+                          Communicating design intent for implementation
+                         </div>
+                      </a>
 
                       <!-- Placeholder -->
-                      <div style="flex: 1;">
-                        <a class="" href="">
-                        </a>
-                      </div> 
+                      <a class="negate-hover" 
+                        style="flex: 1; display:flex; flex-direction:column; margin-left:5%;" 
+                        x-href="./projects-konica-minolta.html"
+                      >
+                        <span class="project-index-tile-header">&nbsp;</span>
+                        <img width="100%" src="../images/projects/index/thumbnail-future.jpg">
+                        <div class="project-index-tile-footer-1">
+                          More to come...
+                        </div>
+                        <div class="project-index-tile-footer-2">
+                          Communicating design intent for implementation
+                        </div>
+                      </a> 
 
                     </div>
                   </div>
                 </div>
-              
+            
               </section>
 
               <div class="spacer-large"></div>

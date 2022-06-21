@@ -145,6 +145,12 @@ a:hover {
   color: var(--top-nav-link-color-hover);
 }
 
+a.negate-hover {
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+  cursor: default;
+}
+
 a.bright-link, a.bright-link:visited {
   color: var(--bright-link-color);
   text-decoration: none;
@@ -544,6 +550,35 @@ a.project-index-name:hover {
 .project-summary {
   display: flex; 
   flex-direction: row;
+}
+
+.project-index-tile-header {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 20px;
+  /* border: red solid 1px; */
+}
+
+.project-index-tile-footer-1 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 20px;
+  /* border: red solid 1px; */
+}
+
+.project-index-tile-footer-2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  color: var(--color-text-default);
+  height: 55px;
+  /* border: red solid 1px; */
 }
 
 .corner-watermark-kaiser-logo {
