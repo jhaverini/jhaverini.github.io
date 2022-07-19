@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iterant</title>
+    
+    <link rel="stylesheet" href="../styles/styles.css">
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerDivId: 'header',
+          sideNavDivId: 'side-nav'
+        });
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="page">
+
+      <script>
+        wh.writeHeader();
+      </script>
+
+      <div id="page-body" class="page-body">
+        
+        <div class="header-shadow">
+        </div>
+        
+        <div id="scroll-window" class="scroll-window">
+
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-nav-and-content-wrapper">
+              
+              <section>
+
+                <div class="spacer-large"></div>
+
+                <div class="block-fg-narrow" style="margin-bottom: 32px;">
+                  <h2 class="company-name" style="margin-bottom:8px;">Iterant</h2>
+                  <h1>Incentivizing longer life-cycles for durable, reusable goods</h1>  
+                </div>
+
+                <div class="block-bg-dark"
+                  style="align-items: center; background-color: #898cda; padding-top: 48px; padding-bottom: 48px;">
+                    <img style="
+                      width:80%;
+                      box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
+                      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
+                      src="../images/projects/iterant/00-iterant-hero.png"
+                  />
+                </div>
+
+                <div class="spacer-medium"></div>
+
+                <div class="block-fg-narrow">
+
+                  <h3>Reuse at a large scale, for a sustainable planet</h3> 
+                  
+                  <p>
+                    A cradle-to-grave approach to the life of durable goods is no longer sustainable. Individuals are doing their part to divert waste from landfills, but at the <b>enterprise scale</b> -  that's where even more meaningful impact can occur. Currently, large scale reuse is inconvenient and costly.
+                  </p>
+    
+                  <img width="100%" src="../images/projects/iterant/01-flow-existing.png"/>
+                  
+                  <div class="spacer-medium"></div>
+
+                  <p>
+                    Enter <b>Iterant</b>: a pre-seed circular economy startup enabling large scale reuse. I worked with the founder to strategize on how his vision for manufacturing, supply chain, and recovery channels can converge at an online marketplace (PaaS) for reselling used products, at scale, with consistent quality and supply.
+                  </p>
+    
+                  <img width="100%" style="padding-bottom: 32px;" src="../images/projects/iterant/02-flow-new.png"/>
+    
+                  <div class="spacer-medium"></div>
+
+                  <h3>Research anchored in goals</h3>
+    
+                  <p>
+                    Identifying stakeholders and end-users was tricky since we were dealing with a new, evolving business concept. I had the unique opportunity to serve as a sounding board for the founder's ideas and to reflect back. I found out quickly that in an evolving system, the key was to focus on stakeholders' and end-users' <b>goals</b> rather than features and tasks (ref. About Face).
+                  </p>
+    
+                  <div style="display:flex; justify-content:space-between; align-items: center; width:100%">
+                    <img width="45%" src="../images/projects/iterant/03-end-users.png"/>
+                    <img width="45%" src="../images/projects/iterant/04-end-users.png"/>  
+                  </div>
+    
+                  <img width="100%" src="../images/projects/iterant/05-personas.png"/>
+    
+                  <div class="spacer-medium"></div>
+
+                  <p>
+                    I began by creating proto-personas to shape the three-sided marketplace at a high level. Mary Manufacturer and Betty Buyer represented the pre-Iterant partnership between an original manufacturer and supply chain manager. I did web research and interviews to understand their goals and how they currently worked.
+                  </p>
+
+                  <p>
+                    With Iterant, Mary receives an additional revenue stream  on discarded parts, thanks to circular incentives. Betty sources less-costly used parts without sacrificing the quality and supply she needs. Carl Collector is a new user made possible by Iterant. To approximate his goals as a starting point, we looked at similar roles, from scavengers to used clothing sellers.
+                  </p>
+
+                  <div class="spacer-medium"></div>
+      
+                  <h3>From insights to platform mockup</h3>
+    
+                  <p>
+                    While developing an understanding of the end-users and business goals, I started to envision the marketplace in a more concrete way for the founder to show potential investors. This allowed us to also colloaboratively prioritizing features for the MVP. 
+                  </p>
+    
+                  <img width="100%" src="../images/projects/iterant/06-site-map.png"/>
+    
+                  <div class="spacer-medium"></div>
+
+                  <p>
+                    I took a deeper dive into Mary Manufacturer's journey as she creates an Iterant catalog page for one of her company's parts. On this screen, Mary uploads product documentation and sets incentives to signal to Carl Collector that he may benefit from reclaiming the parts to sell. I gave the founder a crash-course in zooming, panning, and commenting in Figma, which worked great for getting his feedback and exchanging ideas remotely on different schemes.
+                  </p>
+  
+                  <img width="100%" src="../images/projects/iterant/07-wireframes.png"/>
+  
+                  <div class="spacer-medium"></div>
+
+                  <p>
+                    After dozens of iterations, we arrived at some key screens and a clickable Figma protoype demo, which the founder used for his seed funding rounds. Most recently, Iterant  launched a simple version of the marketplace, and was recently invited to join Berkeley SkyDeck incubator program.
+                  </p>
+                </div>
+
+                <div class="block-bg-dark" style="align-items: center; background-color: #898cda; padding-top: 48px; padding-bottom: 48px">
+                  <img style="
+                    width: 80%;
+                    box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
+                    src="../images/projects/iterant/08-final-oem.png"
+                  />
+                </div>
+
+                <div class="spacer-medium"></div>
+
+              </section>
+
+              <!-- Footer -->
+
+              <div class="spacer-medium"></div>
+
+              <div style="width: 70%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
+        
+                <!--Col 1: Client-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Iterant</b><br>
+                    Matthew Sensky, Founder/CEO
+                  </p>
+                </div>
+                <!--Col 2: User Experience-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>User Experience</b><br>
+                    Nilpa Jhaveri, Consulting Designer<br>
+                  </p>
+                </div>
+                
+                <!--Col 3: Advisor-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Advisor</b><br>
+                    Todd Fulton, Consulting Engineer 
+                  </p>
+                </div>
+              </div>
+
+              <div class="spacer-large"></div>
+
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+</html>

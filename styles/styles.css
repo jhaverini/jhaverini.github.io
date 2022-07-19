@@ -73,10 +73,6 @@ h2 {
   margin-bottom: 32px;
 }
 
-.company-name {
-  color: var(--color-text-alt);
-}
-
 h3 {
   font-size: 2.4rem;
   font-weight: 600;
@@ -149,6 +145,13 @@ a:hover {
   color: var(--top-nav-link-color-hover);
 }
 
+a.negate-hover:hover {
+  color: var(--top-nav-link-color);  /* For text */
+  filter: brightness(100%);  /* For images */
+  text-decoration: none;
+  cursor: default;
+}
+
 a.bright-link, a.bright-link:visited {
   color: var(--bright-link-color);
   text-decoration: none;
@@ -157,6 +160,10 @@ a.bright-link, a.bright-link:visited {
 
 a.bright-link:hover {
   color: var(--bright-link-color-hover);
+}
+
+.company-name {
+  color: var(--color-text-alt);
 }
 
 .page {
@@ -544,6 +551,117 @@ a.project-index-name:hover {
 .project-summary {
   display: flex; 
   flex-direction: row;
+}
+
+
+.project-grid-container {
+  /* first breakpoint*/
+  --w1:1200px;
+  --n:5;
+  /* second breakpoint*/
+  --w2:500px;
+  --m:3;
+  /* third breakpoint*/
+  --w3:200px;
+  --p:2;
+
+  /*
+    Flexible grids with breakpoints are hard.
+    We used the last approach from this tutorial:
+    https://css-tricks.com/responsive-layouts-fewer-media-queries/
+  */
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,
+      minmax(clamp(clamp(clamp(  
+            100%/(var(--n) + 1) + 0.1%,
+              (var(--w1) - 100%)*1000,
+            100%/(var(--m) + 1) + 0.1%), 
+              (var(--w2) - 100%)*1000,
+            100%/(var(--p) + 1) + 0.1%), 
+              (var(--w3) - 100%)*1000,
+            100%), 1fr));
+  gap:3%;
+  overflow:hidden;
+  margin:0px;
+}
+.project-grid-tile {
+  display: block;
+  filter: brightness(100%);
+}
+.project-grid-tile:hover {
+  filter: brightness(110%);  
+}
+.project-grid-tile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.project-grid-tile-header {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.project-grid-tile-footer-title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.project-grid-tile-footer-blurb {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  color: var(--color-text-default);
+}
+
+.hamiltonpay-grid-container {
+  /* first breakpoint*/
+  --w1:1200px;
+  --n:5;
+  /* second breakpoint*/
+  --w2:500px;
+  --m:3;
+  /* third breakpoint*/
+  --w3:200px;
+  --p:2;
+
+  /*
+    Image grid w/ breakpoints, for HamiltonPay project
+    Flexible grids with breakpoints are hard.
+    We used the last approach from this tutorial:
+    https://css-tricks.com/responsive-layouts-fewer-media-queries/
+  */
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,
+      minmax(clamp(clamp(clamp(  
+            100%/(var(--n) + 1) + 0.1%,
+              (var(--w1) - 100%)*1000,
+            100%/(var(--m) + 1) + 0.1%), 
+              (var(--w2) - 100%)*1000,
+            100%/(var(--p) + 1) + 0.1%), 
+              (var(--w3) - 100%)*1000,
+            100%), 1fr));
+  gap:9px;
+  overflow:hidden;
+  margin:0px;
+}
+.hamiltonpay-grid-image {
+  display: block;
+  width: 100%;
+  border: 1px solid #85D1DC;
 }
 
 .corner-watermark-kaiser-logo {
