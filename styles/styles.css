@@ -664,6 +664,14 @@ a.project-index-name:hover {
   border: 1px solid #85D1DC;
 }
 
+/*
+Currently used in Vox Pulmini project page, 
+but could be used more broadly (?)
+*/
+.indented {
+  margin-left: 16px;
+}
+
 .corner-watermark-kaiser-logo {
   background-image: url('./../images/projects/kaiser-nicu/0-101-logo.png');
   background-repeat: no-repeat;
