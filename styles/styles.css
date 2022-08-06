@@ -582,7 +582,6 @@ a.project-index-name:hover {
               (var(--w3) - 100%)*1000,
             100%), 1fr));
   gap:3%;
-  overflow:hidden;
   margin:0px;
 }
 .project-grid-tile {
