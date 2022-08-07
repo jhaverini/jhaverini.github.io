@@ -604,7 +604,7 @@ a.project-index-name:hover {
   text-transform: uppercase;
   font-weight: 400;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
 }
 .project-grid-tile-footer-title {
   width: 100%;
