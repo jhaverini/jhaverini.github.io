@@ -18,7 +18,7 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
   
     document.write(`<div class="header-line2">`);
     document.write(`<div class="header-line2-title">`);
-    document.write(`User Experience Designer`);
+    document.write(`Product/UX Designer`);
     document.write(`</div>`);
     document.write(`<div class="header-line2-title">`);
     document.write(`Licensed Architect`);
