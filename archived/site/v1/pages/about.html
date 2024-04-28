@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    
+    <link rel="stylesheet" href="../styles/styles.css">
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerDivId: 'header',
+          //sideNavDivId: 'side-nav'
+        });
+
+        window.addEventListener("scroll", ()=>{ilog('Scrolling...')});
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="page">
+
+      <script>
+        wh.writeHeader();
+      </script>
+    
+      <div id="page-body" class="page-body">
+        
+        <div class="header-shadow">
+        </div>
+        
+        <div id="scroll-window" class="scroll-window">
+
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-nav-and-content-wrapper">
+
+              <section>
+
+                <div class="block-bg-light">
+
+                  <div class="block-fg-narrow">
+
+                    <div class="spacer-small"></div>
+                    
+                    <img src='./../images/about/about-image-top.png' width="100%" style="padding-top: 20px;" />
+
+                    <div class="spacer-medium"></div>
+
+                    <h2>
+                      An Architect turned UX Designer, I craft human-centered experiences for physical spaces &amp; digital interactions.
+                    </h2>
+
+                    <p>
+                      My design sensibilities were forged in the crucible of <b>Cal Poly's College of Architecture &amp; Environmental Design 
+                      (San Luis Obispo)</b>, and honed through a decade+ career as an architect in San Francisco, where I designed some of 
+                      the places where people live, work, and play today. 
+                    </p>
+                    <p>
+                      Practicing architecture in the Bay Area led me to projects for tech startups and gaming companies, where I 
+                      discovered User Experience (UX) Design. I joined <b>MIT's xPro Human-Computer Interaction Program</b>, and 
+                      have been applying my sense of structure and space in the digital realm ever since.
+                    </p>
+                    
+                    <p>
+                      As an Architect, I turned wishlists into building designs, and guided those designs through construction. 
+                      As a UX Designer, I turn wishlists into user interfaces (UIs), and guide these interfaces through implementation. 
+                      In both contexts, I advocate for end-users, strive for seamlessness, and tame complexity: 
+                      from mobile apps to campus master plans.
+                    </p>
+
+                    <p>
+                      Work aside, I enjoy getting my hands dirty with traditional materials: clay, glass, and wood. I am also an avid social runner with a passion for after-run donuts. 
+                    </p>
+
+                    <img src='./../images/about/about-image-bottom.png' width="100%" style="padding-top: 20px;" />
+
+
+                    <div class="spacer-large"></div>
+
+                    <p>
+                      <b>Clients I've worked with:</b> 
+                    </p>
+
+                    <div class="client-list" style="font-size:smaller; font-weight:300">
+
+                      <!--Col 1-->
+                      <div style="flex:1;">
+                        
+                        <div><b>Environment</b></div>
+                        <div>
+                          <a class="bright-link" href="./projects-key-conservation-app.html" target="_blank">Key Conservation</a>
+                        </div>
+                        <div>
+                          <a class="bright-link" href="./projects-iterant.html" target="_blank">Iterant</a>
+                        </div>
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Work Environments</b></div>
+                        <div>Stanford University</div>
+                        <div>
+                          <a class="bright-link" href="./projects-konica-minolta.html" target="_blank">Konica Minolta</a>
+                        </div>
+                        <div>Proteus Digital Health</div>
+                        <div>SETI (Broadreach)</div>
+                        <div>County of Marin</div>
+                        <div>Talend, Inc.</div>
+                        <div>IBEW</div>
+                        <div>Cushman &amp; Wakefield</div>
+                        <div>Harvest Properties</div>
+                        <div>Sares Regis</div>
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Labs</b></div>  
+                        <div>Tyco Thermal Controls</div>
+                        <div>Averna Test Systems</div> 
+
+                      </div>
+                     
+                      <!--Col 2-->
+                      <div style="flex:1; padding-left: 10px;">
+                        
+                        <div><b>Healthcare</b></div>
+                        <div>
+                          <a class=""bright-link href="https://www.epicorebiosystems.com/connected-hydration/" target="_blank">
+                            Epicore Biosystems
+                          </a>
+                        </div>
+                        <div>Peninsula Healthcare District</div>
+                        <div>Dept. of Veterans' Affairs</div>
+                        <div>
+                          <a class="bright-link" href="./projects-kaiser-nicu.html" target="_blank">
+                            Kaiser Permanente
+                          </a>
+                        </div>
+                        <div>
+                          <a class="bright-link" href="https://hga.com/projects/stanford-childrens-health-lucile-packard-childrens-hospital-stanford/" target="blank">
+                            Lucile Packard Children's Hosp.
+                          </a>
+                        </div>
+                        <div>Appletree Dental</div>
+                        <div>Contra Costa County Regional</div>
+                        <div>Hope House Behav. Health</div>
+                        <div>St. Cloud Hospital Pharmacy</div>
+                        <div>
+                          <a class="bright-link" href="./projects-vox-pulmini.html" target="_blank">
+                            Vox Pulmini
+                          </a>
+                        </div>
+                        <div class="spacer-small"></div>
+                       
+                        <div><b>Hospitality</b></div>
+                        <div>Powell Place</div>
+                        <div>Cartwright Hotel</div>
+                        <div>Vina Enoteca Restaurant</div>
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Civic</b></div>
+                        <div>City of Saratoga</div>
+                        <div>San Ramon Joint-use Library</div>
+                        <div>Marin County Free Library</div>
+                        <div>
+                          <a class="bright-link" href="http://aba-arch.com/Portfolio/community/MLK-Library" target="_blank">
+                            San Jose Joint-use Library
+                          </a>
+                        </div>
+                        <div class="spacer-small"></div>
+                      </div>
+
+                      <!--Col 3-->
+                      <div style="flex:1; padding-left: 10px;">
+                        
+                        <div><b>Gaming Workspaces</b></div>
+                        <div>Sanzaru Games</div>
+                        <div>Niantic, Inc.</div>
+                        <div>RedOctane</div>                    
+                        <div>Sledgehammer Games</div>
+                        <div>Toys for Bob</div>
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Residential</b></div>
+                        <div>Riva Terra Apartments</div>
+                        <div>Sea Ranch, Villa Therese*</div>
+                        <div>Professorville House*</div>
+                        <div>Hope House Behav. Health</div>
+                        <div>Diamond Heights Residence*</div>
+                        <div>...and many others.*</div>
+                        <div>(* Private homeowner)</div>
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Education</b></div>
+                        <div>
+                          <a class="bright-link" href="./projects-speakout.html" target="_blank">
+                            SpeakOut Bahrain
+                          </a>
+                        </div>                        
+                        <div class="spacer-small"></div>
+                        
+                        <div><b>Fintech</b></div>
+                        <div>
+                          <a class="bright-link" href="./projects-hamiltonpay.html" target="_blank">
+                            HamiltonPay
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+              <div class="spacer-large"></div>
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+</html>

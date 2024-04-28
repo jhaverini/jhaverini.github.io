@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Key Conservation</title>
+    
+    <link rel="stylesheet" href="../styles/styles.css">
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script> 
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerDivId: 'header',
+          sideNavDivId: 'side-nav'
+        });
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="page">
+
+      <script>
+        wh.writeHeader();
+      </script>
+
+      <div id="page-body" class="page-body">
+        
+        <div class="header-shadow">
+        </div>
+        
+        <div id="scroll-window" class="scroll-window">
+
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-nav-and-content-wrapper">
+
+              <div class="side-nav-container">
+
+                <div id="side-nav" class="side-nav">
+                  <ul class="side-nav-ul">
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#key-app" onClick="ss.scrollTo('key-app')">
+                        Key App
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a
+                      class="side-nav-link" href="#onboarding" onClick="return ss.scrollTo('onboarding')">
+                        Onboarding
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#research" onClick="return ss.scrollTo('research')">
+                        UX Research
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#decisions" onClick="return ss.scrollTo('decisions')">
+                        Decisions
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a
+                      class="side-nav-link" href="#solutions" onClick="return ss.scrollTo('solutions')">
+                        Solutions
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <section id="key-app" class="corner-watermark-key-conservation-logo">
+
+                <div class="block-fg-narrow">
+                  <div class="spacer-large"></div>
+                  <h2 style="margin-bottom: 8px;">
+                    <div class="company-name">Key Conservation:</div>
+                  </h2>
+                  <h1>
+                    Replenishing biodiversity<br>
+                    through local, real-time support
+                  </h1>
+
+                  <p class="credits">
+                    Work completed for Key Conservation as part of a two month capstone project.
+                  </p>
+                                
+                  <div style='width: 100%; margin-bottom: 32px; white-space: nowrap;'>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/1-101-splash-new.png' width="23%" alt="Tiger eye and logo loading sequence">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/1-102-splash-new.png' width="23%" alt="Mobile screen loading sequence">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/1-103-splash-new.png' width="23%" alt="Mobile screen loading sequence">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/1-104-splash-new.png' width="23%" alt="Mobile login screen">
+                  </div>
+
+                  <div class="spacer-medium"></div>
+                  
+                  <h3>
+                    Why Key Conservation Matters
+                  </h3>
+
+                  <p>
+                    Biodiversity ensures the resilience of habitats &ndash; including human habitats. 
+                    In the past, its care fell to an expert community of scientific professionals 
+                    through research, policy, and fieldwork.
+                  </p>
+
+                  <p>
+                    Key Conservation enables that expert community of conservationists to enlist 
+                    any smartphone-carrying individual to infill gaps in support: from awareness of 
+                    local surroundings, to equipment lending, to active volunteering of time and skills to address urgent initiatives. It empowers average individuals to affect change, 
+                    and to track the effects of their specific contributions &ndash; no PhD required.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/1-201-biodiversity.png' width="100%" alt="Graph showing biodiversity decline and increased mobile phone use">
+                    <div class="spacer-medium"></div>
+                  </div>
+
+                </div>
+          
+              </section>
+
+              <div class="spacer-large"></div>
+
+              <section id="onboarding">
+
+                  <div class="block-fg-narrow">
+                    
+                    <h2>
+                      Redesigning Onboarding
+                    </h2>
+
+                    <div class="goal goal-keycons" style="display: flex; flex-direction: row;">
+                      <!--Col 1-->
+                      <div style="flex:3; font-weight: 300;">
+                        <div>Deliverable</div>
+                        <div>Duration</div>
+                        <div>Team</div>
+                        <div>Client</div>
+                        <div>Audience</div>
+                      </div>
+                      <!--Col 2-->
+                      <div style="flex:10; font-weight: 500;">
+                        <div>Prototype, artboards, user testing recommendations</div>
+                        <div>4 weeks</div>
+                        <div>2 UX Designers, 7 Developers; fully distributed team</div>
+                        <div>Key Conservation</div>
+                        <div>Conservation organizations (non-profits, charities, NGOs)</div>
+                      </div>
+                    </div>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Why Focus on Onboarding?
+                    </h3>
+
+                    <p class="goal goal-keycons">
+                      The Problem: Key Conservation lacked initial memberships needed to launch core functions to a pilot group of end-users.
+                    </p>
+
+                    <p>
+                      The Key mobile app built a community that was recruited from two groups: 
+                      <b>Conservation organizations</b>, and <b>individual supporters</b> &ndash; connecting experts and enthusiasts for a shared cause.
+                    </p>
+
+                    <p>
+                      Organizations made up the backbone of the Key community. The app was structured such that their active involvement furnished the content through which supporters could engage and contribute.
+                    </p>
+
+                    <p>
+                      The pre-existing onboarding process <i>deterred</i> the organizations needed to draw in 
+                      supporters. A majority of motivated "pilot" organizations had stalled during the 
+                      onboarding process. Less motivated proxy end-users who we interviewed stated that they were likely to abandon it prior to completion.
+                    </p>
+
+                    <p class="goal goal-keycons">
+                      Our Approach: Redesign the app's onboarding flow for organizations &ndash; for improved follow-through, and new memberships.
+                    </p>
+                    
+                  </div>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/2-101-before-after.png' width="100%" alt="Mobile screens, before and improved">
+                    <div class="spacer-medium"></div>
+                  </div>
+
+              </section>
+
+              <div class="spacer-large"></div>
+
+              <section id="research">
+                
+                <div class="block-fg-narrow">
+                  
+                  <h2>
+                    Scoping &amp; Research with Limited Resources
+                  </h2>
+                
+                  <p>
+                    Given an aggressive timeline, and limited access to both Key Conservation staff
+                    and applicant organizations, we customized our approach to research:
+                    <ul>
+                      <li>
+                        Reviewed the pre-existing onboarding process
+                      </li>
+                      <li>
+                        Uncovered stakeholders' goals
+                      </li>
+                      <li>
+                        Compared onboarding flows from adjacent application-domains
+                      </li>
+                    </ul>
+                  </p>
+
+                  <div class="spacer-medium"></div>
+
+                  <h3>
+                    Reviewing the Pre-existing Process
+                  </h3>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/3-101-process-old.png' width="100%" alt="Screenshots of pre-existing onboarding">
+                    <p class="caption">
+                      Screenshots of desktop-only website, application form, airtable survey, pdf instructions, in-app profile form, and app screens.
+                    </p>
+                  </div>
+
+                  <p>
+                    The screenshots above show a lengthy pre-existing process that spanned multiple 
+                    formats: it entailed a fifteen-question form (in-app), a document upload, twenty-two 
+                    detailed survey questions (Airtable), a pdf how-to guide (email attachment), 
+                    a form with twelve inputs required to populate a profile page (in-app), and two approval
+                    wait times (approval via email).
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/3-102-workflow-old.png' width="100%" alt="Workflow diagram for pre-existing onboarding">
+                    <p class="caption">
+                      By laying out the the existing onboarding process in a diagram, we exposed breaks in the 
+                      user flow.
+                    </p>
+                  </div>
+
+                  <p>
+                    By diagramming the sequence of screens that the end-user 
+                    encountered, above, we could easily spot the hurdles that had 
+                    likely contributed to drop-out:
+                    <ul>
+                      <li>
+                        Two multiple-day waits for approvals (indicated by red clock icons)
+                      </li>
+                      <li>
+                        Five different environments to navigate between (horizontal bands)
+                      </li>
+                      <li>
+                        Environments optimized for mobile-only or desktop-only viewing (device icons)                        
+                      </li>
+                      <li>
+                        Multiple upfront forms, questionaires, and surveys
+                      </li>
+                    </ul>
+                  </p>
+
+                  <p>
+                    A fundamental problem with the pre-existing approach: 
+                    it assumed an abundance of applicants from whom to select; however,  
+                    without the outreach focus to recruit hundreds of applicants, only eleven 
+                    pilot organizations had joined, after years of product planning.
+                  </p>
+
+                  <p>
+                    A more welcoming, guided approach could entice applicants, 
+                    encourage completion of membership, and engage members to stick around.
+                  </p>
+
+                  <div class="spacer-medium"></div>
+
+                  <h3>
+                    Uncovering Stakeholders' Goals
+                  </h3>
+
+                  <p>
+                    We identified the key stakeholders for organization onboarding as Key Conservation (the client) and applicant organizations (the end-users).
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/3-201-goals.png' width="100%" alt="Notes from stakeholder interviews">
+                    <div class="spacer-medium"></div>
+                  </div>
+
+                  <p>
+                    Through interviews with the director of Key Conservation, 
+                    we identified primary business objectives for onboarding:
+                    <ul>
+                      <li>
+                        <b>Build trust:</b> Screen applicant organizations to ensure legitimacy 
+                        so that supporters don't have to.
+                      </li>
+                      <li>
+                        <b>Engage:</b> Encourage active participation of organizations 
+                        to attract supporters.
+                      </li>
+                      <li>
+                        <b>Excite:</b> Facilitate a process that builds applicant 
+                        enthusiasm about potential gains from joining.
+                      </li>
+                    </ul>
+                  </p>
+
+                  <p>
+                    In parallel, we walked through the pre-existing onboarding process with proxy 
+                    end-users &ndash; representing organization account administrators &ndash; and asked 
+                    them to "think out loud." The exercise revealed that end-users had a 
+                    different set of primary objectives for onboarding:
+                    <ul>
+                      <li>
+                        <b>Align purposes:</b> Be assured that Key Conservation is a serious organization with a clear mission.
+                      </li>
+                      <li>
+                        <b>Offer value:</b> Understand time and energy required vs. value received, prior to 
+                        commitment; beyond the value offered by more established apps.
+                      </li>
+                      <li>
+                        <b>Make it easy:</b> A painless path to begin participating.
+                      </li>
+                    </ul>
+                  </p>
+
+                  <div class="spacer-small"></div>
+
+                  <h3>
+                    Comparative Investigation of Other Onboarding Flows
+                  </h3>
+
+                  <p>
+                    We researched strategies used by other social-benefit mission-based apps, 
+                    and apps in which an end-user group must be screened. AirBnB and various 
+                    financial apps relied on a solid vetting process. World Wildlife Fund was 
+                    well-known for motivating end-users to make donations. AirBnB Open Homes 
+                    encompassed, at a high level, all of the challenge characteristics as 
+                    Key Conservation.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/3-301-inspiration.png' width="100%" alt="Comparative analysis with hueristics call-outs">
+                    <div class="spacer-medium"></div>
+                  </div>
+
+                  <div class="spacer-medium"></div>
+
+                  <div class="key-challenge">
+                    <h3>
+                      Our Biggest Challenge
+                    </h3>
+
+                    <p>
+                      We learned early-on that our client was passionately attached to 
+                      the existing app design and processes &ndash; because they were completely 
+                      her creation. The client had imagined the features, designed the 
+                      marketing materials, and had even drawn the artboards for the 
+                      mobile screens.
+                    </p>
+
+                    <p>
+                      In order to advocate for the end-user for a successful product outcome, 
+                      the UX team had to thread the needle on multiple fronts:
+                    </p>
+
+                    <p>
+                      <b>To accommodate, or to challenge?</b> The client's assumption was that 
+                      visually stimulating graphics would solve the applicant follow-through 
+                      problem. As UX designers, we evaluated follow-through at a fundamental 
+                      level, and our research exposed structural issues that cosmetic adjustments 
+                      would not fix.
+                    </p>
+                    
+                    <p>
+                      <b>To add, or to subtract?</b> The client's proposed solution was additive 
+                      &ndash; spice up a boring process by using pre-selected dynamic backgrounds, on-trend graphics, and effects. The UX team's findings suggested a subtractive approach &ndash; simplify the process and visuals to help the end-user move quickly over the 
+                      administrative hurdle.
+                    </p>
+
+                    <p style="margin-bottom: 0;">
+                      <b>Wings, or roots?</b> The client's ideas were big-picture and visionary. 
+                      Our appraisal of her ideas were detailed and evidence-based.
+                    </p>
+
+                  </div>
+
+              </section>
+              
+              <div class="spacer-large"></div>
+
+              <section id="decisions">
+
+                <div class="block-fg-narrow">
+
+                  <h2>
+                    Improved Onboarding Designs
+                  </h2>
+
+                  <p>
+                    Some interfaces best serve end-users by inviting them to linger, while other interfaces are meant to be moved through with ease. The onboarding process fit the latter category, combining function and aesthetics to roll out the red carpet to member organizations.
+                  </p>
+
+                  <div class="spacer-medium"></div>
+                  
+                  <h3>
+                    A Structurally Improved User Flow
+                  </h3>
+
+                  <p class="goal goal-keycons">
+                    Primary objective: Encourage follow-through of a lengthy onboarding process, while providing Key Conservation with business data from member organizations.
+                  </p>
+
+                  <p>
+                    At the center of our onboarding solution was a commitment to clarity. We simplified the information architecture, thereby smoothing out the user flow for potential member organizations.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-101-workflow-new.png' width="100%" alt="Improved workflow diagram">
+                    <p class="caption">
+                      Proposed: An improved user flow would simplify a complex onboarding process and consolidate it to one environment.
+                    </p>
+                  </div>
+
+                  <p>
+                    In the improved user flow, we:
+                    <ul>
+                      <li>
+                        Removed three environments and one waiting period entirely.
+                      </li>
+                      <li>
+                        Created a parallel track wherein the user can opt to complete the profile while waiting for approval.
+                      </li>
+                      <li>
+                        Moved the entire process to occur in-app.
+                      </li>
+                      <li>
+                        Recommended that the marketing site and mobile app be made responsive (future scope).
+                      </li>
+                      <li>
+                        Paired each requested input field with the stated intent of each step.
+                      </li>
+                      <li>
+                        Removed almost 40 survey questions that did not map to directly to an onboarding step &ndash; saving them for short <i>post-approval</i> in-app surveys.
+                      </li>
+                    </ul>
+                  </p>
+
+                </div>
+
+                <div class="spacer-medium"></div>
+
+                <div class="block-fg-narrow">
+
+                  <h3>
+                    Secondary Design Wins... &amp; Losses
+                  </h3>
+
+                  <p class="goal goal-keycons">
+                    Secondary Objective: To visually project trust, clarity, and reliability, while respecting the client's brand aesthetic.
+                  </p>
+
+                  <p>
+                    Our primary objective was to improve onboarding follow-through. Graphically, we could boost Key Conservation's credibility by refining the design system. Following are three examples of how we challenged the pre-existing visual design.
+                  </p>
+
+                  <div class="spacer-small"></div>
+
+                  <h4>
+                    Projecting Clarity through Typeface Hierarchy
+                  </h4>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-301-text-old.png' width="100%" alt="Old typeface hierarchy">
+                    <p class="caption">
+                      The original typefaces limited hierarchy options and were not mobile-friendly.
+                    </p>
+                  </div>
+
+                  <p>
+                    The pre-existing typefaces were more suited for desktop headlines than for mobile device content, and their limited weights made text hierarchy a challenge. We proposed two mobile-friendly font families which came in multiple weights: Lato and Open Sans. Since the pre-existing content was so text-heavy, we chose Lato, which was narrower but did not compromise legibility.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-302-text-new.png' width="100%" alt="New typeface hierarchy">
+                    <p class="caption">
+                      After: A simple sans-serif typeface with multiple weights allowed for better readability optimized for mobile environments.
+                    </p>
+                  </div>
+
+                  <div class="spacer-small"></div>
+
+                  <h4>
+                    Improving Accessibility by Expanding the Color Palette
+                  </h4>
+                 
+                  <div>
+                    <img src='./../images/projects/kc-app/4-401-color-old.png' width="100%" alt="Old color palette">
+                    <p class="caption">
+                      The original color palette did not allow for multiple button or field states.
+                    </p>
+                  </div>
+
+                  <p>
+                    The pre-existing palette contrast ratios only met 
+                    <a class="bright-link" href="https://www.interactiveaccessibility.com/services/wcag-20-compliance">
+                    WCAG 2.0 AA compliance standards</a> in limited combinations. 
+                    Neon on black appeared off-message. This left few options to depict states and to differentiate primary focus, and no options for secondary focus.
+                  </p>
+
+                  <p>
+                    We proposed alternative palettes reflective of conservation themes, but the client felt that the typical conservation aesthetic was dull.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-402-color-test.png' width="100%" alt="Proposed color palette options">
+                    <p class="caption">
+                      A sampling of proposed alternative color schemes.
+                    </p>
+                  </div>
+                 
+                  <p>
+                    The pre-existing color palette was ultimately deemed off-limits, but we negotiated to  expand it to allow for accessible combinations.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-403-color-new.png' width="100%" alt="Expanded color palette">
+                    <p class="caption">
+                    After: An expanded color palette provided more options for states and affordances.
+                    </p>
+                  </div>
+
+                  <div class="spacer-small"></div>                  
+
+                  <h4>
+                    Supporting Mission &amp; Message by Challenging Brand Imagery
+                  </h4>
+
+                  <p>
+                    The pre-existing brand graphics included a set of animal skin and fur textures. We were tasked with incorporating them into the onboarding process as a means to engage the applicant.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-501-brand-old.png' width="100%" alt="Pre-existing branding">
+                    <p class="caption">
+                      The marketing imagery promoting the Key App heavily relied on up-close animal textures.
+                    </p>
+                  </div>
+
+                  <p>
+                    Our first concern was whether the textures were sending the wrong message. We created a simple test in which fifteen participants were each shown one of the mobile screens below, and asked to guess the subject. On the left was the pre-existing splash screen. The middle screen reflected a traditional conservation aesthetic, with a highly emotive image. The right screen was a hybrid &ndash; retaining the use of texture, while adding context and emotion by including the animal's eye.
+                  </p>
+
+                  <div>
+                    <img src='./../images/projects/kc-app/4-502-brand-test.png' width="100%" alt="User test for brand messaging">
+                    <p class="caption">
+                      User test results compared the existing loading screen and two alternate approaches to imagery and brand.
+                    </p>
+                  </div>
+
+                  <p>
+                    Responses for the pre-existing screen showed that participants correlated the image with pets rather than wild species; and apparel rather than live animals. However, the textures were central to the brand (and the client's) identity. Changes were off the table.
+                  </p>
+                  
+                  <p>
+                    Our second concern was about clarity. From our research, it seemed unlikely that follow-through would improve with flashier screens. We proposed keeping form input screens free of clutter, and incorporating textures as backgrounds on timed transition screens. On those screens, we selected the client-provided textures least likely to be associated with pets or apparel.
+                  </p>
+
+                  <p>
+                    The timed screens had the added bonus of reinforcing the new structure of onboarding steps, while aligning with the client's bright and bold aesthetic.
+                  </p>
+
+                </div>
+
+                <div class="block-bg-dark">
+                  <div class="block-fg-wide" style="text-align: center; white-space: nowrap;">
+                    <img class="drop-shadow" src='./../images/projects/kc-app/4-511-brand1-new.png' width="24%" alt="Mobile screen showing improved branding">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/4-512-brand2-new.png' width="24%" alt="Mobile screen showing improved branding">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/4-513-brand3-new.png' width="24%" alt="Mobile screen showing improved branding">
+                    <div style="display: inline-block; width: 1%;"></div>
+                    <img class="drop-shadow" src='./../images/projects/kc-app/4-514-brand4-new.png' width="24%" alt="Mobile screen showing improved branding">
+                  </div>
+                </div>
+
+                <div class="spacer-medium"></div>
+
+              </section>
+
+              <div class="spacer-large"></div>
+              
+              <section id="solutions">
+              
+                <div class="block-fg-narrow">
+
+                  <h3>
+                    What We Delivered
+                  </h3>
+
+                  <p>
+                    Having addressed the problem of follow-through observed during conservation organization onboarding, we prepared a deliverable package of proposed next steps that would set up the next team for a smooth transition. This included:
+                    <ul>
+                      <li>
+                        The improved user flow diagram
+                      </li>
+                      <li>
+                        Figma artboards and click-through prototype of the organization onboarding process
+                      </li>
+                      <li>
+                        User test and analytics goals for this and future iterations
+                      </li>
+                      <li>
+                        Suggested product roll-out, prioritizing core functions and documenting the Client's full app vision
+                      </li>
+                    </ul>
+                  </p>
+
+                </div>
+
+                <div>
+                  <img src='./../images/projects/kc-app/4-201-screens-new.png' width="100%" alt="Improved mobile screens for onboarding">
+                  <div class="spacer-medium"></div>
+                </div>
+
+              </section>
+
+              <div class="spacer-large"></div>
+
+            <!-- Footer -->
+
+              <div class="spacer-medium"></div>
+
+              <div style="width: 80%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
+                <!--Col 1: Client-->
+                <div style="flex:0 1 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Key Conservation</b><br>
+                    Megan Cromp, Founder
+                  </p>
+                </div>
+                <!--Col 2: UX Designers-->
+                <div style="flex:0 1 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>User Experience</b><br>
+                    Nilpa Jhaveri, UX Designer<br>
+                    Dylan Stephenson, UX Designer
+                  </p>
+                </div>
+                <!--Col 3: Devs-->
+                <div style="flex:0 1 1; display:flex;">
+                  
+                  <div class="credits" style="flex:0 1 1; line-height: 200%;">
+                    
+                    <b>React Native Developers</b><br>
+                    
+                    <!-- Sub-column Left -->
+                    <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
+                      Cameron Alvarado<br>
+                      Blake Goms<br>
+                      Julie Gumerman<br>
+                    </p>
+
+                    <!-- Sub-column Spacer -->
+                    <div style="display: inline-block; width: 20px; flex-direction: row;"></div>
+                    
+                    <!-- Sub-column Right -->
+                    <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
+                      Iris Jitomo<br>
+                      Jonathan Solari<br>
+                      Yi Lun Weng
+                    </p>
+                  </div>
+                </div>
+                <!--Col 4: Leads-->
+                <div style="flex:0 1 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Leadership</b><br>
+                    Katie Felton, Team Lead<br>
+                    David Monson, UX Manager
+                  </p>
+                </div>
+              </div>
+
+              <div class="spacer-medium"></div>
+
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+</html>
