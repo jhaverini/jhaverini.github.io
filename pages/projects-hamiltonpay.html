@@ -64,94 +64,105 @@
                   </h1>  
                 </div>
 
-                <img width="100%" src="../images/projects/hamiltonpay/00-hp-hero.jpg"/>
+                <img width="100%" src="../images/projects/hamiltonpay/00-hp-hero.png"/>
 
                 <div class="spacer-large"></div>
 
                 <div class="block-fg-narrow">
 
-                  <h3>Problem: Transaction costs have a big impact on small businesses</h3> 
+                  <h3>Enabling faster, safer, cheaper transactions</h3> 
                   
                   <p>
-                    Payment collection options for businesses are <b>slow</b>, <b>unsafe</b>, and <b>expensive</b>:
+                    HamiltonPay is an improved payment collection platform that embraces smart contracts to minimize fraud, labor, and human error costs. These costs disproportionately affect micro-entrepreneurs who sell goods and services.
                   </p>
 
-                  <p>
-                    <ul>
-                      <li>Account transactions take 3-5 business days to process</li>
-                      <li>Checks and ACH expose account details</li>
-                      <li>Forms are error-prone</li>
-                      <li>Each transaction costs 2-3% of its value; roughly $1.7T are lost in fees, fraud, errors, and labor costs</li>
-                    </ul>
-                  </p>
-
-                  <p>
-                    By continuing to execute transactions on old infrastructure, everyone loses. <b>Small businesses</b> are especially impacted, because they can't absorb costs like big businesses and banks can. 
+                  <p class="goal">
+                    I designed user-friendly payment flows, dashboards, and integration flows for six high-fidelity, functioning product demos, attracting a range of early adopters and investors. 
                   </p>
            
                   <div class="spacer-small"></div>
 
-                  <h3>HamiltonPay: Faster, safer, cheaper</h3> 
+                  <!--horizontal line over this, change to a heading type maybe-->
+                  <p>My Contributions</p>
+
+                  <h3>Designed custom variations of a product</h3> 
 
                   <p>
-                    HamiltonPay is trying to make payment collection instant and secure, for a low flat fee, by rethinking the technology infrastructure. A key part of this overhaul is blockchain.
+                    I worked closely with the development team to understand the back-end well enough to design landing pages, dashboard views, and key user flows specific to:
+                    <ul>
+                      <li>
+                        Individual fitness trainers, and their students / customers
+                      </li>
+                      <li>
+                        Independent health practitioners, and their patients
+                      </li>
+                      <li>
+                        Micro entrepreneurs, and their buyers / customers
+                      </li>
+                      <li>
+                        Web developers building sites using HamiltonPay’s API
+                      </li>
+                    </ul>
                   </p>
+                
+                  <!--this needs to be wider but what happens at breakpoints?-->
+                  <div style="padding-bottom: 32px;" class="hamiltonpay-grid-container">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01a-landing-smbiz.jpg">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01b-landing-fitness.jpg">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01c-landing-clinic.jpg">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01d-dashboard-smbiz.jpg">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01e-dashboard-fitness.jpg">
+                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/01f-dashboard-clinic.jpg">
+                  </div>
+                  
+                  <p>
+                    The customer-side interface was tricky. These were end-users who hadn’t chosen to pay using the app. To communicate trust, I crafted transparent explanations. To balance trust and ease of use, I paired every automated step with a manual option.
+                  </p>
+
+                  <img width="100%" style="padding-bottom: 32px;" src="../images/projects/hamiltonpay/02-poster-crop.jpg"/>
+
+                  <h3>Explored UI for tie-in of third-party integrations</h3>
 
                   <p>
-                    Blockchain is commonly associated with cryptocurrency, but it has another application: <b>smart contracts</b>. Transactions execute only when a limited set of parameters, via smart contracts, are met. HamiltonPay whitelists transaction pipelines to quickly process smart contracts between trusted partners. End-users' accounts stay private. These approaches together are intended to make payments faster, safer, and cheaper. 
+                    Tying in third-party integrations often leads to confusion as the end-user moves between different environments. The developers wanted to use them as hold-overs until they could be built in-house. I explored how integrations could initially plug in seamlessly to user flows for initial demos and validation for future scope. 
                   </p>
-        
-                  <div class="spacer-small"></div>
+                  
+                  <!--this needs to be wider but what happens at breakpoints?-->
+                  <img width="100%" style="padding-bottom: 32px;" src="../images/projects/hamiltonpay/03-flow-diagram.png"/>
 
-                  <h3>Designing within shared systems</h3>
+                  <div class="spacer-large"></div>
 
+                  <h3>Established a preliminary design system</h3>
                   <p>
-                    <b>Understanding the data model at a high level:</b> Monetary transactions are complex. I first researched how end-users currently make transactions and how banks process them. To understand the intervention proposed by HamiltonPay, the developer-built admin page became my window to the back-end, which provided the right granularity of information to understand how to simplify the different end-user experiences on the site. 
+                    Using Tailwind UI’s Figma components, I semi-customized and managed the design system. The resulting layouts were essentially wireframes with the appearance of finished products, built at speed. This allowed me to user-test flows without linking together pixel-perfect prototype screens, before nailing down a final design.
                   </p>
 
-                  <img width="100%" style="padding-bottom: 32px;" src="../images/projects/hamiltonpay/01-admin-dashbd.png"/>
+                  <!--this needs to be wider-->
+                  <img width="100%" style="border: 1px solid #7A7C80" src="../images/projects/hamiltonpay/04-design-sys.jpg">
 
-                  <p>
-                    By removing any redundancies in requests to the end-users, identifying where mistakes typically occured, and finding out what information could be pulled from linked platforms with user consent, we could minimize user errors. Errors are a huge source of grief in monetary transactions.
-                  </p>
+                  <div class=""spacer-small></div>
 
-                  <p>
-                    <b>Using a design system to help rapidly create working demos:</b> During the early stage, we used Tailwind UI, an off-the-shelf development framework with accompanying Figma components. With the large library of layouts, components, and individual elements, I created our own semi-custom design system that the developers could build quickly. I essentially created wireframes that gave the appearance of being high-fidelity, which the team could quickly turn into working product demos to pitch for seed funding.
-                  </p>
-    
-                  <img width="100%" style="border: 1px solid #7A7C80" src="../images/projects/hamiltonpay/02-design-sys.jpg">
-    
-                  <div class="spacer-medium"></div>
-
-                  <p>
-                    <b>Maintaining consistency across product variants:</b> Our earliest adopters were independent fitness trainers who had shifted their sessions and payments online during the pandemic. Next came independent medical clinics, whose payment collections were more complex. Bookended by the two were solo/micro entrepreneurs. Web developers, as well, needed an entirely different kind of site to find documentation for adding the HamiltonPay API to payment flows.
-                  </p>
+                  <!--line above-->
+                  <p>Takeaways</p>
 
                   <p>
                     Our solutions needed to share a central structure, while addressing each group's unique needs. For that reason, much of my focus was on diagrams of user flows, which helped to identify shared functions versus distinct feature sets.
                   </p>
 
-                  <img width="100%" src="../images/projects/hamiltonpay/03-flow-diagram.png">
-
                   <p>
-                   We also wanted our solutions to visually belong together to keep demos simple at the early stage. These are three different landing pages with their corresponding dashboards.
+                    <ul>
+                      <li>
+                        A developer-created admin view was a great starting point understand what info is really needed to request from an end-user to accomplish a task.
+                      </li>
+                      <li>
+                        I needed to consistently emphasize product usability to remind the team how UX design is foundational to the products, not simply a cosmetic top-coat.
+                      </li>
+                      <li>
+                        It was a chance to wear many hats: I served as copy editor, contributed to marketing material, and did the voiceovers for demo videos.
+                      </li>
+                    </ul>
                   </p>
 
-                  <div class="hamiltonpay-grid-container">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04a-landing-smb.jpg">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04b-landing-fitness.jpg">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04c-landing-clinic.jpg">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04d-dashboard-smb.jpg">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04e-dashboard-fitness.jpg">
-                    <img class="hamiltonpay-grid-image" src="../images/projects/hamiltonpay/04f-dashboard-clinic.jpg">
-                  </div>
-                   
-                  <div class="spacer-large"></div>
-
-                  <h3>Wearing many hats</h3>
-                  <p>
-                    In addition to my UX responsibilities, I assisted with editing and critiquing pitch decks, proposing landing page content, creating promotional materials, and drafting scripts and doing voice-overs for recorded demos.
-                  </p>
                 </div>
 
                 <img width="100%" src="../images/projects/hamiltonpay/05-mockups.jpg">
