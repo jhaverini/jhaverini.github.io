@@ -1,0 +1,634 @@
+/* Fonts - constructed at https://fonts.google.com. */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Variables */
+:root {
+  /* Colors */
+  --top-nav-link-color: #777;
+  --top-nav-link-color-hover: #222;
+  --top-nav-link-color-current: #000;
+  --bright-link-color: #2429B2;
+  --bright-link-color-hover: #000AFF;
+  --color-text-default: #080707;
+  --color-text-alt: #908f8f;
+  --color-section-alt: rgba(13, 38, 18, 0.05);
+  --color-project-keycons: #4cd964;
+  --color-project-nicu: #006ba6;
+  --color-project-default: #00AAFF;
+  /* Fonts */
+  --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
+  --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
+  /* Dimensions */
+  --header-content-tall-height: 88px;
+  --header-content-short-height: 37px;
+  --header-shadow-height: 20px;
+  --content-width: 1280px;
+  --content-width-narrow: 800px;
+  --hero-img-width: 840px;
+  --hero-img-offset: 107px;
+}
+
+/* Styles */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  background-color: #fafafa;
+  font-family: var(--font-family-default);
+  text-align: left;
+  color: var(--color-text-default);
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-family: var(--font-family-alt);
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 120%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+h5 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 200%;
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+p.caption {
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 150%;
+  color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.credits {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-text-alt);
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+ul {
+  font-weight: 300;
+  line-height: 200%;
+  padding-left: 18px;
+  margin-top: -24px;
+  margin-bottom: 32px;
+}
+
+b {
+  font-weight: 600;
+}
+
+a, a:visited {
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--top-nav-link-color-hover);
+}
+
+a.negate-hover:hover {
+  color: var(--top-nav-link-color);  /* For text */
+  filter: brightness(100%);  /* For images */
+  text-decoration: none;
+  cursor: default;
+}
+
+a.bright-link, a.bright-link:visited {
+  color: var(--bright-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.bright-link:hover {
+  color: var(--bright-link-color-hover);
+}
+
+.company-name {
+  color: var(--color-text-alt);
+}
+
+.header {
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-content {
+  height: var(--header-content-tall-height);
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  transition: height 300ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-content-inner {
+  width: var(--content-width-narrow);
+  background-color: white;
+  overflow: hidden;
+  transition: height 300ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-content-short {
+  /* Over-ride to shorten header height */
+  height: var(--header-content-short-height);
+}
+
+.header-shaddow {
+  height: var(--header-shadow-height);
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+}
+
+.header-line1-link {
+  font-family: var(--font-family-alt);
+  font-size: 1.6rem;
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+  margin: 0px;
+  white-space: nowrap;
+}
+.header-line1-link:visited {
+  color: var(--top-nav-link-color);
+  text-decoration: none;
+}
+.header-line1-link:hover {
+  color: var(--top-nav-link-color-hover);
+}
+.header-line1-link.home {
+  font-family: var(--font-family-alt);
+  font-size: 2.0rem;
+}
+.header-line1-link.current {
+  color: var(--top-nav-link-color-current);
+  text-decoration: none;
+}
+
+.header-line1 {
+  width: 100%;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.header-line1-left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header-line1-right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.header-line2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+.header-line2-title {
+  font-family: var(--font-family-alt);
+  font-size: 1.5rem;
+  font-weight: 200;
+  touch-action: none;
+}
+
+.footer {
+  padding-bottom: 20px;
+}
+
+.footer-line {
+  text-align: center;
+  color: gray;
+}
+
+.footer-contact-link {
+  filter: brightness(100%);
+}
+.footer-contact-link:visited {
+  filter: brightness(100%); /* Same as normal value */
+}
+.footer-contact-link:hover {
+  filter: brightness(0%);
+}
+.footer-contact-link:active {
+  filter: brightness(100%);
+}
+
+.page {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--header-content-tall-height);
+  transition: padding-top 300ms ease;  /* Keep in sync with header-content transition type & length */
+}
+
+section {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+}
+
+.block-bg-light {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-bg-dark {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+.block-fg-narrow {
+  width: var(--content-width-narrow);
+}
+
+.block-fg-wide {
+  width: var(--content-width);
+}
+
+
+.goal { /**/
+  width: 100%;
+  font-weight: 600;
+  line-height: 200%;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  padding-left: 20px;
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: var(--color-project-default);
+}
+
+.goal-keycons { /* Use together with goal, as "compound class" */
+  border-left-color: var(--color-project-keycons);
+}
+
+.goal-nicu { /* Use together with goal, as a "compound class" */
+  border-left-color: var(--color-project-nicu);
+}
+
+.key-challenge {
+  border:1px solid #F3C3C6; 
+  background-color: #FEFBFB;
+  padding-left:24px;
+  padding-right:24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.client-list {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  line-height: 250%;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 0px 8px #26262655);
+  
+  /* option 2 copied from CSS Scan shadow #1, need to convert to drop-shadow */
+  /* filter: drop-shadow(0px 7px 29px 0px  */
+  
+  /* option 3 from Figma */
+  /* filter: drop-shadow(0px 4px 4px #62626214);
+  filter: drop-shadow(0px 8px 32px #00000029); */
+  
+  /* option 4 copied from CSS Scan shadow #3, convert to drop-shadow */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+a.project-index-image {
+  filter: brightness(100%);
+}
+
+a.project-index-image:hover {
+  filter: brightness(110%);  
+}
+
+a.project-index-name:hover {
+  color: var(--top-nav-link-color-hover);
+}
+
+.spacer-large {
+  height: 48px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-medium {
+  height: 32px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-small {
+  height: 16px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.project-summary {
+  display: flex; 
+  flex-direction: row;
+}
+
+
+.project-grid-container {
+  /* first breakpoint*/
+  --w1:1200px;
+  --n:5;
+  /* second breakpoint*/
+  --w2:500px;
+  --m:3;
+  /* third breakpoint*/
+  --w3:200px;
+  --p:2;
+
+  /*
+    Flexible grids with breakpoints are hard.
+    We used the last approach from this tutorial:
+    https://css-tricks.com/responsive-layouts-fewer-media-queries/
+  */
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,
+      minmax(clamp(clamp(clamp(  
+            100%/(var(--n) + 1) + 0.1%,
+              (var(--w1) - 100%)*1000,
+            100%/(var(--m) + 1) + 0.1%), 
+              (var(--w2) - 100%)*1000,
+            100%/(var(--p) + 1) + 0.1%), 
+              (var(--w3) - 100%)*1000,
+            100%), 1fr));
+  gap:3%;
+  margin:0px;
+}
+.project-grid-tile {
+  display: block;
+  filter: brightness(100%);
+}
+.project-grid-tile:hover {
+  filter: brightness(110%);  
+}
+.project-grid-tile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.project-grid-tile-header {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+.project-grid-tile-footer-title {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.project-grid-tile-footer-blurb {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  color: var(--color-text-default);
+}
+
+.hamiltonpay-grid-container {
+  /* first breakpoint*/
+  --w1:1200px;
+  --n:5;
+  /* second breakpoint*/
+  --w2:500px;
+  --m:3;
+  /* third breakpoint*/
+  --w3:200px;
+  --p:2;
+
+  /*
+    Image grid w/ breakpoints, for HamiltonPay project
+    Flexible grids with breakpoints are hard.
+    We used the last approach from this tutorial:
+    https://css-tricks.com/responsive-layouts-fewer-media-queries/
+  */
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,
+      minmax(clamp(clamp(clamp(  
+            100%/(var(--n) + 1) + 0.1%,
+              (var(--w1) - 100%)*1000,
+            100%/(var(--m) + 1) + 0.1%), 
+              (var(--w2) - 100%)*1000,
+            100%/(var(--p) + 1) + 0.1%), 
+              (var(--w3) - 100%)*1000,
+            100%), 1fr));
+  gap:9px;
+  overflow:hidden;
+  margin:0px;
+}
+.hamiltonpay-grid-image {
+  display: block;
+  width: 100%;
+  border: 1px solid #85D1DC;
+}
+
+/* Currently used in Vox Pulmini project page, but could be used more broadly (?) */
+.indented {
+  margin-left: 16px;
+}
+
+
+.hero-block-bg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content-container {
+  width: var(--content-width);
+  display: flex;
+  flex-direction: row;  
+}
+
+.hero-image-container {
+  width: calc(var(--hero-img-width) - var(--hero-img-offset));
+  overflow: visible;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-image {
+  width: 840px;
+}
+
+
+
+.hero-text-container {
+  flex: 1;
+  width: 100%;
+  min-height: 100px;
+}
+
+
+/* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
+@media only screen and (max-width: 1100px) {
+  
+  .project-summary {
+    flex-direction: column;
+  }
+
+  .header {
+    width: calc(100vw - 40px);
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
+@media only screen and (max-width: 840px) {
+
+  .hero-content-container {
+    width: 100%;
+    flex-direction: column;  
+  }
+
+  .hero-image-container {
+    width: 100%;
+    z-index: 1; /* Ensure contained image appears on top */
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 90%;
+  }
+
+  .block-fg-narrow {
+    width: var(--content-width);
+  }
+}
