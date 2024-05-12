@@ -8,6 +8,8 @@
   --top-nav-link-color-hover: #222;
   --top-nav-link-color-current: #000;
   --bright-link-color: #2429B2;
+  --prev-next-proj-link-color: #A5A5A5;
+  --prev-next-proj-link-color-hover: #444;
   --bright-link-color-hover: #000AFF;
   --color-text-default: #080707;
   --color-text-alt: #908f8f;
@@ -22,17 +24,29 @@
   --header-content-tall-height: 88px;
   --header-content-short-height: 37px;
   --header-shadow-height: 20px;
-  --content-width: 1280px;
-  --content-width-narrow: 800px;
+  --content-width: min(1280px, 100%);
+  --content-width-narrow: min(800px, 90vw);
   --hero-img-width: 840px;
   --hero-img-offset: 107px;
 }
 
-/* Styles */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+
+/* Styles */
 
 html {
   box-sizing: border-box;
@@ -163,7 +177,7 @@ a.bright-link:hover {
   color: var(--color-text-alt);
 }
 
-.header {
+.heading { /* Naming this header seems to cause subtle problems... */
   z-index: 100;
   position: fixed;
   top: 0px;
@@ -305,6 +319,8 @@ a.bright-link:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: var(--header-content-tall-height);
   transition: padding-top 300ms ease;  /* Keep in sync with header-content transition type & length */
 }
@@ -342,11 +358,27 @@ section {
 }
 
 .block-fg-narrow {
+  flex: 1 1 auto;
   width: var(--content-width-narrow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .block-fg-wide {
+  flex: 1 1 auto;
   width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 
@@ -558,6 +590,40 @@ a.project-index-name:hover {
   margin-left: 16px;
 }
 
+.prev-next-proj {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.prev-next-proj-separator {
+  color: var(--prev-next-proj-link-color);
+}
+
+.prev-next-proj-link {
+  font-family: var(--font-family-alt);
+  font-size: 1.6rem;
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
+  margin: 0px;
+  white-space: nowrap;
+}
+.prev-next-proj-link:visited {
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
+}
+.prev-next-proj-link:hover {
+  color: var(--prev-next-proj-link-color-hover);
+}
+.prev-next-proj-link.home {
+  font-family: var(--font-family-alt);
+  font-size: 2.0rem;
+}
+.prev-next-proj-link.current {
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
+}
+
+
 
 .hero-block-bg {
   width: 100%;
@@ -587,14 +653,52 @@ a.project-index-name:hover {
   width: 840px;
 }
 
-
-
-.hero-text-container {
+.hero-data-container {
   flex: 1;
   width: 100%;
   min-height: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  position: relative; /* So can hold absolute elements, e.g, inset image */
 }
 
+.hero-data-table {
+  color: white;
+  font-size: 15px;
+  border-spacing: 10px;
+}
+
+.hero-data-table-row {
+  vertical-align: top;
+}
+
+.hero-data-heading {
+  font-weight: 500;
+}
+
+.hero-data-line {
+  font-weight: 300;
+}
+
+.hero-data-list {
+  font-weight: 300;
+  line-height: unset;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.hero-data-list-element {
+  margin-bottom: 9px;
+}
+
+.hero-data-inset-image-container {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
 
 /* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
 @media only screen and (max-width: 1100px) {
@@ -610,8 +714,18 @@ a.project-index-name:hover {
   }
 }
 
-/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
-@media only screen and (max-width: 840px) {
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL (TABLET) SCREENS... */
+@media only screen and (max-width: 1200px) {
+
+  .block-fg-narrow {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .block-fg-wide {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   .hero-content-container {
     width: 100%;
@@ -625,10 +739,33 @@ a.project-index-name:hover {
   }
 
   .hero-image {
-    width: 90%;
+    width: 95%;
+  }
+
+  .hero-data-container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .hero-data-inset-image-container {
+    visibility: hidden;
   }
 
   .block-fg-narrow {
     width: var(--content-width);
   }
+}
+
+
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALLER (PHONE) SCREENS... */
+@media only screen and (max-width: 400px) {
+
+  .header-line1-link {
+    font-size: 1.4rem;
+  }
+  .header-line1-link.home {
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+  }
+
 }
