@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+    <title>Projects</title>
+  </head>
+  
+  <body>
+
+    <div class="page" id="page">
+      <script>
+        wh.writeHeader();
+      </script>
+
+      <section>
+        <div class="block-bg-light">
+          <div class="block-fg-narrow">
+            
+            <div class="spacer-large"></div>
+
+            <!-- Case Studies -->
+            <h3>
+              Case Studies
+            </h3>
+
+            <!-- Key Conservation -->
+            <div class="project-summary">
+
+              <!--Col 1: Photo-->
+              <div style="flex:2;">
+                <a class="project-index-image" href="./projects-key-conservation-app.html">
+                  <img src="./../images/projects/index/image-key.jpg" width="100%">
+                </a>
+              </div>
+
+              <!--Col 2: Text-->
+              <div style="flex:1; 
+                display: flex;
+                flex-direction: column; 
+                justify-content: space-between;
+                padding-left: 14px;
+                ">
+                <!-- Top-aligned -->
+                <div>
+                  <h5>
+                    Mobile App &bull; UI/UX Designer
+                  </h5>
+                  <h4 style="margin-bottom:8px">
+                    Enlisting community to replenish local biodiversity
+                  </h4>
+                  <p style="font-size: 1.4rem; line-height: 175%; margin-bottom: 0px;">
+                    Key Conservation empowers anyone carrying a smartphone to help conservation organizations with small to large scale campaigns &ndash; locally and in real-time.
+                  </p>
+                </div>
+                <!-- Bottom-aligned -->
+                <div style="padding-bottom: 5px; padding-top: 5px;">
+                  <a class="project-index-name" href="./projects-key-conservation-app.html">
+                    <b> View Case Study</b>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="spacer-medium"></div>
+
+            <!-- Kaiser NICU -->
+            <div class="project-summary">
+
+              <!--Col 1: Photo-->
+              <div style="flex:2">
+                <a class="project-index-image" href="./projects-kaiser-nicu.html">
+                  <img src="./../images/projects/index/image-nicu.jpg" width="100%">
+                </a>
+              </div>
+              
+              <!--Col 2: Text-->
+              <div style="flex:1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-left: 16px"
+                >
+                <!-- Top-aligned -->
+                <div>
+                  <h5>
+                    Built Environment &bull; Project Designer
+                  </h5>
+                  <h4 style="margin-bottom:8px">
+                    Designing a Neonatal Intensive Care Unit: UX at the boundary of life death
+                  </h4>
+                  <p style="font-size: 1.4rem; line-height: 175%; margin-bottom: 0px;">
+                    Kaiser's Neonatal ICU supports society's most fragile members, pioneering an evidence-based approach featuring private rooms for unwell newborns and their families &ndash; based on the idea that loved ones are a key part of patients' care teams.
+                  </p> 
+
+                </div>
+                <!-- Bottom-aligned -->
+                <div style="padding-bottom: 5px; padding-top: 5px;">
+                  <a class="project-index-name" href="./projects-kaiser-nicu.html">
+                    <b>View Case Study</b>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="spacer-large"></div>
+            
+            <!-- Selected Projects -->
+            <h3>
+              Selected Projects
+            </h3>
+
+            <!-- Project Grid -->
+            <!-- 
+              Flexible grids with breakpoints are hard.
+              We used the last approach from this tutorial:
+              https://css-tricks.com/responsive-layouts-fewer-media-queries/
+            -->
+            <div class="project-grid-container">
+
+              <!-- NOTE:
+                When ready:
+                  * Replace "negate-hover" with "project-index-image"
+                  * Replace "x-href" with "href"
+              -->
+
+              <!-- Iterant -->
+              <a class="project-grid-tile"
+                href="./projects-iterant.html"
+              >
+                <div class="project-grid-tile-header">
+                  WEB APPLICATION &bull; UX DESIGNER
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-iterant.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  Iterant | Circular Economy
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  Incentivizing longer lifecycles for durable, reusable goods
+                </div>
+              </a>
+
+              <!-- HamiltonPay -->
+              <a class="project-grid-tile project-index-image"
+                href="./projects-hamiltonpay.html"
+              >
+                <div class="project-grid-tile-header">
+                  RESPONSIVE WEB APP &bull; UX DESIGNER
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-hamilton.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  HamiltonPay | FinTech
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  Enabling better payment collection options for small businesses
+                </div>
+              </a>
+
+              <!-- SpeakOut -->
+              <a class="project-grid-tile project-index-imager"
+                href="./projects-speakout.html"
+              >
+                <div class="project-grid-tile-header">
+                  RESPONSIVE WEB APP &bull; UX DESIGNER
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-speakout.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  SpeakOut | Education
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  Equalizing access to business English in Bahrain
+                </div>
+              </a>
+
+              <!-- Konica Minolta -->
+              <a class="project-grid-tile project-index-image"
+                href="./projects-konica-minolta.html"
+              >
+                <div class="project-grid-tile-header">
+                  BUILT ENVIRONMENT &bull; ARCHITECT
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-konica.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  Konica Minolta | Workplace
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  UX design and the built environment
+                </div>
+              </a>
+
+              <!-- Vox Pulmini -->
+              <a class="project-grid-tile project-index-image"
+                href="./projects-vox-pulmini.html"
+              >
+                <div class="project-grid-tile-header">
+                  MOBILE APP &bull; UX DESIGNER
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-vox.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  Vox Pulmini | Healthcare
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  Designing an app to collect audio datasets for improving kids' respiratory health
+                </div>
+              </a>
+
+              <!-- Epicore Biosystems -->
+              <a class="project-grid-tile negate-hover"
+                x-href=""
+              >
+              <div class="project-grid-tile-header">
+                MOBILE APP &bull; PRODUCT DESIGNER
+              </div>
+
+              <img class="project-grid-tile-image"
+                src="../images/projects/index/thumbnail-epicore.jpg"
+              >
+              <div class="project-grid-tile-footer-title">
+                Epicore Biosystems | Wearable
+              </div>
+              <div class="project-grid-tile-footer-blurb">
+                Capturing sweat loss data to keep workers in heat-intense conditions hydrated
+              </div>
+            </a>
+
+              <!-- Placeholder -->
+              <!-- <a class="project-grid-tile negate-hover"
+                x-href=""
+              >
+                <div class="project-grid-tile-header">
+                  &nbsp;
+                </div>
+                <img class="project-grid-tile-image"
+                    src="../images/projects/index/thumbnail-future.jpg"
+                >
+                <div class="project-grid-tile-footer-title">
+                  More to come...
+                </div>
+                <div class="project-grid-tile-footer-blurb">
+                  &nbsp;
+                </div>
+              </a> -->
+              
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
+
+      <div class="spacer-large"></div>
+      <div class="spacer-large"></div>
+
+      <script>
+        wf.writeFooter();
+      </script>
+    </div>
+
+    <script src="../scripts/headerResizing.js" />
+  </body>
+</html>
