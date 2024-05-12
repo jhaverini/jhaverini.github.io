@@ -16,14 +16,44 @@ const pr = { //"pr": A containing namespace, to prevent cross-file variable/func
       url: "./projects.html",
       target: "_self",
     },
-    projectKaiserNicu: {
-      name: "Case Study: Kaiser NICU",
+    projectKaiserNICU: {
+      name: "Kaiser NICU",
       url: "./projects-kaiser-nicu.html",
       target: "_self",
     },
-    projectKeyConservationApp: {
-      name: "Case Study: Key Conservation App",
+    projectEpicore: {
+      name: "Epicore App &amp; Web",
+      url: "./projects-kaiser-nicu.html",
+      target: "_self",
+    },
+    projectKeyConservation: {
+      name: "Key Conservation App",
       url: "./projects-key-conservation-app.html",
+      target: "_self",
+    },
+    projectSpeakOut: {
+      name: "SpeakOut",
+      url: "./projects-speakout.html",
+      target: "_self",
+    },
+    projectHamiltonPay: {
+      name: "HamiltonPay",
+      url: "./projects-hamiltonpay.html",
+      target: "_self",
+    },
+    projectIterant: {
+      name: "Iterant",
+      url: "./projects-iterant.html",
+      target: "_self",
+    },
+    projectMuseum: {
+      name: "Academic Website",
+      url: "./projects-museum.html",
+      target: "_self",
+    },
+    projectVoxPulmini: {
+      name: "Vox Pulmini",
+      url: "./projects-vox-pulmini.html",
       target: "_self",
     },
     resume: {
