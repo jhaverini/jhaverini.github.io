@@ -110,6 +110,7 @@ h5 {
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 400;
+  margin-bottom: 32px;
   color:var(--color-text-alt)
 }
 
@@ -657,7 +658,7 @@ a.project-index-name:hover {
 
 .hero-data-table {
   color: white;
-  font-size: 15px;
+  font-size: 1.5rem;
   border-spacing: 10px;
 }
 
