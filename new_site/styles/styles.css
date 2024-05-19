@@ -86,7 +86,7 @@ h2 {
   font-weight: 600;
   line-height: 1.2;
   margin-top: 0px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 }
 
 h3 {
@@ -584,7 +584,7 @@ a.project-index-name:hover {
 
 .prev-next-proj {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .prev-next-proj-separator {
