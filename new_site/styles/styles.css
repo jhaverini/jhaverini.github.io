@@ -43,7 +43,7 @@
 }
 
 ol, ul {
-  list-style: none;
+  list-style: disc outside;
 }
 
 *, *:before, *:after {
@@ -680,6 +680,7 @@ a.project-index-name:hover {
   padding-left: 0px;
   margin-top: 0px;
   margin-bottom: px;
+  list-style: none;
 }
 
 .hero-data-list-element {
