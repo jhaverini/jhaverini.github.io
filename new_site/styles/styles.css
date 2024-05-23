@@ -651,6 +651,28 @@ a.project-index-name:hover {
   align-items: center;
 }
 
+.hero-image-container-speakout-left {
+  width: 60%;
+  aspect-ratio: 2.31511254019;
+  overflow: hidden;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-image-container-speakout-right {
+  width: 3.28%;
+  aspect-ratio: 74 / 584;
+  overflow: hidden;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .hero-image {
   width: 840px;
 }
@@ -692,7 +714,7 @@ a.project-index-name:hover {
   line-height: normal;
   padding-left: 0px;
   margin-top: 0px;
-  margin-bottom: px;
+  margin-bottom: 0px;
   list-style: none;
   /* list-style: disc;
   list-style-position:outside;
@@ -704,7 +726,7 @@ a.project-index-name:hover {
   font-size: 0.5em;
 }
 
-.hero-data-list-element {
+.hero-data-list-element:not(:last-child) {
   margin-bottom: 9px;
 }
 
@@ -714,6 +736,17 @@ a.project-index-name:hover {
   right: 40px;
 }
 
+.nicu-users-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nicu-user-circle {
+  width: 140px; /* 167 */
+  margin: 10px;
+}
+
+
 /* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
 @media only screen and (max-width: 1100px) {
   
@@ -721,6 +754,10 @@ a.project-index-name:hover {
     flex-direction: column;
   }
 
+  .nicu-users-container {
+    flex-direction: column;
+  }
+  
   .header {
     width: calc(100vw - 40px);
     margin-left: 0px;
@@ -749,6 +786,10 @@ a.project-index-name:hover {
     width: 100%;
     z-index: 1; /* Ensure contained image appears on top */
     justify-content: center;
+  }
+
+  .hero-image-container-speakout-right {
+    visibility: hidden;
   }
 
   .hero-image {
