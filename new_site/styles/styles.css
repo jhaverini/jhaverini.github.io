@@ -26,11 +26,12 @@
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
   /* Dimensions */
-  --header-content-tall-height: 88px;
-  --header-content-short-height: 37px;
+  --header-content-tall-height: 80px;
+  --header-content-short-height: 33px;
   --header-shadow-height: 20px;
-  --content-width: min(1140px, 100%);
+  --content-width: min(1280px, 100%);
   --content-width-narrow: min(740px, 90vw);
+  --content-width-narrow2: min(786px, 90vw);
   --hero-img-width: 840px;
   --hero-img-offset: 107px;
 }
@@ -112,6 +113,14 @@ h5 {
   font-weight: 400;
   margin-bottom: 32px;
   color:var(--color-text-alt)
+}
+
+hr {
+  height: 0.1px;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-bottom-width: 1px;
 }
 
 p {
@@ -245,7 +254,7 @@ a.bright-link:hover {
 }
 .header-line1-link.home {
   font-family: var(--font-family-alt);
-  font-size: 2.0rem;
+  font-size: 1.6rem;
 }
 .header-line1-link.current {
   color: var(--top-nav-link-color-current);
@@ -289,8 +298,9 @@ a.bright-link:hover {
 }
 
 .header-line2-title {
+  margin-top: 2px;
   font-family: var(--font-family-alt);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 200;
   touch-action: none;
 }
@@ -386,7 +396,6 @@ section {
   padding-right: 0px;
 }
 
-
 .goal { /**/
   width: 100%;
   line-height: 200%;
@@ -408,6 +417,7 @@ section {
 
 
 .client-list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   font-size: 1.4rem;
@@ -641,6 +651,28 @@ a.project-index-name:hover {
   align-items: center;
 }
 
+.hero-image-container-speakout-left {
+  width: 60%;
+  aspect-ratio: 2.31511254019;
+  overflow: hidden;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-image-container-speakout-right {
+  width: 3.28%;
+  aspect-ratio: 74 / 584;
+  overflow: hidden;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .hero-image {
   width: 840px;
 }
@@ -648,6 +680,9 @@ a.project-index-name:hover {
 .hero-data-container {
   flex: 1;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100px;
   padding-top: 80px;
   padding-left: 50px;
@@ -676,22 +711,41 @@ a.project-index-name:hover {
 
 .hero-data-list {
   font-weight: 300;
-  line-height: unset;
+  line-height: normal;
   padding-left: 0px;
   margin-top: 0px;
-  margin-bottom: px;
+  margin-bottom: 0px;
   list-style: none;
+  /* list-style: disc;
+  list-style-position:outside;
+  margin-left: 12px; */
 }
 
-.hero-data-list-element {
+/* If bullets are included... */
+.hero-data-list li::marker {
+  font-size: 0.5em;
+}
+
+.hero-data-list-element:not(:last-child) {
   margin-bottom: 9px;
 }
 
 .hero-data-inset-image-container {
   position: absolute;
-  bottom: 20px;
-  right: 50px;
+  bottom: 0px;
+  right: 40px;
 }
+
+.nicu-users-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nicu-user-circle {
+  width: 140px; /* 167 */
+  margin: 10px;
+}
+
 
 /* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
 @media only screen and (max-width: 1100px) {
@@ -700,6 +754,10 @@ a.project-index-name:hover {
     flex-direction: column;
   }
 
+  .nicu-users-container {
+    flex-direction: column;
+  }
+  
   .header {
     width: calc(100vw - 40px);
     margin-left: 0px;
@@ -708,17 +766,16 @@ a.project-index-name:hover {
 }
 
 /* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL (TABLET) SCREENS... */
-@media only screen and (max-width: 1200px) {
-
-  .block-fg-narrow {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+@media only screen and (max-width: 1280px) {
 
   .block-fg-wide {
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  /* .block-fg-narrow {
+    width: var(--content-width-narrow);
+  } */
 
   .hero-content-container {
     width: 100%;
@@ -731,21 +788,24 @@ a.project-index-name:hover {
     justify-content: center;
   }
 
+  .hero-image-container-speakout-right {
+    visibility: hidden;
+  }
+
   .hero-image {
     width: 95%;
   }
 
   .hero-data-container {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 0px;
+  }
+
+  .hero-data-table {
+    width: var(--content-width-narrow);
   }
 
   .hero-data-inset-image-container {
     visibility: hidden;
-  }
-
-  .block-fg-narrow {
-    width: var(--content-width);
   }
 }
 
