@@ -594,7 +594,7 @@ a.project-index-name:hover {
 
 .prev-next-proj {
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .prev-next-proj-separator {
@@ -651,26 +651,8 @@ a.project-index-name:hover {
   align-items: center;
 }
 
-.hero-image-container-speakout-left {
-  width: 60%;
-  aspect-ratio: 2.31511254019;
-  overflow: hidden;
-  z-index: 1; /* Ensure contained image appears on top */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.hero-image-container-speakout-right {
-  width: 3.28%;
-  aspect-ratio: 74 / 584;
-  overflow: hidden;
-  z-index: 1; /* Ensure contained image appears on top */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+.hero-image-speakout {
+  width: 100%;
 }
 
 .hero-image {
@@ -689,6 +671,25 @@ a.project-index-name:hover {
   padding-right: 25px;
   padding-bottom: 60px;
   position: relative; /* So can hold absolute elements, e.g, inset image */
+}
+
+.hero-data-container-speakout {
+  background-color: #EFDB73;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  position: absolute;
+  right: 50px;
+  top: 0px;
+  bottom: 0px;
+  width: 40%;
 }
 
 .hero-data-table {
@@ -788,16 +789,27 @@ a.project-index-name:hover {
     justify-content: center;
   }
 
-  .hero-image-container-speakout-right {
-    visibility: hidden;
-  }
-
   .hero-image {
     width: 95%;
   }
 
   .hero-data-container {
     padding-left: 0px;
+  }
+
+  .hero-data-container-speakout {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100px;
+    padding-top: 80px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 60px;
+    position: relative; /* So can hold absolute elements, e.g, inset image */
+    right: 0px;
   }
 
   .hero-data-table {
