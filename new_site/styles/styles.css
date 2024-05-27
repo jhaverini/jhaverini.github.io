@@ -603,9 +603,10 @@ a.project-index-name:hover {
 
 .prev-next-proj-link {
   font-family: var(--font-family-alt);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--prev-next-proj-link-color);
   text-decoration: none;
+  text-transform: uppercase;
   margin: 0px;
   white-space: nowrap;
 }
