@@ -480,13 +480,13 @@ a.project-index-name:hover {
 
 .project-grid-container {
   /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
+  --w1:1600px;
+  --n:4;
   /* second breakpoint*/
-  --w2:500px;
+  --w2:900px;
   --m:3;
   /* third breakpoint*/
-  --w3:200px;
+  --w3:700px;
   --p:2;
 
   /*
@@ -494,20 +494,22 @@ a.project-index-name:hover {
     We used the last approach from this tutorial:
     https://css-tricks.com/responsive-layouts-fewer-media-queries/
   */
-  display:grid;
+  display: grid;
   grid-template-columns:
     repeat(auto-fill,
       minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:3%;
-  margin:0px;
+        100%/(var(--n) + 1) + 0.1%,
+          (var(--w1) - 100%)*1000,
+        100%/(var(--m) + 1) + 0.1%), 
+          (var(--w2) - 100%)*1000,
+        100%/(var(--p) + 1) + 0.1%), 
+          (var(--w3) - 100%)*1000,
+        100%), 1fr));
+  gap: 3%;
+  margin: 0px;
 }
+
+
 .project-grid-tile {
   display: block;
   filter: brightness(100%);
@@ -547,44 +549,6 @@ a.project-index-name:hover {
   margin-top: 2px;
   margin-bottom: 0px;
   color: var(--color-text-default);
-}
-
-.hamiltonpay-grid-container {
-  /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
-  /* second breakpoint*/
-  --w2:500px;
-  --m:3;
-  /* third breakpoint*/
-  --w3:200px;
-  --p:2;
-
-  /*
-    Image grid w/ breakpoints, for HamiltonPay project
-    Flexible grids with breakpoints are hard.
-    We used the last approach from this tutorial:
-    https://css-tricks.com/responsive-layouts-fewer-media-queries/
-  */
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fill,
-      minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:9px;
-  overflow:hidden;
-  margin:0px;
-}
-.hamiltonpay-grid-image {
-  display: block;
-  width: 100%;
-  border: 1px solid #85D1DC;
 }
 
 /* Currently used in Vox Pulmini project page, but could be used more broadly (?) */
