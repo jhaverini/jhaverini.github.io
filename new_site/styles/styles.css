@@ -156,7 +156,7 @@ ul {
   margin-bottom: 32px;
 }
 
-b {
+b, strong {
   font-weight: 600;
 }
 
