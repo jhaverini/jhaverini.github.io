@@ -396,6 +396,12 @@ section {
   padding-right: 0px;
 }
 
+.bottom-image {
+  width: 80%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
 .goal { /**/
   width: 100%;
   line-height: 200%;
@@ -739,10 +745,6 @@ a.project-index-name:hover {
     padding-right: 10px;
   }
 
-  /* .block-fg-narrow {
-    width: var(--content-width-narrow);
-  } */
-
   .hero-content-container {
     width: 100%;
     flex-direction: column;  
@@ -784,6 +786,12 @@ a.project-index-name:hover {
   .hero-data-inset-image-container {
     visibility: hidden;
   }
+
+  .bottom-image {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }  
 }
 
 
@@ -798,4 +806,9 @@ a.project-index-name:hover {
     line-height: 2.7rem;
   }
 
+  .bottom-image {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }  
 }
