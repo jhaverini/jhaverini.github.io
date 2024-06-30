@@ -762,6 +762,7 @@ a.project-index-name:hover {
 
   .hero-data-container {
     padding-left: 0px;
+    padding-top:20px;
   }
 
   .hero-data-container-speakout {
@@ -771,7 +772,7 @@ a.project-index-name:hover {
     justify-content: center;
     align-items: flex-start;
     min-height: 100px;
-    padding-top: 80px;
+    padding-top: 20px;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 60px;
