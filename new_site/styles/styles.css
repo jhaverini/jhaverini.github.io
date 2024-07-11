@@ -100,11 +100,9 @@ h3 {
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  line-height: 1.4;
-  margin-top: 0px;
-  margin-bottom: 32px;
+  line-height: 200%
 }
 
 h5 {
@@ -156,7 +154,7 @@ ul {
   margin-bottom: 32px;
 }
 
-b {
+b, strong {
   font-weight: 600;
 }
 
@@ -396,6 +394,12 @@ section {
   padding-right: 0px;
 }
 
+.bottom-image {
+  width: 80%;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
 .goal { /**/
   width: 100%;
   line-height: 200%;
@@ -480,13 +484,13 @@ a.project-index-name:hover {
 
 .project-grid-container {
   /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
+  --w1:1600px;
+  --n:4;
   /* second breakpoint*/
-  --w2:500px;
+  --w2:900px;
   --m:3;
   /* third breakpoint*/
-  --w3:200px;
+  --w3:700px;
   --p:2;
 
   /*
@@ -494,20 +498,22 @@ a.project-index-name:hover {
     We used the last approach from this tutorial:
     https://css-tricks.com/responsive-layouts-fewer-media-queries/
   */
-  display:grid;
+  display: grid;
   grid-template-columns:
     repeat(auto-fill,
       minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:3%;
-  margin:0px;
+        100%/(var(--n) + 1) + 0.1%,
+          (var(--w1) - 100%)*1000,
+        100%/(var(--m) + 1) + 0.1%), 
+          (var(--w2) - 100%)*1000,
+        100%/(var(--p) + 1) + 0.1%), 
+          (var(--w3) - 100%)*1000,
+        100%), 1fr));
+  gap: 3%;
+  margin: 0px;
 }
+
+
 .project-grid-tile {
   display: block;
   filter: brightness(100%);
@@ -549,44 +555,6 @@ a.project-index-name:hover {
   color: var(--color-text-default);
 }
 
-.hamiltonpay-grid-container {
-  /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
-  /* second breakpoint*/
-  --w2:500px;
-  --m:3;
-  /* third breakpoint*/
-  --w3:200px;
-  --p:2;
-
-  /*
-    Image grid w/ breakpoints, for HamiltonPay project
-    Flexible grids with breakpoints are hard.
-    We used the last approach from this tutorial:
-    https://css-tricks.com/responsive-layouts-fewer-media-queries/
-  */
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fill,
-      minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:9px;
-  overflow:hidden;
-  margin:0px;
-}
-.hamiltonpay-grid-image {
-  display: block;
-  width: 100%;
-  border: 1px solid #85D1DC;
-}
-
 /* Currently used in Vox Pulmini project page, but could be used more broadly (?) */
 .indented {
   margin-left: 16px;
@@ -594,7 +562,7 @@ a.project-index-name:hover {
 
 .prev-next-proj {
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .prev-next-proj-separator {
@@ -603,9 +571,10 @@ a.project-index-name:hover {
 
 .prev-next-proj-link {
   font-family: var(--font-family-alt);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--prev-next-proj-link-color);
   text-decoration: none;
+  text-transform: uppercase;
   margin: 0px;
   white-space: nowrap;
 }
@@ -651,26 +620,8 @@ a.project-index-name:hover {
   align-items: center;
 }
 
-.hero-image-container-speakout-left {
-  width: 60%;
-  aspect-ratio: 2.31511254019;
-  overflow: hidden;
-  z-index: 1; /* Ensure contained image appears on top */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.hero-image-container-speakout-right {
-  width: 3.28%;
-  aspect-ratio: 74 / 584;
-  overflow: hidden;
-  z-index: 1; /* Ensure contained image appears on top */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+.hero-image-speakout {
+  width: 100%;
 }
 
 .hero-image {
@@ -689,6 +640,25 @@ a.project-index-name:hover {
   padding-right: 25px;
   padding-bottom: 60px;
   position: relative; /* So can hold absolute elements, e.g, inset image */
+}
+
+.hero-data-container-speakout {
+  background-color: #EFDB73;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  position: absolute;
+  right: 50px;
+  top: 0px;
+  bottom: 0px;
+  width: 40%;
 }
 
 .hero-data-table {
@@ -773,10 +743,6 @@ a.project-index-name:hover {
     padding-right: 10px;
   }
 
-  /* .block-fg-narrow {
-    width: var(--content-width-narrow);
-  } */
-
   .hero-content-container {
     width: 100%;
     flex-direction: column;  
@@ -788,16 +754,28 @@ a.project-index-name:hover {
     justify-content: center;
   }
 
-  .hero-image-container-speakout-right {
-    visibility: hidden;
-  }
-
   .hero-image {
     width: 95%;
   }
 
   .hero-data-container {
     padding-left: 0px;
+    padding-top:20px;
+  }
+
+  .hero-data-container-speakout {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100px;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 60px;
+    position: relative; /* So can hold absolute elements, e.g, inset image */
+    right: 0px;
   }
 
   .hero-data-table {
@@ -807,6 +785,12 @@ a.project-index-name:hover {
   .hero-data-inset-image-container {
     visibility: hidden;
   }
+
+  .bottom-image {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }  
 }
 
 
@@ -821,4 +805,9 @@ a.project-index-name:hover {
     line-height: 2.7rem;
   }
 
+  .bottom-image {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }  
 }

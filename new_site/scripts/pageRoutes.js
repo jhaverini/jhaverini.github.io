@@ -23,7 +23,7 @@ const pr = { //"pr": A containing namespace, to prevent cross-file variable/func
     },
     projectEpicore: {
       name: "Epicore App &amp; Web",
-      url: "./projects-kaiser-nicu.html",
+      url: "./projects-epicore.html",
       target: "_self",
     },
     projectKeyConservation: {
