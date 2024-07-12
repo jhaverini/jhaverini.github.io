@@ -2,30 +2,38 @@ const wh = { //"wh": A containing namespace, to prevent cross-file variable/func
   
   writeHeader: () => {
 
-    document.write(`<div id="header" class="header">`); //id required to "find" header for collapsing / expanding when scrolling down / up
+    document.write(`<header class="heading">`)  // id required to "find" header for collapsing / expanding when scrolling down / up
 
-    document.write(`<div class="header-line1">`);
-    
-    document.write(`<div class="header-line1-left">`);
-    wh.writeLeftNav();
-    document.write(`</div>`);
-    
-    document.write(`<div class="header-line1-right">`);
-    wh.writeRightNav();
-    document.write(`</div>`);
-  
-    document.write(`</div>`);
-  
-    document.write(`<div class="header-line2">`);
-    document.write(`<div class="header-line2-title">`);
-    document.write(`Product/UX Designer`);
-    document.write(`</div>`);
-    document.write(`<div class="header-line2-title">`);
-    document.write(`Licensed Architect`);
-    document.write(`</div>`);
-    document.write(`</div>`);
+      document.write(`<div id="header-content" class="header-content">`)  // id required to "find" header for collapsing / expanding when scrolling down / up
 
-    document.write(`</div>`); //header
+        document.write(`<div class="header-content-inner">`)
+
+          document.write(`<div class="header-line1">`)
+            document.write(`<div class="header-line1-left">`)
+              wh.writeLeftNav()
+            document.write(`</div>`)
+            
+            document.write(`<div class="header-line1-right">`)
+              wh.writeRightNav()
+            document.write(`</div>`) 
+          document.write(`</div>`) 
+        
+          document.write(`<div class="header-line2">`)
+            document.write(`<div class="header-line2-title">`)
+              document.write(`Product/UX Designer`)
+            document.write(`</div>`)
+            document.write(`<div class="header-line2-title">`)
+              document.write(`Licensed Architect`)
+            document.write(`</div>`)
+          document.write(`</div>`)
+
+        document.write(`</div>`) // header-content-inner
+
+      document.write(`</div>`) // header-content
+
+     document.write(`<div class="header-shaddow" /> `)
+
+    document.write(`</header>`);   
   },
 
 

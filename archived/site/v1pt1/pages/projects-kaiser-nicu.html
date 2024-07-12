@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaiser NICU</title>
+    
+    <link rel="stylesheet" href="../styles/styles.css">
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerDivId: 'header',
+          sideNavDivId: 'side-nav'
+        });
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="page">
+
+      <script>
+        wh.writeHeader();
+      </script>
+
+      <div id="page-body" class="page-body">
+        
+        <div class="header-shadow">
+        </div>
+        
+        <div id="scroll-window" class="scroll-window">
+
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-nav-and-content-wrapper">
+
+              <div class="side-nav-container">
+
+                <div id="side-nav" class="side-nav">
+                  <ul class="side-nav-ul">
+                    <li class="side-nav-li">
+                      <a class="side-nav-link">
+                        Jump to:
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#kaiser-nicu" onClick="ss.scrollTo('kaiser-nicu')">
+                        Kaiser NICU
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#ux-research" onClick="return ss.scrollTo('ux-research')">
+                        UX Research
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#design-dev" onClick="return ss.scrollTo('design-dev')">
+                        Design Dev.
+                      </a>
+                    </li>
+                    <li class="side-nav-li">
+                      <a class="side-nav-link" href="#outcomes" onClick="return ss.scrollTo('outcomes')">
+                        Outcomes
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <section id="kaiser-nicu" class="corner-watermark-kaiser-logo">
+
+                <div class="block-fg-narrow">
+
+                  <div class="spacer-large"></div>
+
+                  <h2 style="margin-bottom: 8px;">
+                    <div class="company-name">Kaiser San Diego</div>
+                  </h2>
+
+                  <h1>
+                     Designing a Neonatal Intensive Care Unit: UX at the Boundary of Life &amp; Death
+                  </h1>
+
+                  <p class="credits">
+                    Project Designer, HGA Architects & Engineers, Inc.
+                  </p>
+
+                  <div>
+                    <img src="./../images/projects/kaiser-nicu/00-nicu-hero.png" width="100%" alt="Image of premie's feet in doctor's hands." >
+                    <div class="spacer-small"></div>
+                  </div>
+                
+                </div>
+                
+                <div class="block-bg-dark";>                
+                  <div class="block-fg-wide">
+                    <img class="drop-shadow" src="./../images/projects/kaiser-nicu/1-104-isolette-final.jpg" width="100%" alt="Photo of the finished patient room.">
+                    <p class="caption" style="margin-bottom: 0px; color: #080707">
+                      The new patient room: functional design validated through research, prototyping, and simulation.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="spacer-medium"></div>
+
+                <div class="block-bg-light">
+                  <div class="block-fg-narrow">
+
+                    <h3>
+                      Enabling Those who Support Society's Most Fragile
+                    </h3>
+                    
+                    <p>
+                      Born at 22 weeks with underdeveloped lungs, doctors gave Isabella a one percent chance to live. Everyone braced for her impending death. 
+                    </p>
+
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/1-103-isabella-newborn.png" width="100%" style="border:1px solid #00000011" alt="Photo of premature newborn Isabella">
+                      <p class="caption">
+                        Lee, Marcella (reporter). (2014, March 14: 18:41 PDT). Evening news (tv newscast). San Diego, CA: CBS Channel 8.
+                      </p>
+                    </div>
+
+                    <p>
+                      How did Isabella beat the odds?
+                    </p>
+
+                    <p>
+                      First and foremost &ndash; an innate instinct to survive, a devoted family, and a highly focused professional care team. And quietly underpinning their coordinated efforts? A state-of-the-art interactive environment, pioneering a family-centered approach to neonatal intensive care.
+                    </p>
+
+                  </div>
+                </div>
+
+                <div class="spacer-large"></div>
+
+                <div class="block-bg-light">
+                  <div class="block-fg-narrow">
+
+                    <h2>
+                      Designing for Critical Infants &amp; Care Teams
+                    </h2>
+
+                    <p>
+                      Two years prior to Isabella's birth, I had been a part of the core architecture team that implemented a bold new approach to Neonatal Intensive Care Unit design, rooted in Kaiser's evidence-based research and current studies on family-centered care.
+                    </p>
+
+                    <p>
+                      This is the Neonatal Intensive Care Unit that played a key role in giving Isabella and other infants an improved chance at life.
+                    </p>
+
+                    <div class="goal goal-nicu" style="display: flex; flex-direction: row;">
+                      <!--Col 1-->
+                      <div style="flex:1; font-weight: 300;">
+                        <div>Project Type</div>
+                        <div>Context</div>
+                        <div>Scope</div>
+                        <div>Duration</div>
+                        <div>Client</div>
+                        <div>End-users</div>
+                      </div>
+                      <!--Col 2-->
+                      <div style="flex:4; font-weight: 500;">
+                        <div>Built environment - Healthcare</div>
+                        <div>Highly specialized ICU in a Critical Care Facility</div>
+                        <div>15,000 sq.ft., 30 beds, $20M budget</div>
+                        <div>2 years</div>
+                        <div>Kaiser San Diego Medical Center (SDMC)</div>
+                        <div>Premature / critically-ill infants, their families, professional staff</div>
+
+                      </div>
+                    </div>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      What is a Neonatal Intensive Care Unit (NICU)?
+                    </h3>
+
+                    <p>
+                      Most newborns experience their first moments in a parent's arms before being taken to the well-baby nursery. Critically-ill or premature newborns are instead rushed to a high-tech nursery to receive 24/7 specialized care.
+                    </p>
+
+                    <p>
+                      The majority of NICU stays are unanticipated, with caregivers &ndash; 
+                      some recovering from high-risk pregnancies &ndash; being separated 
+                      from their newborns. That separation is proven to compound the trauma 
+                      experienced by infants, parents, and extended family.
+                    </p>
+
+
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Old Bay -->
+                      <div style="flex:1">
+                        <img src="./../images/projects/kaiser-nicu/1-201-nicu-traditional.jpg" width="100%" style="border:1px solid #0000001A" alt="Photo of traditional NICU.">
+                        <p class="caption">
+                          Pre-existing traditional NICU - open bay layout.
+                        </p>
+                      </div>
+                      <!--Col 2: Spacer -->
+                      <div style="flex:0 0 8px;"></div>
+                      <!--Col 3: New Bay -->
+                      <div style="flex:1">
+                        <img src="./../images/projects/kaiser-nicu/1-202-room-patient-final.jpg" width="100%" style="border:1px solid #0000001A" alt="Photo of completed private NICU room.">
+                        <p class="caption">
+                          Our improved NICU design - private room configuration.
+                        </p>
+                      </div>
+                    </div>
+
+                    <p class="goal goal-nicu">
+                      Our Challenge: Replace the hospital's pre-existing 5,000 square foot traditional open-bay Neonatal Intensive Care 
+                      nursery with a radically different <i>family-centered</i> model, pioneering private rooms for each infant.
+                    </p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      What makes this NICU "state-of-the-art"?
+                    </h3>
+                    
+                    <ul style="margin-top: 0px;">
+                      <li>
+                        <b>Technology:</b> the newest, most advanced, and rigorously tested equipment with proven outcomes.
+                      </li>
+                      <li>
+                        <b>Participatory approach:</b> a design approach shaped by years of studies that addresses the
+                        shortcomings of prior models through a layout organized around a fundamental idea: that an infant's
+                        caretakers are vital participants in the care team.
+                      </li>
+                      <li>
+                        <b>Spatial considerations:</b> a series of mutually-reinforcing spaces that take into consideration &ndash; along
+                        with life-saving systems and technology &ndash; the patient, family, and staff's functional and emotional
+                        needs.
+                      </li>
+                    </ul>
+
+                    <p>
+                      What makes a NICU <i>good</i> is its technology. We configured the systems-intense spaces to enable and extend the capabilities of the professional care team. By necessity, a NICU must be machine-like: clinical, precise, and sterile.
+                    </p>
+
+                    <p>
+                      What lifts a NICU to the <i>next level</i> is its attention to the human condition &ndash; as experienced by the constellation of participants it serves. We prioritized the end-users that the space is meant to serve, rather than treating them as secondary to the technological aspect of the design.
+                    </p>
+
+                    <p>
+                      If the NICU walls could talk, they would tell you that they witness the extremes of human struggle in its overwhelming rawness of life and death: trauma, resilience, panic, ingenuity, loss, capability, tragedy, love, perseverance. Statistically, the emotional intensity of the NICU stresses healthcare professionals, families, and relationships to the breaking point. To better serve these individuals, we designed for their needs for a calm and supportive environment.
+                    </p>
+
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/1-203-sketch-room-patient-concept.png" width="100%" style="border:1px solid #0000001A" alt="Perspective sketch of private room concept.">
+                      <p class="caption">
+                        Private-room conceptual sketch, featuring natural lighting and space to sleep (artist unknown).
+                      </p>
+                    </div>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      My Role
+                    </h3>
+
+                    <p>
+                      As a core member of the architectural team, I collaborated on all facets needed to take the project from paper to reality, from planning spatial relationships, to construction, to move-in: technology and systems coordination, concept development, jurisdictional approvals, and upholding design intent follow-through during implementation.
+                    </p>
+
+                    <p>
+                      This particular case study focuses on the user experience facet, which itself had many aspects to balance. 
+                      <b>My task was to advocate for the end-users of a systems-dominated, technology-heavy space.</b> 
+                      Our human-centered design approach prioritized the end-users' experiences along with &ndash; 
+                      not secondary to &ndash; life-saving systems and technology.
+                    </p>
+
+                    <p>
+                      As project designer, I progressively built iterations upon new and existing hospital planning research, direct end-user work sessions, feedback from trade specialists, and observations of workflow simulations via prototypes.
+                    </p>
+
+                  </div>
+          
+                </div>
+
+              </section>
+
+              <div class="spacer-large"></div>
+
+              <section id="ux-research">
+
+                <div class="block-bg-light">
+                
+                  <div class="block-fg-narrow">
+
+                    <h2>
+                      Researching Pre-existing User Experiences
+                    </h2>
+
+                    <p>
+                      We began our user research by identifying the stakeholders and surveying the spaces in which they interacted. From there, we prioritized each  stakeholder's needs and learned how they used the pre-existing spaces. Simultaneously, we familiarized ourselves with medical research on improved practices and their outcomes in other NICUs.
+                    <p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Interviewing Our Stakeholders
+                    </h3>
+
+                    <div style='width: 100%; white-space: nowrap;'>
+                      <img src='./../images/projects/kaiser-nicu/2-105-stakeholder-evs.jpg' width="14%" style="border-radius: 50%;" alt="Housekeeping staff avatar">
+                      <div style="display: inline-block; width: 1%;"></div>
+                      <img src='./../images/projects/kaiser-nicu/2-103-stakeholder-mom.jpg' width="14%" style="border-radius: 50%;" alt="PMother avatar">
+                      <div style="display: inline-block; width: 1%;"></div>
+                      <img src='./../images/projects/kaiser-nicu/2-101-stakeholder-patient.jpg' width="14%" style="border-radius: 50%;" alt="Patient avatar">
+                      <div style="display: inline-block; width: 1%;"></div>
+                      <img src='./../images/projects/kaiser-nicu/2-106-stakeholder-client.jpg' width="14%" style="border-radius: 50%;" alt="Client avatar">
+                      <div style="display: inline-block; width: 1%;"></div>
+                      <img src='./../images/projects/kaiser-nicu/2-102-stakeholder-doctor.jpg' width="14%" style="border-radius: 50%;" alt="Neonatologist avatar">
+                      <div style="display: inline-block; width: 1%;"></div>
+                      <img src='./../images/projects/kaiser-nicu/2-104-stakeholder-nurse.jpeg' width="14%" style="border-radius: 50%;" alt="Nurse avatar">
+                      <div class="spacer-medium"></div>
+                    </div>
+                
+                    <div style="width: 80%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+                      <!--Col 1: Primary Users-->
+                      <div style="flex:1; font-weight: 300; font-size: smaller; padding-right: 10px;">
+                        <div><b>Primary Users:</b></div>
+                        <div>Patients</div>
+                        <div>Parents and caretakers</div>
+                        <div>Neonatologists</div>
+                        <div>Charge Nurse</div>
+                        <div>Nursing staff</div>
+                        <div>Respiratory Therapists</div>
+                      </div>
+                      <!--Col 2: Secondary Users-->
+                      <div style="flex:1; font-weight: 300; font-size: smaller; padding-right: 10px;">
+                        <div><b>Secondary Users:</b></div>
+                        <div>Families</div>
+                        <div>Specialists</div>
+                        <div>Facilities Engineers</div>
+                        <div>Housekeeping</div>
+                        <div>IT Staff</div>
+                        <div>Volunteers</div>
+                      </div>
+                      <!--Col 3: Secondary Users-->
+                      <div style="flex:1; font-weight: 300; font-size: smaller;">
+                        <div><b>Client:</b></div>
+                        <div>San Diego Medical Center</div>
+                        <div>Kaiser National Facilities</div>
+                      </div>
+                    </div>
+                    
+                    <div class="spacer-medium"></div>
+
+                    <p class="goal goal-nicu">
+                      What did the NICU experience look like to our end-users?
+                      What were their goals, and what did they need to achieve them? 
+                      The NICU was the stage set for a host of characters, each with 
+                      different &ndash; and often competing &ndash; concerns that we balanced:
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- Patient -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-101-stakeholder-patient.jpg" width="100%" style="border-radius: 50%;" alt="Patient avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Patients: Premature and/or Critically-ill Infants</b><br>
+                          One-time end-users, for whom the outcome is life or death. How does one design for a primary end-user who cannot communicate its needs? Data and studies told the story of improved outcomes from customized environments and proximity to their caretakers.
+                        </p>
+                      </div>
+                    </div>
+
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          Levels of sound, diurnal lighting, stimulation, and temperature optimized for healing and development &ndash; which vary per infant and over time; traffic and disturbance control.
+                        </li>
+                        <li>
+                          Access to a set of considerations referred to as "kangaroo care": skin-to-skin touch, caretakers' voices, smells, and interaction, which lower stress and stimulate senses, helping infants survive and develop.
+                        </li>
+                        <li>
+                          Nutrients, medication, and life-saving equipment to accommodate a range of patients, from most to least acute, with stays in the NICU ranging from days to many months.
+                        </li>
+                        <li>
+                          Constant monitoring by Nurses, quick and decisive actions of Doctors.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- Neonatologist -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-102-stakeholder-doctor.jpg" width="100%" style="border-radius: 50%;" alt="Neonaologist avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Neonatologists</b><br>
+                          Hyper-focused on patients, Neonatologists are the NICU's expert power-users. They need to communicate, delegate, and act efficiently with the team. Seconds matter. Their jobs are eased if they can provide an optimal environment for the development of each newborn.
+                        </p>
+                      </div>
+                    </div>
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          Near-instant access to technology, to aid in keeping infants alive and stable &ndash; 
+                          Neonatologists do not have time to struggle with technology.
+                        </li>
+                        <li>
+                          Proximity to the professional care team, and access to patients' caretakers.
+                        </li>
+                        <li>
+                          Clear space to conduct procedures bedside, particularly emergency procedures, 
+                          to avoid moving fragile patients.
+                        </li>
+                        <li>
+                          Controls to optimize an environment for each infant's specific developmental needs.
+                        </li>
+                        <li>
+                          Identical room setups to support workflows that leverage spatial memory and 
+                          muscle memory in support of speed, accuracy, and safety for doctors working 
+                          across multiple rooms.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- Parents/Caretakers -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-103-stakeholder-mom.jpg" width="100%" style="border-radius: 50%;" alt="Mother avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Mothers of Patients</b><br>
+                          Some are battling conflicting needs to recover from childbirth and to protect their infant, some are battling drug addiction, some have given birth to triplets. They need access to information, rest, quiet, and privacy. They, like patients, are novice but intense one-time end-users. Some are there for months.
+                        </p>
+                      </div>
+                    </div>
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          An environment that eases stress and promotes rest breaks, despite the circumstances.
+                        </li>
+                        <li>
+                          Ability to easily stay close to their newborn; and for those with multiples, the ability to stay together.
+                        </li>
+                        <li>
+                          Proximity to the Antepartum if the mother is a recovering patient.
+                        </li>
+                        <li>
+                          Access to the professional care team for information, updates, and training for feeding and special care.
+                        </li>
+                        <li>
+                          Options for privacy with their newborns, as well as options to socially interact with other parents.
+                        </li>
+                        <li>
+                          Security against abduction &ndash; unfortunately, family members' duress can lead to bad decisions in the NICU.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- Nursing Staff -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-104-stakeholder-nurse.jpeg" width="100%" style="border-radius: 50%;" alt="Nurse avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Nursing Staff</b><br>
+                          Keenly tracking many things at once, nurses, like doctors, are NICU expert power-users: they must continuously monitor infants and vitals, perform routine care, be poised to assist doctors with procedures at any moment, and control traffic moving through the department. They also calm and inform the patients' caretakers.
+                        </p>
+                      </div>
+                    </div>
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          Proximity to all: the professional team, support staff, security, patients, and families, 
+                          for continuous communication and immediate response.
+                        </li>
+                        <li>
+                          Ability to regulate occupants for security, infection control, and crowd management.
+                        </li>
+                        <li>
+                          Clear space for routine care and to assist Neonatologists and specialists.
+                        </li>
+                        <li>
+                          Sightlines from any seated position to each infant's head, ensuring a nurse-to-patient ratio of 1:1 to 1:3.
+                        </li>
+                        <li>
+                          Support services that separate "dirty" and "clean" workflows for infection control.
+                        </li>
+                        <li>
+                          Ergonomic placement of equipment, especially for repetitive tasks.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- House-Keeping Staff -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-105-stakeholder-evs.jpg" width="100%" style="border-radius: 50%;" alt="Housekeeping staff avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Housekeeping Staff</b><br>
+                          The support staff team is made of expert intermittent users in a critical role &ndash; infection control. Housekeeping professionals may handle multiple departments, so it is important that department layouts are consistent and support intuitive protocol compliance.
+                        </p>
+                      </div>
+                    </div>
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          Clutter-free spaces that allow for ease of deep-cleaning and disinfecting.
+                        </li>
+                        <li>
+                          Department layouts that minimize cross-contamination between dirty and clean workflows.
+                        </li>
+                        <li>
+                          Consistency with housekeeping layouts and protocol in other departments in the hospital, and a layout that encourages typical best practices to minimize errors. 
+                        </li>
+                        <li>
+                          Ergonomic placement of equipment, especially for repetitive tasks.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-small"></div>
+
+                    <!-- Client -->
+                    <div style="display: flex; flex-direction: row;">
+                      <!--Col 1: Photo-->
+                      <div style="flex:1; padding-right: 16px;">
+                        <img src="./../images/projects/kaiser-nicu/2-106-stakeholder-client.jpg" width="100%" style="border-radius: 50%;" alt="Client avatar">
+                      </div>
+                      <!--Col 2: Text-->
+                      <div style="flex:4;">
+                        <p>
+                          <b>Client: San Diego Medical Center / Kaiser National Facilities</b><br>
+                          Not technically a NICU end-user, the client is interested in careful monitoring of performance. How users report on their experiences, patient outcomes, overall bed-occupancy, and the ability to attract and retain talent are all important data-points for the hospital's star department.
+                        </p>
+                      </div>
+                    </div>
+                    <p>
+                      <b>Needs:</b>
+                      <ul>
+                        <li>
+                          Positive patient experiences and ratings.
+                        </li>
+                        <li>
+                          Stand-out professional rankings for the department and hospital &ndash; positive outcomes and new technology to attract talent and retain staff.
+                        </li>
+                        <li>
+                          Improvements to physical proximities of departments that support one another, for more efficient workflows and better patient outcomes.
+                        </li>
+                        <li>
+                          Strategic implementation of improvements to keep all six hospital floors fully functional and minimize department downtime due to construction.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <div class="spacer-medium"></div>
+                
+                    <h3>
+                      Observing Workflow Dynamics in the Pre-existing NICU
+                    </h3>
+
+                    <p>
+                      In order to improve the experiences of this diverse set of end-users, we needed to understand how they functioned in the pre-existing NICU. We kicked off months of research with walk-throughs of the NICU that was slated to be replaced.
+                    </p>
+
+                    <p>
+                      Configured in a "traditional" layout, the department consisted of a single large room nursery with nurse stations outside of the nursery. Nurses monitored newborns through windows into the nursery and by making rounds through the room. The care team rolled in supplemental mobile equipment as needed. A small corner was kept clear for a few wooden rocking chairs where parents or volunteers could sign up for time slots to feed and hold newborns inthe shared space.
+                    </p>
+
+                    <p class="goal goal-nicu">
+                      What existing conditions worked well for the various stakeholders, and which conditions could be prioritized and improved by architectural intervention? How did equipment and workflow affect the use of the space?
+                    </p>
+
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/2-201-nicu-traditional-notes.png" 
+                      width="100%" alt="Photos of traditional NICU with observation call-outs">
+                      <p class="caption">
+                        Top image: pre-existing traditional NICU layout, also called an "open-bay" configuration. Bottom image: pre-existing typical isolette with surrounding mobile equipment.
+                      </p>
+                    </div>
+
+                    <div>
+                      <img src='./../images/projects/kaiser-nicu/2-202-quotes.png' width="100%" alt="End-user quotes on traditional NICU experience">
+                      <div class="spacer-medium"></div>
+                    </div>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Researching User Experiences of Different Layouts
+                    </h3>
+
+                    <p>
+                      Leveraging a wealth of contemporanneous studies on NICU design innovations, including Kaiser's own research, we quickly immersed ourselves in the end-users' worlds. This helped us:
+                      <ul>
+                        <li>
+                          Understand strengths and weaknesses of different configurations.
+                        </li>
+                        <li>
+                          Further clarify major concerns for end-users and workflows, and ask new questions.
+                        </li>
+                        <li>
+                          Stay on top of new insights in a constantly developing subject area.
+                        </li>
+                      </ul>
+                    </p>
+
+                    <p>
+                      Prior to the project, Kaiser had evaluated various layout options to select their optimal approach. Two starkly different examples considered were pods and private rooms:
+                    </p>
+
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/2-203-nicu-layout-pod-private.png" width="100%" alt="Diagrams comparing department layout approaches">
+                      <div style="display: flex; flex-direction: row;">
+                        <!--Col 1: Old Caption -->
+                        <div style="flex:1">
+                          <p class="caption" style="text-align: left;">
+                            A "pod" layout, with a centralized nurse station.
+                          </p>
+                        </div>
+                        <!--Col 2: Spacer -->
+                        <div style="flex:0 0 5px;"></div>
+                        <!--Col 3: New Caption -->
+                        <div style="flex:1">
+                          <p class="caption" style="text-align: center;">
+                            A private room layout, with distributed nurse stations.
+                          </p>
+                      </div>
+                    </div>
+
+                    <p>
+                      The pod layout model was essentially a traditional open-bay layout modified for smaller groups of isolettes &ndash; such as three rooms with six isolettes each instead of one room with 18. Pods are best monitored by a centralized bank of nurse stations. This approach was an improvement on the open-bay,  but there was still little to no room for parents.
+                    </p>
+
+                    <p>
+                      The private room layout model presented a dramatic operational change for staff. Nurse stations were distributed, rather than centralized, to achieve sightlines to patients. The layout required larger nurse stations to accommodate centrally networked computers to monitor multiple patients simultaneously. Each room accommodated a family zone.
+                    </p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Understanding the Design Team's Position in the Continuum of NICU Research
+                    </h3>
+
+                    <p>
+                      Several hospitals were already piloting 1-2 private rooms in combination with pods or open bays. The NICU at SDMC was committing to all private rooms (with flexible configurations to connect rooms for twins, triplets, and quadruplets), using the valuable feedback gained from the pilots.
+                    </p>
+
+                    <p>
+                      Unlike many product roll-outs, beta-testing in life-or-death situations s not an option. Kaiser appointed an expert panel that had spent six years refining best practices based on studies, tours, interviews, and low-fidelity full-size mockups to simulate procedures. Our team would be iterating on the resulting room templates.
+                    </p>
+
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/2-204-room-template.png" width="100%" alt="CAD plan of patient room template">
+                      <p class="caption" style="text-align: left;">
+                        Typical NICU patient room template released by Kaiser as their national standard in 2006.
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <div class="spacer-large"></div>
+
+              <section id="design-dev" >
+                <div class="block-bg-light">
+                  <div class="block-fg-narrow">
+                    
+                    <h2>
+                      Human-Centered Design in a Machine-Intensive Environment
+                    </h2>
+
+                    <p>
+                      From department relationships to button placements, developing a design meant proposing options for given problems, and then providing the visuals (and tangibles) to orient discussion for the end-users.
+                    </p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Addressing Big Picture Needs of the Client
+                    </h3>
+         
+                    <p>
+                      At a macro scale, Kaiser's studies showed that an effective NICU department required proximity to certain departments that were located throughout the hospital's six floors. I helped to graphically communicate the roll-out plan iterations to help the client to visualize a consolidated birthing center and align logistics with their business goals. The diagrams synthesized logical adjacencies, maintenance of bed counts, and construction impact over time for both hospital management and Kaiser's national facilities arm to align with broader region-wide 10-year and 20-year plans. 
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-101-building-axon.png" width="100%" alt="Exploded axonometric diagram of hospital">
+                      <p class="caption">
+                        Disruption plans showed a bird's eye view of the hospital reorganization for the planned birthing center consolidation.
+                      </p>
+                    </div>
+         
+                    <div>
+                       <img src="./../images/projects/kaiser-nicu/3-102-adjacencies.png" width="100%" alt="Bubble diagrams">
+                        <p class="caption">
+                          Operational studies aided in determining which departments should be adjacent to the NICU and how the NICU should be organized internally.
+                        </p>
+                    </div>
+         
+                    <p>
+                      With client input, we created visual tools to address the feasibility of phasing and disruption, which we updated monthly to adjust for new insights. While updates were manual, we had to identify the key data points to highlight and create a layering system to easily update a dynamically evolving plan in multiple dimensions.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-103-phasing-plan-2c.png" width="100%" alt="Floor plan of construction phase">
+                      <p class="caption">
+                        One of seven phasing plans &ndash; each of which needed to convey spatial and temporal data points at a glance.
+                      </p>
+                    </div>
+         
+                    <p>
+                      Floor plans spatially delineated areas of active construction, peripheral impact, and completed construction for the larger seven-phase birthing center project, of which the NICU was one phase. Other important metrics were time-based: providing "snapshots" of adjacencies retained during construction while departments were still functional, and total versus available beds per department.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-104-phasing-timeline-2c.png" width="100%" alt="Phasing plan timeline">
+                      <p class="caption">
+                        Enlarged, the timeline related impacted bed counts during construction and move-in to areas of construction.
+                      </p>
+                    </div>
+         
+                    <p>
+                      The phase-specific timelines provided a way to view a non-linear process linearly. Phases overlapped, but Kaiser needed to know per-floor bed counts in order to schedule construction to optimize on filled beds. The plans and timelines helped them adjust inputs and develop a viable way to achieve their business goals.
+                    </p>
+                    
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Conducting User Group Work Sessions
+                    </h3>
+         
+                    <p>
+                      Over the course of a year, I co-led weekly user-group meetings, reviewing workflows directly with the staff who would be using the space. My design colleague and I found that work-session style agendas invited the best feedback as we proposed changes and posed questions to the user groups, worked out solutions together, and solicited feedback that we folded in to new iterations and used for coordination with other technical teams.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-201-redline-sketch.png" width="100%" alt="Work session sketch">
+                      <p class="caption">
+                        During user group work sessions, we often sketched ideas and adjustments on trace paper over the proposed designs.
+                      </p>
+                    </div>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Taming Interrelated Complexities
+                    </h3>
+         
+                    <p>
+                      In an existing building, multiple realities require adjustments to idealized templates:
+                      <ul>
+                        <li>
+                          Idiosyncratic workflows of the San Diego staff transitioning to the new NICU.
+                        </li>
+                        <li>
+                          Pre-existing building elements, such as spacing of windows and structural, hvac, and plumbing systems.
+                        </li>
+                        <li>
+                          Jurisdictionally required nursing unit support rooms.
+                        </li>
+                        <li>
+                          Clearances for equipment servicing and for accessibility.
+                        </li>
+                        <li>
+                          Smoke containment suites and fire-rated walls.
+                        </li>
+                        <li>
+                          Exit paths and maximum travel distances to exits.
+                        </li>
+                        <li>
+                          Infant abduction prevention.
+                        </li>
+                      </ul>
+                    </p>
+         
+                    <p>
+                      An example to illustrate the interplay of considerations: Existing column locations affected, among other things, the patient rooms. For <b>staff</b>, patient rooms needed workflow uniformity; for the state <b>regulatory agencies</b>, floor areas must meet minimums; and for the <b>client</b>, bed-counts had to pencil out to justify the project. In other words, we needed to fit at least 30 isolettes with ample workspace with identical staff workflows, within a finite space.
+         
+                    </p>
+         
+                    <p>
+                      The <b>building code</b> required us to divide the department into three "units" due to bed-count maximums. Each unit required dedicated amenities, tripling the number of those amenities to fit into our finite space.
+                    </p>
+         
+                    <p>
+                      <b>Fire codes</b> required areas to be divided into smoke containment suites, which limit travel distance to exits. Suite boundaries involve fire partitions with doors that shut when an alarm is triggered. (1) the suite would need to be configured to never allow a scenario in which an <b>infant</b> is separated from <b>nurses</b>; and (2) wall-mounted items in fire partitions are minimized to avoid penetrations, affecting patient room layouts &ndash; for which, again, identical workflows were crucial.
+                    </p>
+         
+                    <p>
+                      Lastly, for <b>emergency exiting</b>, exit doors must allow free egress to avoid trapping people in; but <b>infant abduction</b> concerns ideally need the exact opposite &ndash; a lockdown of all ways out.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-301-its-complicated.png" width="100%" alt="Progress sketch">
+                      <p class="caption">
+                        A quick-and-dirty approach of overlaying and color-coding allowed for quick brainstorming sessions.
+                      </p>
+                    </div>
+         
+                    <p>
+                      To effectively serve the end-users, the architectural team was in charge of harmonizing a multitude of complexities inherent in critical care environments.
+                    </p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Diverse Approaches for Key Decisions: Two Examples
+                    </h3>
+
+                    <div class="spacer-small"></div>
+
+                    <h4>
+                      Lines of Sight
+                    </h4>
+         
+                    <p>
+                      The private room design created a challenge for sightlines from the Nurses' seated locations to the infants' heads since infants were no longer collectively in one space. Maintaining monitoring capabilities involved geometric studies, procedural decisions, and the incorporation of new technology.
+                      <ul>
+                        <li>
+                          Bedside workstations in each room provided 1:1 monitoring where needed.
+                        </li>
+                        <li>
+                          Sliding doors between room pairs allowed a nurse seated bedside to also monitor paired patient rooms.
+                        </li>
+                        <li>
+                          Nurses at fixed workstations outside of the patient rooms provided redundant sightlines.
+                        </li>
+                        <li>
+                          Advanced "central monitoring" systems displayed multiple infants' vitals simultaneously at workstations.
+                        </li>
+                        <li> 
+                          Building elements and equipment could not obstruct the sightlines.
+                        </li>
+                        <li>
+                          Glass portions in doors needed to be maximized for view, yet minimized for privacy.
+                        </li>
+                      </ul>
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-401-sightline-sketch.png" width="100%" alt="Hand-drawn diagrams">
+                      <p class="caption">
+                        Sketches helped identify critical relationships, which were later 3D modeled to test exact dimensions.
+                      </p>
+                    </div>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-402-sightline-dept.png" width="100%" alt="Floor plan showing sightlines">
+                      <p class="caption">
+                        Inboard fixed nurse stations and bedside mobile stations afforded nurses flexibility in monitoring infants in the new design.
+                      </p>
+                    </div>
+
+                    <div class="spacer-small"></div>
+
+                    <h4>
+                      Headwall Control Variations
+                    </h4>
+         
+                    <p>
+                      A seasoned design team knows its limits, and when to engage specialists for particular input. We enlisted consulting support for one of the most crucial pieces of equipment: the headwalls. 
+                    </p>
+         
+                    <p>
+                      Flanking the patient bed, the in-wall panels held most of the equipment, emergency call buttons, and hookups for suction, air supply, outlets, and plumbing. The headwalls had a major impact on space planning by <i>creating order</i>. They kept the equipment off of the floor, in standardized locations, with limited cords, and allowed for ergonomic setups.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-403-headwalls.png" width="100%" alt="Comparison of headwall models">
+                      <p class="caption">
+                        Our design team coordinated headwall options with specialists to present comparisons to user groups.
+                      </p>
+                    </div>
+         
+                    <p>
+                      To converge on the best headwall configuration to serve the end-users, we arranged a series of meetings that allowed for each user group affected to identify its priorities with the headwall specialist and an ergonomist. Our design engineers also sat in to ensure that the design would be feasible given constraints of the existing building.
+                    </p>
+
+                    <div class="spacer-medium"></div>
+
+                    <h3>
+                      Prototyping &amp; Testing the Resulting Designs
+                    </h3>
+         
+                    <p>
+                      Once we identified and located the headwall features, sightlines, and other layout decisions, Kaiser accordingly built full-size mock-ups of critical rooms. These mid-fidelity prototypes were the evolution of the low-fidelity versions developed two years prior by the expert panel. The professional care team performed simulations of procedures to answer remaining questions and  fine-tune the layouts.
+                    </p>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-501-mockup-sim.png" width="100%" alt="Photo of medical staff simluating procedures">
+                      <p class="caption">
+                        The professional care team tested the design by simulating critical procedures on a full-size patient room prototype.
+                      </p>
+                    </div>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-502-mockup-buttons.jpg" width="100%" alt="Photos of medical staff fine-tuning protoype">
+                      <p class="caption">
+                        Simulating a typical scenario, a nurse pointed to where she would reach for an emergency call button to alert the hospital of a "code blue" (medical emergency) or "code pink" (abduction).
+                      </p>
+                    </div>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/3-503-mockup-notes.jpg" width="100%" alt="Photos of patient protoype adjustments by medical staff">
+                      <p class="caption">
+                        The team mocked up final tweaks based on in-person experience simulating real-life scenarios.
+                      </p>
+                    </div>
+         
+                  </div>
+         
+                </div>
+         
+              </section>
+
+
+              <div class="spacer-large"></div>
+
+              <section id="outcomes">
+                <div class="block-bg-light">
+                  <div class="block-fg-narrow">
+                    
+                    <h2>
+                      Deliverables
+                    </h2>
+
+                    <h3>Construction and Move-in</h3>
+
+                    <p>
+                      As the project's architects, we delivered fully coordinated and permitted "blueprints" with specifications to the client for implementation by the builders. During construction, we had ongoing responsibilities (1) to work with jurisdictional authorities to assist builders with delivering a code-compliant project; and (2) to advise the client on alignment of the design intent with actual construction and assist in weighing options for alternatives.
+                    </p>
+
+                    <p>
+                      The following is a photograph of a completed corner patient room for twins, followed by a floor plan.
+                    </p>
+                    
+                  </div>
+                </div>
+                
+                <div>
+                  <img src="./../images/projects/kaiser-nicu/4-101-final.png" 
+                     width="100%" 
+                     alt="Photo of completed patient room and plan with call-outs">
+                  <div class="spacer-medium"></div>
+                </div>
+
+                <div class="spacer-medium"></div>
+
+                <div class="block-bg-light">
+                  <div class="block-fg-narrow">
+                    <h3>
+                      Healthful Outcomes
+                    </h3>
+
+                    <p>
+                      <b>Raised the bar and paved the way for future private-room NICUs.</b><br>With a design that was ahead of regulatory frameworks, we worked with jurisdictions to have seven "alternate methods of compliance" approved. In doing so, we set new precedents for achieving compliance within the intent of the Building Code. Unorthodox, but successful; and it paved a pathway to continue transforming and improving how NICUs can be implemented.
+                    </p>
+         
+                    <p>
+                      <b>Designed and oversaw successful implementation of a pioneering NICU, overcoming non-trivial challenges in the process.</b><br>By prioritizing the end-users' perspectives, we balanced numerous complexities &ndash; including accessibility, seismic, technical, procedural, budgetary, jurisdictional &ndash; without losing sight of the individual experiences of those in the NICU. Through construction, the design team worked with the implementation team to ensure that the built reality aligned with design intent.
+                    </p>
+         
+                    <p>
+                      <b>Contributed to a continuum of research.</b><br>The concept of a NICU is not even a hundred years old. In a shifting and developing area, we improved on prior knowledge,  delivering a functioning department from which qualitative and quantitative insights will further inform a growing body of knowledge on future NICU design.
+                    </p>
+         
+                    <p>
+                      <b>Indirectly helped ease end-users through difficult, often life-changing experiences.</b><br>Private-room NICUs are now being implemented worldwide. They increase the chances of both infant survival and improved quality of life; reduce the pressures that often break families and staff; improve prospects and outcomes of top-flight doctors; and create a better overall working environment.
+                    </p>
+         
+                    <p>
+                      <b>Most concretely, remember Isabella?</b><br>
+                      From premature newborn to NICU grad to five year old, her story is the most rewarding outcome.
+                    </p>
+                    
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/4-102-isabella-latest.png" width="100%" alt="Photo of Isabella at five years old">
+                      <p class="caption">
+                        Lee, Marcella (reporter). (2018, December 20: 17:26 PST). Evening news (tv newscast). San Diego, CA: CBS Channel 8.
+                      </p>
+                    </div>
+         
+                    <div>
+                      <img src="./../images/projects/kaiser-nicu/4-103-kudos.png" 
+                         width="100%" 
+                         alt="Reporter's quote about the NICU">
+                      <div class="spacer-medium"></div>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
+              <!-- Footer -->
+
+              <div class="spacer-medium"></div>
+
+              <div style="width: 80%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
+        
+                <!--Col 1: Client-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Kaiser Foundation</b><br>
+                    David Cross<br>
+                    Barbara Hartnett<br>
+                    Isaias Salazar
+                  </p>
+                </div>
+                <!--Col 2: Architecture Designers-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Design</b><br>
+                    Marc Davidson<br>
+                    Leslie Fishburn<br>
+                    Esther Gonzales-Parber<br>
+                    Nilpa Jhaveri<br>
+                    Demetrios Kanakis<br>
+                    David Noferi
+                  </p>
+                </div>
+                <!--Col 3: Architecture Technical-->
+                <div style="flex:0 0 1;">
+                  <div class="credits" style="line-height: 200%;">
+                    <b>Technical</b><br>
+
+                     <!-- Sub-column Left -->
+                     <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
+                      Nate Chiappa<br>
+                      Ryan Combies<br>
+                      April Fame<br>
+                      Nilpa Jhaveri<br>
+                     </p>
+
+                    <!-- Sub-column Spacer -->
+                    <div style="display: inline-block; width: 20px; flex-direction: row;"></div>
+                    
+                    <!-- Sub-column Right -->
+                    <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
+                      Demetrios Kanakis<br>
+                      Hattem Nigma<br>
+                      Wonson Shortes<br>
+                      Anthony Tan,<br>
+                      Mike Villaluna
+                    </p>
+
+                  </div>
+                </div>
+                <!--Col 4: Engineering Design-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Engineering</b><br>
+                    KPFF - Structural<br>
+                    Randall Lamb - Mech. / Plum. / Elec.<br>
+                    Safir Rosetti - Low-voltage &amp; Security<br>
+                    AON - Fire Alarm &amp; Suppression<br>
+                  </p>
+                </div>
+              </div>
+
+              <div class="spacer-medium"></div>
+              
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+</html>
