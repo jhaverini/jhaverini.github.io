@@ -1,264 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
-    <title>Key Conservation</title>
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="../styles/styles.css">
-   
-    <script src="../scripts/jquery-3.5.1.min.js"></script> 
-    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script> 
-    <script src="../scripts/pageRoutes.js"></script>
     <script src="../scripts/logging.js"></script>
-    <script src="../scripts/scrollEffects.js"></script>
-    <script src="../scripts/smoothScrolling.js"></script>
-    <script src="../scripts/updateHeader.js"></script>
-    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/writePrevNextProj.js"></script>
     <script src="../scripts/writeHeader.js"></script>
     <script src="../scripts/writeFooter.js"></script>
-
-    <script>
-      //When the document is fully loaded ("ready"), call a function 
-      //that sets up scroll behaviors:
-      // * smooth-scrolling, when clicking on side-nav links
-      // * header resizing on scroll up/down
-      // * side-nav highlighting on scroll up/down
-      $(document).ready(()=>{
-        sfx.initScrollEffects({
-          scrollDivId: 'scroll-window',
-          headerDivId: 'header',
-          sideNavDivId: 'side-nav'
-        });
-      });
-    </script>
-
+    <title>Key Conservation</title>
   </head>
   
   <body>
-    <div class="page">
 
+    <div class="page" id="page">
       <script>
-        wh.writeHeader();
+        wh.writeHeader()
       </script>
 
-      <div id="page-body" class="page-body">
-        
-        <div class="header-shadow">
+      <script>
+        pnp.writePrevNextProj('projectKaiserNICU', 'projectSpeakOut')
+      </script>
+
+      <div class="block-fg-narrow">
+        <h2 class="company-name" style="margin-bottom:8px;">
+          Key Conservation
+        </h2>          
+        <h1>Local biodiversity &amp; habitat stewardship from any smartphone</h1>
+      </div>
+
+      <div class="spacer-small"></div>
+    
+      <div class="hero-block-bg">
+        <div class="hero-content-container" style="background-color: #FFC266;">
+          <div class="hero-image-container">
+            <img src='./../images/projects/kc-app/00-key-hero.png' class="hero-image" alt="Iterant hero image" />
+          </div>
+          <div class="hero-data-container" style="background-color: #DB9238;">
+            <table class="hero-data-table">
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Project:</td>
+                <td class="hero-data-line">Circular Economy &bull; Sustainability &bull; Web App</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Scope:</td>
+                <td class="hero-data-line">Onboarding Flow &bull; App Redesign</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Roles:</td>
+                <td class="hero-data-line">
+                  <ul class="hero-data-list">
+                    <li class="hero-data-list-element">Created &amp; user-tested wireframe prototype iterations</li>
+                    <li class="hero-data-list-element">Streamlined org-side onboarding</li>
+                    <li class="hero-data-list-element">Introduced new visual design elements supporting accessibility, visual hierarchy &amp; messaging</li>
+                    <li class="hero-data-list-element">Provided recommendations for future app roll-out</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Tools:</td>
+                <td class="hero-data-line">Sketch &bull; Invision</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-label">Year:</td>
+                <td class="hero-data-line">2019-2020</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer-large"></div>
+          
+      <div class="block-fg-narrow">
+        <h3>Connecting experts and locals for the rescue of habitats</h3>
+        <p>
+          Key Conservation enables an expert community of <strong>conservationists</strong> to ask any <strong>smartphone-carrying individual</strong> to infill urgent gaps in support. It empowers average individuals to affect change, and to track the real results of their specific contributions &ndash; no PhD required.
+        </p>
+        <p>
+          <strong>Organizations</strong> make up the backbone of the Key community. Their active involvement furnishes the content through which individual supporters engage and participate.
+        </p>
+        <div class="goal" style="border-left-color:#DB9238">
+          <p>
+            There were eleven “pilot” organizations, a number of which had stalled during the onboarding process. I co-designed a new org-side onboarding flow to improve follow-through while maintaining the rigorous vetting process desired by Key Conservation.
+          </p>
+          <p style="margin-bottom: 0;">
+            In addition to streamlining the onboarding experience, we flipped the tone from one of suspicion to a presumption of good intention.
+          </p>
         </div>
         
-        <div id="scroll-window" class="scroll-window">
 
-          <div id="scroll-pane" class="scroll-pane">
+      <div class="spacer-medium"></div>
 
-            <div class="side-nav-and-content-wrapper">
+      <hr style="width:100%; border-color:#FFC266;">
+      <h5>My Contributions</h5>
 
-              <section>
+      <div class="spacer-medium"></div>
 
-                <div class="spacer-large"></div>
+      <h3>&#x25b6; Uncovered the goals beyond the stated needs</h3>
+      <p>
+        The project brief stated that more "on-trend" graphics were needed to improve onboarding follow-through. Our initial audit, however, suggested that the process was excessively complicated. It revealed a daunting pre-existing application process spanning five platforms and toggling between devices.
+      </p>
+      <p>
+        After account authorization and authentication, the onboarding entailed 37 questions over two forms, a document upload, a five-page non-mobile-friendly reference pdf, twelve long-format inputs (mobile-only) which auto-formatted to a profile page, and two approval wait times.
+      </p>
+      <img src='./../images/projects/kc-app/01-process-old.png' width="100%" style="padding-bottom: 32px" alt="Screenshots of pre-existing onboarding">
+      <p>
+        We tested the pre-existing onboarding process with six proxy end-users. Five questioned the value that the app would provide them with respect to the effort required to apply.
+      </p>
+      <img src="./../images/projects/kc-app/02-quotes.jpg" width="100%" style="padding-bottom: 32px;" alt="Proxy end-user quotes"/>
+      <p>
+        While the called for the <em>addition</em> of graphics, our research pointed to a <em>subtractive</em> approach to redesigning onboarding.
+      </p>
 
-                <div class="block-fg-narrow" style="margin-bottom: 32px;">
-                  <h2 class="company-name" style="margin-bottom:8px;">
-                    Key Conservation
-                  </h2>
-                  
-                  <h1>Local biodiversity & habitat stewardship from any smartphone</h1>
+      <div class="spacer-medium"></div>
 
-                  <p class="credits">
-                    Work completed for Key Conservation as part of a two month capstone project.
-                  </p>
-                                
-                  <div style='width: 100%; margin-bottom: 32px; white-space: nowrap;'>
-                    <img class="drop-shadow" src='./../images/projects/kc-app/00-key-hero.png' width="100%" alt="Tiger eye and logo loading sequence">
-                  </div>
+      <h3>&#x25b6; Streamlined the onboarding user flow</h3>
+        <p>
+          Mapping the pre-existing onboarding process helped us determine how we might improve it:
+        </p>
+        <img src="./../images/projects/kc-app/03-userflow-old.png" width="100%" style="padding-bottom: 32px;" alt="Diagram showing the complicated pre-existing onboarding flow"/>
+        <p>
+          Informed by stakeholder meetings, proxy-user interviews, and analysis of other onboarding flows, we simplified the devices, platforms, questions, and wait times needed by proposing to:
+          <ul>
+            <li>Make the website mobile-friendly</li>
+            <li>Ask only the questions necessary to complete the task at hand (with explanations)</li>
+            <li>Demonstrate value upfront</li>
+            <li>Hold remaining questions for post-registration, as brief periodic or milestone-based surveys</li>
+            <li>Group multiple screens and forms into 3-4 main steps</li>
+          </ul>
+        </p>
+      </div>
 
-                  <div class="spacer-medium"></div>
-                  
-                  <h3>
-                    Connecting experts and locals to rescue habitats
-                  </h3>
+      <div class="block-fg-wide">
+        <img src="./../images/projects/kc-app/04-userflow-new.png" width="100%" style="padding-bottom: 32px;" alt="Diagram showing proposed streamlined onboarding flow"/>
+      </div>
 
-                  <p>
-                    Key Conservation enables an expert community of <strong>conservationists</strong> to ask any <strong>smartphone-carrying individual</strong> to infill urgent gaps in support. It empowers average individuals to affect change, and to track the real results of their specific contributions &ndash; no PhD required.
-                  </p>
+      <div class="spacer-small"></div>
 
-                  <p>
-                    <strong>Organizations</strong> make up the backbone of the Key community. Their active involvement furnishes the content through which individual supporters engage and participate.
-                  </p>
+      <div class="block-fg-narrow">
+        <h3>&#x25b6; Rolled out the red carpet</h3>
+        <p>
+          Onboarding thus far had resembled a grant application, with extensive rules, forms, and acceptance tiers. Unlike a grant, however, there is <em>no obvious reward</em> for an organization to participate. Our approach was to demonstrate value early, and to change the tone to one of welcome.
+        </p>
+        <img src="./../images/projects/kc-app/05-screens-old.jpg" width="100%" style="padding-bottom: 32px;" alt="Pre-existing onboarding screens"/>
+      </div>
 
-                  <p class="goal">
-                    There were eleven “pilot” organizations, a number of whom had stalled during the onboarding process. I co-designed the org-side onboarding flow to improve follow-through while maintaining the rigorous vetting process desired by Key Conservation.
-                    <br><br>
-                    I co-designed a streamlined onboarding experience, and flipped the tone from one of suspicion to a presumption of good intention.
-                  </p>
+      <div class="spacer-medium"></div>
 
-                  <p>My Contributions</p>
+      <div class="block-fg-wide">
+        <img src="./../images/projects/kc-app/06-screens-new.png" width="100%" style="padding-bottom: 32px;" alt="Improved onboarding screens"/>
+      </div>
+      
+      <div class="spacer-small"></div>
 
-                  <h3>Identified the goal beyond the stated need</h3>
+      <div class="block-fg-narrow">
+        <h3>&#x25b6; Advocated for accessibility</h3>
+        <p>
+          While redesign and rebranding were declared off the table by the founder, we made the case to improve accessibility by expanding her color palette, and by changing to a typeface compatible with visual hierarchy for mobile devices.
+        </p>
+        <img src="./../images/projects/kc-app/07-color-old.png" width="100%" style="padding-bottom: 32px;" alt="Pre-existing color inaccessible pallete"/>
+      </div>
 
-                  <p>
-                    The project brief stated that more "on-trend" graphics were needed to improve onboarding follow-through. Our initial audit, however, revealed a daunting pre-existing application process spanning five platforms. It also required toggling between devices.
-                  </p>
+      <div class="spacer-medium"></div>
 
-                  <p>
-                    After account authorization and authentication, the onboarding entailed 37 questions over two forms, a document upload, a five-page letter-sized reference pdf, twelve long-format inputs (mobile-only) which auto-formatted to a profile page, and two approval wait times.
-                  </p>
+      <div class="block-fg-wide">
+        <img src="./../images/projects/kc-app/08-color-new.png" width="100%" style="padding-bottom: 32px;" alt="Improved accessibility and visual hierarchy"/>
+      </div>
 
-                  <img src='./../images/projects/kc-app/01-process-old.png' width="100%" style="padding-bottom: 32px" alt="Screenshots of pre-existing onboarding"/>
+      <div class="spacer-large"></div>
 
-                  <p>
-                    We tested the pre-existing onboarding process with six proxy end-users. Five questioned the value of the app with respect to the effort required to apply.
-                  </p>
+      <div class="block-fg-narrow">
+        <hr style="width:100%; border-color:#FFC266;">
+        <h5>Takeaways</h5>
 
-                  <img src="./../images/projects/kc-app/02-quotes.jpg" width="100%" style="padding-bottom: 32px;" alt="Proxy end-user quotes"/>
+        <div class="spacer-medium"></div>
+        <h3>Reflecting on subjective pushback, objectively</h3>
+        <p>
+          <ul>
+            <li>By basing design recommendations on user-centered research, we were able to validate and make a case for some changes to the visual design to add usability and sophistication.</li>
+            <li>Initially asked to make onboarding more flashy to promote follow-through, we found that a subtractive solution was needed, rather than an additive one. As UX Designers, we brought value by asking "why" with open minds.</li>
+          </ul>
+        </p>
+      </div>
+      
+      <div class="block-bg-dark" style="align-items: center; background-color: #FFC266;">
+        <div class="block-fg-wide" style="align-items: center; padding-top: 10px; padding-bottom: 10px;">
+          <div class="bottom-image">
+            <img src="./../images/projects/kc-app/09-final.png" width="100%" style="padding-bottom: 10px; padding-top: 10px;"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="spacer-medium"></div>
 
-                  <p>
-                    While the called for the addition of graphics, our research pointed to a subtractive approach to redesigning onboarding.
-                  </p>
+      <!-- Client & Credits -->
+      <div class="block-fg-narrow">
 
-                  <h3>
-                    Streamlined the onboarding user flow
-                  </h3>
+        <div style="width: 100%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
 
-                  <p>
-                    Mapping the pre-existing onboarding process helped us determine how we might improve it.
-                  </p>
+          <!--Col 1: Client-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>Key Conservation</b><br>
+              Megan Cromp, Founder
+            </p>
+          </div>
 
-                  <img src="./../images/projects/kc-app/03-userflow-old.png" width="100%" style="padding-bottom: 32px;" alt="Diagram showing the complicated pre-existing onboarding flow"/>
-
-                  <p>
-                    Informed by stakeholder meetings, proxy-user interviews, and analysis of other onboarding flows, we simplified the devices. platforms, questions, and wait times needed by proposing to:
-                    <ul>
-                      <li>
-                        Make the website mobile-friendly
-                      </li>
-                      <li>
-                        Ask only the questions necessary to complete the task at hand (with an explanation)
-                      </li>
-                      <li>
-                        Demonstrate value upfront
-                      </li>
-                      <li>
-                        Hold remaining questions for post-registration, as brief periodic or milestone-based surveys
-                      </li>
-                      <li>
-                        Group multiple screens and forms into four main steps
-                      </li>
-                    </ul>
-                  </p>
-
-                  <img src="./../images/projects/kc-app/04-userflow-new.png" width="100%" style="padding-bottom: 32px;" alt="Diagram showing proposed streamlined onboarding flow"/>
-
-                  <h3>Rolled out the red carpet</h3>
-
-                  <p>
-                    Onboarding thus far had resembled a grant application, with extensive rules, forms, and acceptance tiers. Unlike a grant, however, there is <em>no obvious reward</em> for an organization to participate. Our approach was to demonstrate value early, and to change the tone to one of welcome.
-                  </p>
-
-                  <img src="./../images/projects/kc-app/05-screens-old.jpg" width="100%" style="padding-bottom: 32px;" alt="Pre-existing onboarding screens"/>
-                  <img src="./../images/projects/kc-app/06-screens-new.png" width="100%" style="padding-bottom: 32px;" alt="Improved onboarding screens"/>
-
-                  <h3>Advocated for accessibility</h3>
-
-                  <p>
-                    While redesign / rebranding was declared off the table by the founder, we made the case to improve accessibility by expanding her color palette, and by changing to a typeface compatible with visual hierarchy on mobile devices.
-                  </p>
-
-                  <img src="./../images/projects/kc-app/07-color-old.png" width="100%" style="padding-bottom: 32px;" alt="Pre-existing color inaccessible pallete"/>
-                  <img src="./../images/projects/kc-app/08-color-new.png" width="100%" style="padding-bottom: 32px;" alt="Improved accessibility and visual hierarchy"/>
-
-                  <p>Takeaways</p>
-
-                  <h3>Challenging a client's assumptions</h3>
-
-                  <p>
-                    <ul>
-                      <li>
-                        By basing design recommendations on user-centered research, we were able to make the case for some changes to the visual design to add usability and sophistication.
-                      </li>
-                      <li>
-                        Initially asked to make onboarding more flashy to promote follow-through, we found that a subtractive solution was needed, rather than an additive one. As UX Designers, we brought value by asking "why" with an open mind.
-                      </li>
-                    </ul>
-                  </p>
-
-                  <img src="./../images/projects/kc-app/09-final.png" width="100%" style="padding-bottom: 32px;"/>
-
-                </div>
-          
-              </section>
-
-              <div class="spacer-large"></div>
-
-            <!-- Footer -->
-
-              <div class="spacer-medium"></div>
-
-              <div style="width: 80%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
-                <!--Col 1: Client-->
-                <div style="flex:0 1 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>Key Conservation</b><br>
-                    Megan Cromp, Founder
-                  </p>
-                </div>
-                <!--Col 2: UX Designers-->
-                <div style="flex:0 1 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>User Experience</b><br>
-                    Nilpa Jhaveri, UX Designer<br>
-                    Dylan Stephenson, UX Designer
-                  </p>
-                </div>
-                <!--Col 3: Devs-->
-                <div style="flex:0 1 1; display:flex;">
-                  
-                  <div class="credits" style="flex:0 1 1; line-height: 200%;">
-                    
-                    <b>React Native Developers</b><br>
-                    
-                    <!-- Sub-column Left -->
-                    <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
-                      Cameron Alvarado<br>
-                      Blake Goms<br>
-                      Julie Gumerman<br>
-                    </p>
-
-                    <!-- Sub-column Spacer -->
-                    <div style="display: inline-block; width: 20px; flex-direction: row;"></div>
-                    
-                    <!-- Sub-column Right -->
-                    <p class="credits" style="flex:1; display: inline-flex; flex-direction: row;">
-                      Iris Jitomo<br>
-                      Jonathan Solari<br>
-                      Yi Lun Weng
-                    </p>
-                  </div>
-                </div>
-                <!--Col 4: Leads-->
-                <div style="flex:0 1 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>Leadership</b><br>
-                    Katie Felton, Team Lead<br>
-                    David Monson, UX Manager
-                  </p>
-                </div>
-              </div>
-
-              <div class="spacer-medium"></div>
-
-              <div>
-                <script>
-                  wf.writeFooter();
-                </script>
-              </div>
-
-            </div>
-
+          <!--Col 2-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>User Experience</b><br>
+              Nilpa Jhaveri<br>
+              Dylan Stephenson
+            </p>
           </div>
           
+          <!--Col 3-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>Developers</b><br>      
+                Cameron Alvarado<br>
+                Blake Goms<br>
+                Julie Gumerman<br>
+                Iris Jitomo<br>
+                Jonathan Solari<br>
+                Yi Lun Weng
+            </p>
+          </div>
+
+          <!--Col 4-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>Leadership</b><br>
+              Katie Felton<br>
+              David Monson
+            </p>
+          </div>
+
         </div>
 
+        
       </div>
-    
+
+      <div class="spacer-medium"></div>
+
+      <script>
+        pnp.writePrevNextProj('projectKaiserNICU', 'projectSpeakOut')
+      </script>
+
+      <div class="spacer-medium"></div>
+
+      <script>
+        wf.writeFooter();
+      </script>
     </div>
+
+    <script src="../scripts/headerResizing.js"></script>
   </body>
 </html>

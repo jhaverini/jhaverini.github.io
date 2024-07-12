@@ -1,227 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
-    <title>Academic Website</title>
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="../styles/styles.css">
-   
-    <script src="../scripts/jquery-3.5.1.min.js"></script> 
-    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script>
-    <script src="../scripts/pageRoutes.js"></script>
     <script src="../scripts/logging.js"></script>
-    <script src="../scripts/scrollEffects.js"></script>
-    <script src="../scripts/smoothScrolling.js"></script>
-    <script src="../scripts/updateHeader.js"></script>
-    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/writePrevNextProj.js"></script>
     <script src="../scripts/writeHeader.js"></script>
     <script src="../scripts/writeFooter.js"></script>
-
-    <script>
-      //When the document is fully loaded ("ready"), call a function 
-      //that sets up scroll behaviors:
-      // * smooth-scrolling, when clicking on side-nav links
-      // * header resizing on scroll up/down
-      // * side-nav highlighting on scroll up/down
-      $(document).ready(()=>{
-        sfx.initScrollEffects({
-          scrollDivId: 'scroll-window',
-          headerDivId: 'header',
-          sideNavDivId: 'side-nav'
-        });
-      });
-    </script>
-
+    <title>University Course Website</title>
   </head>
   
   <body>
-    <div class="page">
 
+    <div class="page" id="page">
       <script>
-        wh.writeHeader();
+        wh.writeHeader()
       </script>
 
-      <div id="page-body" class="page-body">
-        
-        <div class="header-shadow">
+      <script>
+        pnp.writePrevNextProj('projectVoxPulmini', 'projectEpicore')
+      </script>
+
+      <div class="block-fg-narrow">
+        <h2 class="company-name" style="margin-bottom:8px;">
+          University Course Website
+        </h2>          
+        <h1>
+          Amplifying the silenced narratives of history for today's pluralistic society
+        </h1>
+      </div>
+
+      <div class="spacer-small"></div>
+
+      <div class="hero-block-bg">
+        <div class="hero-content-container" style="background-color: #FFD36D;">
+          <div class="hero-image-container">
+            <img src='./../images/projects/museum/00-muse-hero.png' class="hero-image" alt="Public History Website hero image" />
+          </div>
+          <div class="hero-data-container" style="background-color: #B28650;">
+            <table class="hero-data-table">
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Project:</td>
+                <td class="hero-data-line">Higher Ed. &bull; Website Design</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Scope:</td>
+                <td class="hero-data-line">Research &bull; UX &bull; Visual Design</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Roles:</td>
+                <td class="hero-data-line">
+                  <ul class="hero-data-list">
+                    <li class="hero-data-list-element">Met weekly with client to help realize ideal presentation of material</li>
+                    <li class="hero-data-list-element">Designed &amp; built a responsive, no-code site.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-heading">Tools:</td>
+                <td class="hero-data-line">Figma &bull; Vev &bull; Trello</td>
+              </tr>
+              <tr class="hero-data-table-row">
+                <td class="hero-data-label">Year:</td>
+                <td class="hero-data-line">2023</td>
+              </tr>
+            </table>
+          </div>
         </div>
-        
-        <div id="scroll-window" class="scroll-window">
+      </div>
 
-          <div id="scroll-pane" class="scroll-pane">
+      <div class="spacer-large"></div>
 
-            <div class="side-nav-and-content-wrapper">
-              
-              <section>
+      <div class="block-fg-narrow">
+        <h3>Challenging the validity of one-sided historical narratives</h3>
+        <p>
+          Museums often focus on dominant perspectives; thus the need for <strong>public history</strong>, described as <q>...the preservation, interpretation, and representation of historical narratives, specifically highlighting the experiences of <em>marginalized and underrepresented peoples</em>.</q>
+          <sup>1</sup>
+        </p>
 
-                <div class="spacer-large"></div>
+        <p class="goal" style="border-left-color: #B28650;">
+          The client, a professor at St. Mary’s College, wanted an effective way to share her research insights with other public history academics. I built a website for her to also function as a supplemental reference for her new course offering, helping students unearth and highlight underlying relevant, richer, more inclusive narratives when crafting museum exhibitions.
+        </p>
 
-                <div class="block-fg-narrow" style="margin-bottom: 32px;">
-                  <h2 class="company-name" style="margin-bottom:8px;">Academic Website</h2>
-                  <h1>Amplifying the silenced narratives of history for today's pluralistic society</h1>
-                </div>
+        <p>
+          <sup>1</sup>
+          <cite>https://www.stmarys-ca.edu/news/lisa-manters-2023-neh-award-win-public-history-and-win-students.</cite>
+        </p>
 
-                <div class="block-bg-dark"
-                  style="align-items: center; background-color: #FFD36D;">
-                    <img style="width:100%;" src="../images/projects/museum/00-muse-hero.png"
-                    />
-                </div>
+        <hr style="width:100%; border-color:#FFD36D">
+        <h5> My Contributions</h5>
 
-                <div class="spacer-medium"></div>
+        <h3>&#x25b6; Proposed variations along schematic themes</h3>
+        <p>
+          Tapping into skills that I learned early in my career as a residential architect, I was able to feel out the client's goals, expectations, and tastes through quick vignettes on different schemes. This required careful listening, establishing a shared language, and avoiding jargon. We worked together one-on-one to hone a body of work that the client was passionate about.
+        </p>
+        <img style="width:100%; padding-bottom: 20px;" src="../images/projects/museum/01-story.jpg"/>
+        <img style="width:100%; padding-bottom: 32px;" src="../images/projects/museum/02-loc.jpg"/>
 
-                <div class="block-fg-narrow">
-                  
-                  <h3>Public History, Storytelling, & Museums</h3>
-                  <p>
-                    Museums often focus on dominant perspectives; thus the need for <b>public history</b>, described as: “...the preservation, interpretation, and representation of historical narratives, specifically highlighting the experiences of <i>marginalized and underrepresented peoples</i>.”(1)
-                  </p>
+        <div class="spacer-medium"></div>
 
-                  <p class="goal">
-                    The client, a professor at St. Mary’s College, needed a way to share her research insights with other public history academics. I built a website for her that also functioned to supplement her new course offering, helping students unearth and highlight underlying relevant, richer, more inclusive narratives when crafting museum exhibitions.
-                  </p>
+        <h3>&#x25b6; Built an interactive website</h3>
+        <p>
+          I began with static diagrams and concepts in Figma. Rather than continuing with high-fidelity static designs and prototypes for hand-off, I chose a “no-code” website builder. This way, I could demo the staging site at any point and test a variety of navigation approaches, interactions, and animated effects.
+        </p>
+      </div>
 
-                  <p class="caption">1  https://www.stmarys-ca.edu/news/lisa-manters-2023-neh-award-win-public-history-and-win-students.</p>
+      <div class="block-fg-wide">
+        <img style="width:100%; padding-bottom: 32px;" src="../images/projects/museum/03-vev.jpg"/>
+      </div>
 
-                  <p> My Contributions</p>
+      <div class="block-fg-narrow">
+        <p>
+          It was also important to choose an environment that permitted designer, client, and developer to work concurrently on design, content, and code. This invited participation and collaboration in ways that proved useful:
+          <ul>
+            <li>I could concretely communicate interactions and animated effects to a non-technical audience</li>
+            <li>The client could make content changes based on the templates I had set up, giving her ongoing agency for her website as her research evolves</li>
+            <li>The developer could override and customize behavior in a coding environment that they know, rather than having to adapt to another design tool</li>
+          </ul>
+        </p>
 
-                  <h3>Proposed variations along schematic themes</h3>
+        <hr style="width:100%; border-color:#FFD36D">
+        <h5>Takeaways</h5>
 
-                  <p>
-                    This project tapped into skills that I learned early in my career as a residential architect: listening, communicating through themes, establishing a shared language, and avoiding jargon. I worked one-on-one to help hone a body of work that the client was passionate about.
-                  </p>
+        <h3>Selecting the right tools for the task</h3>
+        <p>
+          <ul>
+            <li>
+              The website-builders I reviewed were described as “no-code,” but some knowledge of HTML and CSS proved to be critical to learning quickly and troubleshooting.
+            </li>
+            <li>
+              I was tempted by a relatively new platform that offered unique features. It was also an opportunity to support the maturing of a new, promising product. On the flip side, resources like user-created tutorials, tips, and tricks did not yet exist, and I had to be patient and allow time for bugs to be worked out.
+            </li>
+          </ul>
+        </p>
+      </div>
 
-                  <img width="100%" src="../images/projects/museum/01-story.jpg"/>
-                  <img width="100%" style="padding-bottom: 32px;" src="../images/projects/museum/02-loc.jpg"/>
+      <div class="block-bg-dark" style="align-items: center; background-color: #FFD36D;">
+        <div class="block-fg-wide" style="align-items: center; padding-top: 50px; padding-bottom: 50px; display: flex; flex-direction: row;">
+          <div class="bottom-image" style="display:flex; flex-direction:row; align-items: center;">
+            <img
+              style="flex:1; min-width: 0;
+              box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
+              src="../images/projects/museum/04a-detail.jpg"
+            />
+            <div style="flex:0.05 0 0;"></div>
+            <img 
+              style="flex:1; min-width: 0;
+              box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
+              src="../images/projects/museum/04b-exhibits.jpg"
+            />
+          </div>
+        </div>
+      </div>
 
-                  <div class="spacer-medium"></div>
+      <div class="spacer-medium"></div>
 
-                  <h3>Built an interactive website</h3>
+      <!-- Client & Credits -->
+      <div class="block-fg-narrow">
 
-                  <p>
-                    I began with static diagrams and concepts in Figma. Rather than continuing with high-fidelity static designs for hand-off, I chose a “no-code” website builder. This way, I could demo the staging site at any point and test a variety of navigation approaches, interactions, and animated effects.
-                  </p>
-              
-                </div>
+        <div style="width: 100%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-around;">
 
-                  <div class="block-bg-dark">
-                    <img width="100%" style="padding-bottom: 32px;" src="../images/projects/museum/03-vev.jpg"/>
-                  </div>
+          <!--Col 1: Client-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>Client</b><br>
+              Lisa Manter, PhD
+            </p>
+          </div>
 
-                  <div class="block-fg-narrow">
-                    
-                    <p>
-                      It was also important to choose an environment that permitted designer, client, and developer to work concurrently on design, content, and code. This invited participation and collaboration in ways that proved useful:
-                      <ul>
-                        <li>
-                          I could clearly communicate realistic interactions to a non-technical audience
-                       </li>
-                        <li>
-                          The client could make content changes based on templates I had set up, giving her ongoing agency for her website as content changes
-                       </li>
-                       <li>
-                          The developer could override / customize behavior in a coding environment that they know, rather than having to adapt to another design tool
-                       </li>
-                      </ul>
-                    </p>
-
-                    <div class="spacer-medium"></div>
-
-                    <p>Takeaways</p>
-
-                    <h3>Selecting the right tools for the task</h3>
-
-                    <p>
-                      <ul>
-                        <li>
-                          Despite the website-builders I reviewed being described as “no-code,” some knowledge of HTML and CSS proved to be critical to learning quickly.
-                        </li>
-                        <li>
-                          I was tempted by a relatively new platform as a great opportunity to contribute to the evolution of a new product. On the flip side, the user-created tutorials, tips, and tricks did not yet exist, so I had to be patient and allow time for learning and beta-testing.
-                        </li>
-                      </ul>
-                    </p>
-                  </div>
-
-                <div class="block-bg-dark"
-                  style="
-                    align-items: center;
-                    background-color: #FFD36D;
-                    padding-top: 48px;
-                    padding-bottom: 48px;"
-                >  
-                <div style="
-                  width: 80%;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;"
-                >
-                    <img
-                      style="flex:1; min-width: 0;
-                      box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
-                      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
-                      src="../images/projects/museum/05a-detail.jpg"
-                    />
-                    <div style="flex:0.05 0 0;"></div>
-                    <img 
-                      style="flex:1; min-width: 0;
-                      box-shadow: inset -6px -10px 7px rgba(0, 0, 0, 0.08);
-                      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 31px rgba(0, 0, 0, .26));" 
-                      src="../images/projects/museum/05b-exhibits.jpg"
-                    />
-                  </div>
-
-                </div>
-                
-                <div class="spacer-medium"></div>
-
-              </section>
-
-              <!-- Footer -->
-
-              <div class="spacer-medium"></div>
-
-              <div style="width: 70%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
-        
-                <!--Col 1: Client-->
-                <div style="flex:0 0 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>Client</b><br>
-                    Prof. Lisa Manter
-                  </p>
-                </div>
-                <!--Col 2: User Experience-->
-                <div style="flex:0 0 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>User Experience</b><br>
-                    Nilpa Jhaveri<br>
-                  </p>
-                </div>
-                
-                <!--Col 3: Dev-->
-                <div style="flex:0 0 1;">
-                  <p class="credits" style="line-height: 200%;">
-                    <b>Developer</b><br>
-                    Rohan Talip 
-                  </p>
-                </div>
-
-              </div>
-
-              <div class="spacer-large"></div>
-
-              <div>
-                <script>
-                  wf.writeFooter();
-                </script>
-              </div>
-
-            </div>
-
+          <!--Col 2-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>User Experience</b><br>
+              Nilpa Jhaveri<br>
+            </p>
           </div>
           
+          <!--Col 3-->
+          <div style="flex:0 0 1;">
+            <p class="credits" style="line-height: 200%;">
+              <b>Developer</b><br>
+              Rohan Talip 
+            </p>
+          </div>
         </div>
-
+        
       </div>
-    
+
+      <div class="spacer-medium"></div>
+
+      <script>
+        pnp.writePrevNextProj('projectVoxPulmini', 'projectEpicore')
+      </script>
+
+      <div class="spacer-medium"></div>
+
+      <script>
+        wf.writeFooter();
+      </script>
     </div>
+
+    <script src="../scripts/headerResizing.js"></script>
   </body>
 </html>

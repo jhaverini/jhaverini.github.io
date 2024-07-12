@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vox Pulmini</title>
+    
+    <link rel="stylesheet" href="../styles/styles.css">
+   
+    <script src="../scripts/jquery-3.5.1.min.js"></script> 
+    <script src="../scripts/jquery-ui-1.12.1.easing.min.js"></script>
+    <script src="../scripts/pageRoutes.js"></script>
+    <script src="../scripts/logging.js"></script>
+    <script src="../scripts/scrollEffects.js"></script>
+    <script src="../scripts/smoothScrolling.js"></script>
+    <script src="../scripts/updateHeader.js"></script>
+    <script src="../scripts/updateNav.js"></script>
+    <script src="../scripts/writeHeader.js"></script>
+    <script src="../scripts/writeFooter.js"></script>
+
+    <script>
+      //When the document is fully loaded ("ready"), call a function 
+      //that sets up scroll behaviors:
+      // * smooth-scrolling, when clicking on side-nav links
+      // * header resizing on scroll up/down
+      // * side-nav highlighting on scroll up/down
+      $(document).ready(()=>{
+        sfx.initScrollEffects({
+          scrollDivId: 'scroll-window',
+          headerDivId: 'header',
+          sideNavDivId: 'side-nav'
+        });
+      });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="page">
+
+      <script>
+        wh.writeHeader();
+      </script>
+
+      <div id="page-body" class="page-body">
+        
+        <div class="header-shadow">
+        </div>
+        
+        <div id="scroll-window" class="scroll-window">
+
+          <div id="scroll-pane" class="scroll-pane">
+
+            <div class="side-nav-and-content-wrapper">
+              
+              <section>
+
+                <div class="spacer-large"></div>
+
+                <div class="block-fg-narrow" style="margin-bottom:32px;">
+                  <h2 class="company-name" style="margin-bottom:8px">Vox Pulmini</h2>
+                  <h1>Mobile app for collecting audio samples to manage respiratory health</h1>  
+                </div>
+
+                <img style="width:100%" src="../images/projects/vox-pulmini/00a-vox-hero.png"/>
+                <img src="../images/projects/vox-pulmini/00b-inset.png"/>
+                
+                <div class="spacer-medium"></div>
+
+                <div class="block-fg-narrow">
+
+                  <h3>Simplifying audio data set collection</h3> 
+                  
+                  <p>
+                    Vox Pulmini is a start-up focused on improving outcomes in children’s respiratory health.
+                  </p>
+
+                  <p class="goal">
+                    I designed a mobile app to collect high-quality audio samples from volunteers using a paired physical device. The data trained a machine learning model to recognize critical patterns in patients with chronic respiratory conditions to predict and prevent attacks.
+                    <br> <br>
+                    With a low-fi clickable mobile prototype, we tested a physical sample-collection device on volunteers ranging in age from 4 to 82. This helped us optimize the app for ease of use.
+                  </p>
+                  
+                  <div class="spacer-medium"></div>
+
+                  <p>My Contributions</p>
+
+                  <h3>Mapped steps to collect automatically labeled samples  using a physical device and mobile phone</h3>
+
+                  <p>
+                    I worked with the founder to envision the collection and labeling of thousands of audio samples from volunteer participants, on a shoestring budget.
+                  </p>
+
+                  <p>
+                    Unique considerations included how to: package the physical testing device for delivery and return, communicate delay when recording and transmitting large sound files, and incentivize participants to record more sounds. Potential snags for the end-user included multi-user account creation, bluetooth pairing, and device ID matching.
+                  </p>
+                  
+                  <img style="width: 100%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/01-custjourney.png"/>
+
+                  <p>
+                    Below are initial wireframes showing a user flow in which an established user records a sound using the testing device.
+                  </p>
+
+                  <img style="width: 22%" src="../images/projects/vox-pulmini/02a-note.jpg"/>
+                  <img style="width: 22%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/02a-wframe.jpg"/>
+
+                  <img style="width: 22%" src="../images/projects/vox-pulmini/02b-note.jpg"/>
+                  <img style="width: 22%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/02b-wframe.jpg"/>
+
+                  <img style="width: 22%" src="../images/projects/vox-pulmini/02c-note.jpg"/>
+                  <img style="width: 22%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/02c-wframe.jpg"/>
+
+                  <img style="width: 22%" src="../images/projects/vox-pulmini/02d-note.jpg"/>
+                  <img style="width: 22%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/02d-wframe.jpg"/>
+
+                  <p>
+                    These evolved into a low-fidelity interactive, clickable prototype. The simple prototype made quick testing possible before committing the design to code. Our main goal was to ensure that  instructions were crystal clear.
+                  </p>
+
+                  <img style="width: 100%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/03-prototype.png"/>
+
+                  <h3>Testing, iterating, and validating</h3>
+
+                  <p>
+                    Testing prototypes on various age groups for clarity of instructions proved to be incredibly insightful. We found that with our initial screens, many end-users missed their prompts. We were asking them to follow timers while reading instructions, holding the phone in one hand and the device in the other. Simplifying the timed prompts improved results.
+                  </p>
+
+                  <img style="width: 100%; margin-bottom: 32px;" src="../images/projects/vox-pulmini/04-testing.jpg"/>
+
+                  <p>Takeaways</p>
+
+                  <h3>Designing for a mobile app for a physical device</h3>
+
+
+                  <p>
+                    <ul>
+                      <li>
+                        The tangible aspect of working with a mobile interface and a physical product was rewarding, especially when testing the app and observing the usability of both.
+                      </li>
+                      <li>
+                        Data was more easily labeled when we allowed participants to provide some context (a coarse category selection and with optional text entry for clarification).
+                      </li>
+                      <li>
+                        Highlighting a participant’s small part in the larger effort was a big motivator. Even the little ones were excited to know there were others like them contributing.
+                      </li>
+                      <li>
+                        “Let ME try!”: One big adjustment that surfaced from observing participants was to offer  family accounts with multiple users for larger data sets.
+                      </li>
+                    </ul>
+                  </p>
+
+                  <img src="../images/projects/vox-pulmini/05a-final.jpg"/>
+                  <img src="../images/projects/vox-pulmini/05b-final.jpg"/>
+                  <img src="../images/projects/vox-pulmini/05c-final.jpg"/>
+
+                </div>  
+                
+                <div class="spacer-medium"></div>
+
+              </section>
+
+              <!-- Footer -->
+
+              <div class="spacer-medium"></div>
+
+              <div style="width: 25%; margin-left: auto; margin-right: auto; display: flex; flex-direction: row; justify-content: space-between;">
+        
+                <!--Col 1: Client-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>Vox Pulmini</b><br>
+                    Krispin Leydon, Founder
+                  </p>
+                </div>
+
+                <!--Col 2: User Experience-->
+                <div style="flex:0 0 1;">
+                  <p class="credits" style="line-height: 200%;">
+                    <b>User Experience</b><br>
+                    Nilpa Jhaveri
+                  </p>
+                </div>
+                
+              </div>
+
+              <div class="spacer-large"></div>
+
+              <div>
+                <script>
+                  wf.writeFooter();
+                </script>
+              </div>
+
+            </div>
+
+          </div>
+          
+        </div>
+
+      </div>
+    
+    </div>
+  </body>
+</html>

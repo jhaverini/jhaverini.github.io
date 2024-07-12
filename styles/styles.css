@@ -3,42 +3,59 @@
 
 /* Variables */
 :root {
+  /* Colors */
   --top-nav-link-color: #777;
   --top-nav-link-color-hover: #222;
   --top-nav-link-color-current: #000;
   --bright-link-color: #2429B2;
+  --prev-next-proj-link-color: #A5A5A5;
+  --prev-next-proj-link-color-hover: #444;
   --bright-link-color-hover: #000AFF;
   --color-text-default: #080707;
   --color-text-alt: #908f8f;
   --color-section-alt: rgba(13, 38, 18, 0.05);
-  --color-project-keycons: #4cd964;
-  --color-project-nicu: #006ba6;
+  --color-project-hampay: #48aec4;
+  --color-project-iterant: #8bda89;
+  --color-project-keycons: #cc7d24;
+  --color-project-museum: #b28650;
+  --color-project-nicu: #7578ba;
+  --color-project-speakout: #FFD600;
+  --color-project-vox: #5C9DE1;
   --color-project-default: #00AAFF;
+  /* Fonts */
   --font-family-default: "Open Sans", "Helvetica-Neue", sans-serif; 
   --font-family-alt: "Poppins", "Helvetica-Neue", sans-serif;
-  --max-page-width: 1200px; /* Keep in sync with media query breakpoint... */
-  --header-line1-height: 48px;
-  --header-line2-height: 48px;
-  --header-max-height: calc( var(--header-line1-height) + var(--header-line2-height) );
-  --header-min-height: calc( var(--header-line1-height) );  /* Line2 gets hidden... */
-  --header-transition-duration: 300ms;
-  --header-transition-timing-function: ease-in-out;
-  --side-nav-container-padding-top: 180px;
-  --side-nav-min-top: 0px;
-  --side-nav-max-top: 50px;
-  --side-nav-height: 250px;
-  --side-nav-width: 175px;
-  --side-margin-narrow: calc( var(--side-nav-width) + 96px );
-  --side-margin-wide: calc( var( --side-nav-width) + 16px );
+  /* Dimensions */
+  --header-content-tall-height: 80px;
+  --header-content-short-height: 33px;
+  --header-shadow-height: 20px;
+  --content-width: min(1280px, 100%);
+  --content-width-narrow: min(740px, 90vw);
+  --content-width-narrow2: min(786px, 90vw);
+  --hero-img-width: 840px;
+  --hero-img-offset: 107px;
 }
 
-/* Styles */
 
+/* CSS Reset */
 * {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: disc outside;
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
+
+/* Styles */
+
 html {
+  box-sizing: border-box;
   font-size: 62.5%;
 }
 
@@ -70,7 +87,7 @@ h2 {
   font-weight: 600;
   line-height: 1.2;
   margin-top: 0px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 }
 
 h3 {
@@ -83,19 +100,25 @@ h3 {
 }
 
 h4 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  line-height: 1.4;
-  margin-top: 0px;
-  margin-bottom: 32px;
+  line-height: 200%
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 400;
-  margin-top: 0px;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
+  color:var(--color-text-alt)
+}
+
+hr {
+  height: 0.1px;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-bottom-width: 1px;
 }
 
 p {
@@ -131,7 +154,7 @@ ul {
   margin-bottom: 32px;
 }
 
-b {
+b, strong {
   font-weight: 600;
 }
 
@@ -166,69 +189,50 @@ a.bright-link:hover {
   color: var(--color-text-alt);
 }
 
-.page {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 100vh;
+.heading { /* Naming this header seems to cause subtle problems... */
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: var(--max-page-width);
-  height: 100vh;
-  background-color: white;
+  justify-content: flex-start;
 }
 
-.header {
-  position: relative;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: var(--header-max-height);
+.header-content {
+  height: var(--header-content-tall-height);
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  transition: height 300ms ease;
   display: flex;
   flex-direction: column;
-  width: calc(100% - var(--side-margin-narrow) - var(--side-margin-narrow) - 15px); /* Subtracts left & right margin, and scrollbar width. Ideally, scrollbar width would be based on ACTUAL scrollbar width...  */
-  will-change: auto;
-  transition: all var(--header-transition-duration) var(--header-transition-timing-function), width 1ms; /* Ideally, we'd just want to animate flex-basis, but Safari bug. So, added width exception... */
-  margin-left: var(--side-margin-narrow);
-  margin-right: var(--side-margin-narrow);
-  background-color: white;
-  touch-action: none;
-}
-
-.header-line1 {
-  position: absolute;
-  z-index: 20;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: var(--header-line1-height);
-  width: 100%;
-  padding-top: 5px;
-  display: flex;
-  flex-direction:row;
+  align-items: center;
   justify-content: flex-start;
-  align-items: flex-end;
+}
+
+.header-content-inner {
+  width: var(--content-width-narrow);
   background-color: white;
-  touch-action: none;
+  overflow: hidden;
+  transition: height 300ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.header-line1-left {
-  flex: 1;
-  height: 100%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-start;
-  touch-action: none;
+.header-content-short {
+  /* Over-ride to shorten header height */
+  height: var(--header-content-short-height);
 }
 
-.header-line1-right {
-  flex: 1;
-  height: 100%;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: flex-end;
-  touch-action: none;
+.header-shaddow {
+  height: var(--header-shadow-height);
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
 }
 
 .header-line1-link {
@@ -239,45 +243,62 @@ a.bright-link:hover {
   margin: 0px;
   white-space: nowrap;
 }
-
 .header-line1-link:visited {
   color: var(--top-nav-link-color);
   text-decoration: none;
 }
-
 .header-line1-link:hover {
   color: var(--top-nav-link-color-hover);
 }
-
 .header-line1-link.home {
   font-family: var(--font-family-alt);
-  font-size: 2.0rem;
+  font-size: 1.6rem;
 }
-
 .header-line1-link.current {
   color: var(--top-nav-link-color-current);
   text-decoration: none;
 }
 
+.header-line1 {
+  width: 100%;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.header-line1-left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header-line1-right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .header-line2 {
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: var(--header-line2-height);
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   white-space: nowrap;
-  padding-bottom: 10px;
-  touch-action: none;
 }
 
 .header-line2-title {
+  margin-top: 2px;
   font-family: var(--font-family-alt);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 200;
   touch-action: none;
 }
@@ -291,139 +312,39 @@ a.bright-link:hover {
   color: gray;
 }
 
-
 .footer-contact-link {
   filter: brightness(100%);
 }
-
 .footer-contact-link:visited {
   filter: brightness(100%); /* Same as normal value */
 }
-
 .footer-contact-link:hover {
   filter: brightness(0%);
 }
-
 .footer-contact-link:active {
   filter: brightness(100%);
 }
 
-
-.page-body {
+.page {
   position: relative;
+  background-color: white;
+  width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-
-.header-shadow {
-  position: absolute;
-  top: 0px;
-  z-index: 1000;
-  height: 20px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), rgba(0,0,0,0));
-}
-
-.scroll-window {
-  flex: 1;
-  flex-basis: 0px; /* Firefox complains if no flex-basis */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
-
-.scroll-pane {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.side-nav-and-content-wrapper {
-  position: relative;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  padding-top: var(--header-content-tall-height);
+  transition: padding-top 300ms ease;  /* Keep in sync with header-content transition type & length */
 }
-
-.side-nav-container {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  padding-top: var(--side-nav-container-padding-top);
-  width: var(--side-margin-narrow);
-}
-
-.side-nav {
-  position: sticky;
-  top: var(--side-nav-max-top); /* See: scripts/updateHeader.js */
-  padding-top: 20px; /* Prevents header from sliding over side-nav */
-  left: 0px;
-  z-index: 1000;
-  align-self: flex-start;
-  height: var(--side-nav-height);
-  width: var(--side-nav-width);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* background-color: rgba(255, 220, 174, 0.397); */
-  /* 
-     NOTE: The transition animation properties below enable 
-     the side-nav to counter-animate against the header 
-     collapse/expansion animation, such that the side
-     navigation appears to remain in the same place.
-     See: scripts/resizeHeaderOnScroll.js
-  */
-  transition-property: top;
-  transition-duration: var(--header-transition-duration);
-  transition-timing-function: var(--header-transition-timing-function);
-}
-
-.side-nav-ul {
-  list-style-type: none;
-}
-
-.side-nav-li {
-  padding: 10px;
-}
-
-.side-nav-link {
-  font-size: 1.6rem;
-  font-weight: 600;
-  transition: background 100ms;
-  border-left-width: 4px;
-  border-left-color: transparent;
-  border-left-style: solid;
-  padding-left: 6px;
-  height: 20px;
-}
-
-.side-nav-link-selected {
-  border-left-color: var(--color-project-default);
-}
-
-.side-nav-link-selected-nicu {
-  border-left-color: var(--color-project-nicu);
-}
-
-.side-nav-link-selected-keycons {
-  border-left-color: var(--color-project-keycons);
-}
-
 
 section {
-  /* border: 1px rgb(204, 204, 204) dashed; */
   flex: 1 1 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   position: relative;  /* Enables absolute positioning of children in corners, etc */
 }
 
@@ -433,7 +354,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
 
 .block-bg-dark {
@@ -451,24 +372,41 @@ section {
 
 .block-fg-narrow {
   flex: 1 1 auto;
-  margin-left: var(--side-margin-narrow);
-  margin-right: var(--side-margin-narrow);
+  width: var(--content-width-narrow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .block-fg-wide {
   flex: 1 1 auto;
-  margin-left: var(--side-margin-wide);
-  margin-right: var(--side-margin-wide);
+  width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;  /* Enables absolute positioning of children in corners, etc */
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.bottom-image {
+  width: 80%;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .goal { /**/
   width: 100%;
-  font-weight: 600;
   line-height: 200%;
   margin-top: 0px;
   margin-bottom: 32px;
   padding-left: 20px;
-  border-left-width: 6px;
+  border-left-width: 8px;
   border-left-style: solid;
   border-left-color: var(--color-project-default);
 }
@@ -481,20 +419,9 @@ section {
   border-left-color: var(--color-project-nicu);
 }
 
-.key-challenge {
-  border:1px solid #F3C3C6; 
-  background-color: #FEFBFB;
-  padding-left:24px;
-  padding-right:24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin-top: 0px;
-  margin-bottom: 32px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
 
 .client-list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   font-size: 1.4rem;
@@ -548,6 +475,7 @@ a.project-index-name:hover {
   margin: 0px;
 }
 
+
 .project-summary {
   display: flex; 
   flex-direction: row;
@@ -556,13 +484,13 @@ a.project-index-name:hover {
 
 .project-grid-container {
   /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
+  --w1:1600px;
+  --n:4;
   /* second breakpoint*/
-  --w2:500px;
+  --w2:900px;
   --m:3;
   /* third breakpoint*/
-  --w3:200px;
+  --w3:700px;
   --p:2;
 
   /*
@@ -570,20 +498,22 @@ a.project-index-name:hover {
     We used the last approach from this tutorial:
     https://css-tricks.com/responsive-layouts-fewer-media-queries/
   */
-  display:grid;
+  display: grid;
   grid-template-columns:
     repeat(auto-fill,
       minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:3%;
-  margin:0px;
+        100%/(var(--n) + 1) + 0.1%,
+          (var(--w1) - 100%)*1000,
+        100%/(var(--m) + 1) + 0.1%), 
+          (var(--w2) - 100%)*1000,
+        100%/(var(--p) + 1) + 0.1%), 
+          (var(--w3) - 100%)*1000,
+        100%), 1fr));
+  gap: 3%;
+  margin: 0px;
 }
+
+
 .project-grid-tile {
   display: block;
   filter: brightness(100%);
@@ -625,84 +555,167 @@ a.project-index-name:hover {
   color: var(--color-text-default);
 }
 
-.hamiltonpay-grid-container {
-  /* first breakpoint*/
-  --w1:1200px;
-  --n:5;
-  /* second breakpoint*/
-  --w2:500px;
-  --m:3;
-  /* third breakpoint*/
-  --w3:200px;
-  --p:2;
-
-  /*
-    Image grid w/ breakpoints, for HamiltonPay project
-    Flexible grids with breakpoints are hard.
-    We used the last approach from this tutorial:
-    https://css-tricks.com/responsive-layouts-fewer-media-queries/
-  */
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fill,
-      minmax(clamp(clamp(clamp(  
-            100%/(var(--n) + 1) + 0.1%,
-              (var(--w1) - 100%)*1000,
-            100%/(var(--m) + 1) + 0.1%), 
-              (var(--w2) - 100%)*1000,
-            100%/(var(--p) + 1) + 0.1%), 
-              (var(--w3) - 100%)*1000,
-            100%), 1fr));
-  gap:9px;
-  overflow:hidden;
-  margin:0px;
-}
-.hamiltonpay-grid-image {
-  display: block;
-  width: 100%;
-  border: 1px solid #85D1DC;
-}
-
-/*
-Currently used in Vox Pulmini project page, 
-but could be used more broadly (?)
-*/
+/* Currently used in Vox Pulmini project page, but could be used more broadly (?) */
 .indented {
   margin-left: 16px;
 }
 
-.corner-watermark-kaiser-logo {
-  background-image: url('./../images/projects/kaiser-nicu/0-101-logo.png');
-  background-repeat: no-repeat;
-  background-position: right 0px top 0px;
-  background-size: 440px;
+.prev-next-proj {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.corner-watermark-key-conservation-logo {
-  background-image:url('./../images/projects/kc-app/0-101-logo.svg');
-  background-repeat: no-repeat;
-  background-position: right -70px top -160px;
-  background-size: 500px;
+.prev-next-proj-separator {
+  color: var(--prev-next-proj-link-color);
 }
 
-/* IOS-SPECIFIC */
-/* https://stackoverflow.com/a/47818418 */
-@supports (-webkit-touch-callout: none) {
-  .page-body {
-    /* 
-     Prevents wierd behavior on iPhone, with header scrolling out of view, or scrolling happening faster than your thumb.
-    */
-    max-height: calc(100vh - var(--header-max-height));
-  }
+.prev-next-proj-link {
+  font-family: var(--font-family-alt);
+  font-size: 1.4rem;
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0px;
+  white-space: nowrap;
+}
+.prev-next-proj-link:visited {
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
+}
+.prev-next-proj-link:hover {
+  color: var(--prev-next-proj-link-color-hover);
+}
+.prev-next-proj-link.home {
+  font-family: var(--font-family-alt);
+  font-size: 2.0rem;
+}
+.prev-next-proj-link.current {
+  color: var(--prev-next-proj-link-color);
+  text-decoration: none;
 }
 
-/* LAYOUT ADJUSTMENTS FOR CORNER WATERMARKS... */
-@media only screen and (max-width: 1200px) {
-  .corner-watermark-key-conservation-logo {
-    background-position: right calc(50px - 10vw) top calc(20px - 15vw); /* Fiddled with these until they worked... */
-    background-size: 41.8vw;
-  }
+
+
+.hero-block-bg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.hero-content-container {
+  width: var(--content-width);
+  display: flex;
+  flex-direction: row;  
+}
+
+.hero-image-container {
+  width: calc(var(--hero-img-width) - var(--hero-img-offset));
+  overflow: visible;
+  z-index: 1; /* Ensure contained image appears on top */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-image-speakout {
+  width: 100%;
+}
+
+.hero-image {
+  width: 840px;
+}
+
+.hero-data-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  position: relative; /* So can hold absolute elements, e.g, inset image */
+}
+
+.hero-data-container-speakout {
+  background-color: #EFDB73;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100px;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  position: absolute;
+  right: 50px;
+  top: 0px;
+  bottom: 0px;
+  width: 40%;
+}
+
+.hero-data-table {
+  color: white;
+  font-size: 1.5rem;
+  border-spacing: 10px;
+}
+
+.hero-data-table-row {
+  vertical-align: top;
+}
+
+.hero-data-heading {
+  font-weight: 500;
+}
+
+.hero-data-line {
+  font-weight: 300;
+}
+
+.hero-data-list {
+  font-weight: 300;
+  line-height: normal;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+  /* list-style: disc;
+  list-style-position:outside;
+  margin-left: 12px; */
+}
+
+/* If bullets are included... */
+.hero-data-list li::marker {
+  font-size: 0.5em;
+}
+
+.hero-data-list-element:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.hero-data-inset-image-container {
+  position: absolute;
+  bottom: 0px;
+  right: 40px;
+}
+
+.nicu-users-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nicu-user-circle {
+  width: 140px; /* 167 */
+  margin: 10px;
+}
+
 
 /* LAYOUT ADJUSTMENTS FOR PROJECTS SUMMARY... */
 @media only screen and (max-width: 1100px) {
@@ -711,6 +724,10 @@ but could be used more broadly (?)
     flex-direction: column;
   }
 
+  .nicu-users-container {
+    flex-direction: column;
+  }
+  
   .header {
     width: calc(100vw - 40px);
     margin-left: 0px;
@@ -718,23 +735,79 @@ but could be used more broadly (?)
   }
 }
 
-/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL SCREENS... */
-@media only screen and (max-width: 768px) {
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALL (TABLET) SCREENS... */
+@media only screen and (max-width: 1280px) {
 
-  .corner-watermark-key-conservation-logo {
-    background-image: none;
+  .block-fg-wide {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .corner-watermark-kaiser-logo {
-    background-image: none;
+  .hero-content-container {
+    width: 100%;
+    flex-direction: column;  
   }
 
-  .side-nav {
-    display: none;
+  .hero-image-container {
+    width: 100%;
+    z-index: 1; /* Ensure contained image appears on top */
+    justify-content: center;
   }
 
-  .block-fg-narrow {
-    margin-left: 24px;
-    margin-right: 24px;
+  .hero-image {
+    width: 95%;
   }
+
+  .hero-data-container {
+    padding-left: 0px;
+    padding-top:20px;
+  }
+
+  .hero-data-container-speakout {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100px;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 60px;
+    position: relative; /* So can hold absolute elements, e.g, inset image */
+    right: 0px;
+  }
+
+  .hero-data-table {
+    width: var(--content-width-narrow);
+  }
+
+  .hero-data-inset-image-container {
+    visibility: hidden;
+  }
+
+  .bottom-image {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }  
+}
+
+
+/* VARIOUS LAYOUT ADJUSTMENTS FOR SMALLER (PHONE) SCREENS... */
+@media only screen and (max-width: 400px) {
+
+  .header-line1-link {
+    font-size: 1.4rem;
+  }
+  .header-line1-link.home {
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+  }
+
+  .bottom-image {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }  
 }
