@@ -172,7 +172,8 @@ a.negate-hover:hover {
   color: var(--top-nav-link-color);  /* For text */
   filter: brightness(100%);  /* For images */
   text-decoration: none;
-  cursor: default;
+  cursor: not-allowed;
+  
 }
 
 a.bright-link, a.bright-link:visited {
